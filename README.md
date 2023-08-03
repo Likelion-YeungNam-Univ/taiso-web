@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# YU LIKELION
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 📌 Branch Naming Convention
 
-## Available Scripts
+```
+main ── develop ── feature/ ??
 
-In the project directory, you can run:
+```
 
-### `npm start`
+### 컴포넌트 구성하기
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+C:.
+│ App.js
+│ index.js
+│
+├───assets (이미지 파일 넣는 곳 - 예) LoginForm.jpg )
+├───components
+│ │ index.js
+│ │
+│ ├───auth
+│ │ index.js
+│ │ LoginForm.js (네이버, 카카오, 구글 버튼) 수비
+│ │  
+│ ├───topbar 강록
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+│ │ TopBar.js
 
-### `npm test`
+│ │
+│ ├───header 강록
+│ │ index.js
+│ │ Header.js
+│ │  
+│ ├───footer 강록
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+│ │ Footer.js
 
-### `npm run build`
+│ │
+│ └───main
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+│ HotBoard.js (인기 타이어 전체 화면) 수비
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+│ - HotList.js (인기 타이어 아이템 전체 화면)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+│ - HotItem.js (인기 타이어 각각 아이템 화면)
 
-### `npm run eject`
+│ RecommandBoard.js (타이어 추천 전체 화면) 민정
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+│ - RecommandList.js (타이어 추천 아이템 전체 화면)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+│ - RecommandItem.js (타이어 추천 각각 아이템 화면)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+│ ReviewBoard.js (타이어 후기 전체 화면) 민정
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+│ - ReviewList.js (타이어 후기 아이템 전체 아이템 화면)
 
-## Learn More
+│ - ReviewItem.js (타이어 후기 각각 아이템 화면)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+│ StoryBoard.js (타이어 이야기 전체 화면) 민정
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+│ - StoryList.js (타이어 이야기 아이템 전체 화면)
 
-### Code Splitting
+│ - StoryItem.js (타이어 이야기 각각 아이템 전체 화면)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+│ SearchForm.js (차종으로 찾기) 민정  
+└───pages
+│ index.js
+│
 
-### Analyzing the Bundle Size
+     ├───auth
+     │       index.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+     │       SignInPage.js (로그인 전체 페이지) 수비
+     │
+     └───main
+              index.js
+              MainPage.js (메인 화면 타이어 이미지) 강록
