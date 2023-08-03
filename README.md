@@ -3,74 +3,69 @@
 ### 📌 Branch Naming Convention
 
 ```
-main ── develop ── feature/ ??
-
+main ── develop ── feature/"
 ```
 
-### 컴포넌트 구성하기
+### 📌 컴포넌트 구성하기
 
-C:.
-│ App.js
-│ index.js
-│
-├───assets (이미지 파일 넣는 곳 - 예) LoginForm.jpg )
-├───components
-│ │ index.js
-│ │
-│ ├───auth
-│ │ index.js
-│ │ LoginForm.js (네이버, 카카오, 구글 버튼) 수비
-│ │  
-│ ├───topbar 강록
+```
+.
+├── App.js
+├── App.test.js
+├── assets
+├── components
+│   ├── auth
+│   ├── footer
+│   │   └── Footer.js
+│   ├── header
+│   │   ├── Header.js
+│   │   └── index.js
+│   ├── main
+│   │   ├── SearchForm.js
+│   │   ├── hot
+│   │   │   ├── HotBoard.js
+│   │   │   ├── HotItem.js
+│   │   │   └── HotList.js
+│   │   ├── recommand
+│   │   │   ├── RecommandBoard.js
+│   │   │   ├── RecommandItem.js
+│   │   │   └── RecommandList.js
+│   │   ├── review
+│   │   │   ├── ReviewBoard.js
+│   │   │   ├── ReviewItem.js
+│   │   │   └── ReviewList.js
+│   │   └── story
+│   │       ├── StoryBoard.js
+│   │       ├── StoryItem.js
+│   │       └── StoryList.js
+│   └── topbar
+│       └── TopBar.js
+├── index.js
+├── pages
+│   ├── auth
+│   │   ├── SignInPage.js
+│   │   └── index.js
+│   ├── index.js
+│   └── main
+│       ├── MainPage.js
+│       └── index.js
+├── reportWebVitals.js
+└── setupTests.js
+```
 
-│ │ TopBar.js
+### 📌 Commit Convention
 
-│ │
-│ ├───header 강록
-│ │ index.js
-│ │ Header.js
-│ │  
-│ ├───footer 강록
-
-│ │ Footer.js
-
-│ │
-│ └───main
-
-│ HotBoard.js (인기 타이어 전체 화면) 수비
-
-│ - HotList.js (인기 타이어 아이템 전체 화면)
-
-│ - HotItem.js (인기 타이어 각각 아이템 화면)
-
-│ RecommandBoard.js (타이어 추천 전체 화면) 민정
-
-│ - RecommandList.js (타이어 추천 아이템 전체 화면)
-
-│ - RecommandItem.js (타이어 추천 각각 아이템 화면)
-
-│ ReviewBoard.js (타이어 후기 전체 화면) 민정
-
-│ - ReviewList.js (타이어 후기 아이템 전체 아이템 화면)
-
-│ - ReviewItem.js (타이어 후기 각각 아이템 화면)
-
-│ StoryBoard.js (타이어 이야기 전체 화면) 민정
-
-│ - StoryList.js (타이어 이야기 아이템 전체 화면)
-
-│ - StoryItem.js (타이어 이야기 각각 아이템 전체 화면)
-
-│ SearchForm.js (차종으로 찾기) 민정  
-└───pages
-│ index.js
-│
-
-     ├───auth
-     │       index.js
-
-     │       SignInPage.js (로그인 전체 페이지) 수비
-     │
-     └───main
-              index.js
-              MainPage.js (메인 화면 타이어 이미지) 강록
+| emoji                       | message  | description                                           |
+| --------------------------- | -------- | ----------------------------------------------------- |
+| :sparkles:                  | feat     | 새로운 기능 추가, 기존 기능을 요구 사항에 맞추어 수정 |
+| :bug:                       | fix      | 기능에 대한 버그 수정                                 |
+| :green_heart:               | build    | 빌드 관련 수정                                        |
+| :pushpin:                   | chore    | 패키지 매니저 수정, 그 외 기타 수정 ex) .gitignore    |
+| :construction_worker:       | ci       | CI 관련 설정 수정                                     |
+| :closed_book:               | docs     | 문서(주석) 수정                                       |
+| :art:                       | style    | 코드 스타일, 포맷팅에 대한 수정                       |
+| :recycle:                   | refactor | 기능 변화가 아닌 코드 리팩터링                        |
+| :white_check_mark:          | test     | 테스트 코드 추가/수정                                 |
+| :bookmark:                  | release  | 버전 릴리즈                                           |
+| :ambulance:                 | hotfix   | 긴급 수정                                             |
+| :twisted_rightwards_arrows: | branch   | 브랜치 추가/병합                                      |
