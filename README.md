@@ -13,6 +13,8 @@ main ── develop ── feature/"
 ├── App.js
 ├── App.test.js
 ├── assets
+│   └── images
+│       └── HeaderLogo.svg
 ├── components
 │   ├── auth
 │   ├── footer
@@ -20,6 +22,7 @@ main ── develop ── feature/"
 │   ├── header
 │   │   ├── Header.js
 │   │   └── index.js
+│   ├── index.js
 │   ├── main
 │   │   ├── SearchForm.js
 │   │   ├── hot
@@ -39,7 +42,8 @@ main ── develop ── feature/"
 │   │       ├── StoryItem.js
 │   │       └── StoryList.js
 │   └── topbar
-│       └── TopBar.js
+│       ├── TopBar.js
+│       └── index.js
 ├── index.js
 ├── pages
 │   ├── auth
