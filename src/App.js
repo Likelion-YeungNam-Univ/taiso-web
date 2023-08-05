@@ -1,11 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter, Route, Routes } from 'react-router-dom'
+import SignInPage from './pages';
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <BrowserRouter> 
+      <Routes>
+       <Route path="/login" element={<SignInPage />}/>
+        {/* <Route path="/register" element={<RegisterPage />}/> */}
+        {/* <Route path="/" element={<MainPage />} /> */}
+        {/* <Route path="/*" element={<NotFoundPage />}/> */} {/* 404 Not Found */}
+      </Routes>
+  </BrowserRouter>
   );
 }
 
