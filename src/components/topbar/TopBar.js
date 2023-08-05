@@ -1,16 +1,17 @@
 import { HiOutlineSpeakerphone } from "react-icons/hi";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import styled from "styled-components";
+import { useState } from "react";
 
 const Top = styled.div`
   width: 100%;
   height: 40px;
   background: #2D2926;
 ;
-  color: white;
+  color: #FFFFFF;
   top: 0;
   position: sticky;
-  display: flex;
+  display: ${(props) => (props.visible ? "flex" : "none")};
   align-items: center;
   font-size: 12px;
   justify-content: center;
@@ -34,14 +35,19 @@ const CloseIcon = styled(AiOutlineCloseCircle)`
 `
 
 const TopBar = () => {
+  const [isVisible, setIsVisible] = useState(true);
+
+  const handleCloseIconClick = () => {
+    setIsVisible(false);
+  };
+
   return (
-    <Top>
+    <Top visible={isVisible}>
         <TopCenter>
             <SpeakerIcon />
             <span>타이소에 회원가입하고 타이어 할인 혜택을 받아보세요!</span>
         </TopCenter>      
-        <CloseIcon />
-      
+        <CloseIcon onClick={handleCloseIconClick}/>
     </Top>
   );
 };
