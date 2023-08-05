@@ -1,10 +1,11 @@
-import { Header, TopBar} from "components";
+import { Header, TopBar, Footer} from "components";
 
 function App() {
   return (
     <div className="App">
       <TopBar/>
       <Header/>
+      <Footer/>
     </div>
   );
 };

@@ -6,9 +6,11 @@ const Nav = styled.div`
     height: 133px;
     background: pink;
     position: sticky;
+    /* padding-top: 32px;
+    top: -32px; */
     display: flex;
     align-items: center;
-
+    font-family: 'Nunito', sans-serif;
 `
 const Logo = styled.div`
     flex: 5;
