@@ -16,12 +16,15 @@
 
 
 import SignInPage from "./pages/auth/SignInPage";
+import { Header, TopBar} from "components";
 
 function App() {
   return (
     <div className="App">
     <div>
       <SignInPage />
+      <TopBar/>
+      <Header/>
     </div>
   </div>
   );
