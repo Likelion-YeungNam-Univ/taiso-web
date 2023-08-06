@@ -16,7 +16,6 @@
 
 
 import SignInPage from "./pages/auth/SignInPage";
-// import NaverLogin from "./pages/auth/NaverLogin";
 
 function App() {
   return (
