@@ -1,3 +1,5 @@
+import { Header, TopBar } from "components";
+import RecommandBoard from "components/main/recommand/RecommandBoard";
 // import {BrowserRouter, Route, Routes } from 'react-router-dom'
 // import SignInPage from './pages';
 
@@ -25,6 +27,7 @@ function App() {
       <SignInPage />
       <TopBar/>
       <Header/>
+      <RecommandBoard/>
     </div>
   </div>
   );
