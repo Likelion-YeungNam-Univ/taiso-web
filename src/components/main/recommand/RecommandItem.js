@@ -36,7 +36,16 @@ const ImageBox = styled.div`
 const InnerBox = styled.div`
     width: 50%;
     height: 100%;
-    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    margin-top: 30px;
+
+    & > * {
+        margin: 5px 0;
+    }
+    
     h1 {
         font-size: 1.5rem;
         font-family: 'IBM Plex Sans KR', sans-serif;
@@ -51,13 +60,33 @@ const Keyword = styled.div`
     background: ${props => props.color || "white"};
     font-size: 20px;
     font-family: 'IBM Plex Sans KR', sans-serif;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 20px;
     border: 2px solid black;
+    margin-right: 15px;
 `
 const Grade = styled.h1`
     font-size: 24px;
     font-family: 'IBM Plex Sans KR', sans-serif;
+    margin-left: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+const Brand = styled.div`
+    width: ${props => props.width || "auto"};
+    height: 45px;
+    border-radius: 20px;
+    font-size: 20px;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    text-align: center;
+    color: ${props => props.color || "black"};
+    box-shadow: 0.5px 0.5px 60px 10px #EFEFF1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `
 function RecommandItem(props) {
     return (
@@ -68,7 +97,7 @@ function RecommandItem(props) {
             <ContentBox>
                 <ImageBox>{props.img}</ImageBox>
                 <InnerBox>
-                    {props.brand}
+                    <Brand width={props.width} height={props.height} color={props.brandcolor}>{props.brand}</Brand>
                     <h1>{props.tirename}</h1>
                     <KeywordContainer>
                         <Keyword>{props.keyword1}</Keyword>

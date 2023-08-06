@@ -16,7 +16,9 @@ function RecommandList() {
             <RecommandItem 
                 title = {`“시끄럽던 금쪽이 SUV 완치,\n사실상 오은영 박사급 타이어”`} 
                 img = {<Tire1/>}
-                brand = {<Kumho/>}
+                brandcolor = "#FF0000"
+                brand = "금호"
+                width = "70px"
                 tirename = {`크루젠 HP71`}
                 keyword1 = {`사계절용`}
                 keyword2 = {`SUV`}
@@ -28,7 +30,9 @@ function RecommandList() {
             <RecommandItem
                 title = {`“차종, 계절을 초월한 특수부대급\n전천후 프리미엄 타이어”`} 
                 img={<Tire2/>} 
-                brand = {<Continental/>}
+                brandcolor = "#FFA500"
+                brand = "컨티넨탈"
+                width = "116px"
                 tirename = {`익스트림 컨택트 DW506`}
                 keyword1 = {`사계절용`}
                 keyword2 = {`승용·SUV`}
