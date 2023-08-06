@@ -4,17 +4,17 @@ import styled from "styled-components";
 import { useState } from "react";
 
 const Top = styled.div`
-  width: 100%;
-  height: 40px;
-  background: #2D2926;
-;
-  color: #FFFFFF;
-  top: 0;
-  position: sticky;
-  display: ${(props) => (props.visible ? "flex" : "none")};
-  align-items: center;
-  font-size: 12px;
-  justify-content: center;
+    width: 100%;
+    height: 40px;
+    background: #2D2926;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #FFFFFF;
+    top: 0;
+    position: sticky;
+    display: ${(props) => (props.visible ? "flex" : "none")};
+    align-items: center;
+    font-size: 12px;
+    justify-content: center;
 `
 
 const TopCenter = styled.div`
