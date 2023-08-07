@@ -1,0 +1,41 @@
+import styled from "styled-components";
+import HotList from "./HotList";
+import { ReactComponent as Fire } from "assets/images/Hot/tires/Fire.svg";
+
+const Title = styled.div`
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+    h1 {
+        padding: 1rem;
+        font-size: 40px;
+        font-weight: 600;
+        font-family: 'IBM Plex Sans KR', sans-serif;
+    }
+`;
+const FireIcon = styled(Fire)`
+    margin-left: 2rem;
+`;
+const Nav = styled.div`
+    width: 1136px;
+    height: 900px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+`
+
+function HotBoard() {
+    return (
+        <Nav>
+            <Title>
+                <FireIcon/>
+                <h1>지금 이 순간, 가장 인기 있는 타이어</h1>
+            </Title>
+            <HotList/>
+        </Nav>
+    );
+}
+
+export default HotBoard;

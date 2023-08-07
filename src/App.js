@@ -1,6 +1,7 @@
 import { Header, TopBar, Footer} from "components";
-import RecommandBoard from "components/main/recommand/RecommandBoard";
-import SignInPage from "./pages/auth/SignInPage";
+// import RecommandBoard from "components/main/recommand/RecommandBoard";
+// import SignInPage from "./pages/auth/SignInPage";
+import HotBoard from "components/main/hot/HotBoard";
 
 function App() {
   return (
@@ -9,7 +10,8 @@ function App() {
       <TopBar/>
       <Header/>
       <Footer/>
-      <RecommandBoard/>
+      <HotBoard/>
+      {/* <RecommandBoard/> */}
     </div>
   </div>
   );
