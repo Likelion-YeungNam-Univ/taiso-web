@@ -13,12 +13,27 @@ main ── develop ── feature/"
 ├── App.js
 ├── App.test.js
 ├── assets
-│   └── images
-│       └── HeaderLogo.svg
+│   ├── googleLogo.png
+│   ├── images
+│   │   ├── FooterLogo.svg
+│   │   ├── HeaderLogo.svg
+│   │   └── recommand
+│   │       ├── ThumbUp.svg
+│   │       ├── brand
+│   │       │   ├── Continental.svg
+│   │       │   └── Kumho.svg
+│   │       └── tires
+│   │           ├── ct_dw506.svg
+│   │           └── kh_hp71.svg
+│   ├── kakaoLogo.png
+│   ├── naverLogo.png
+│   ├── tire1.png
+│   └── tireLogo.jpg
 ├── components
 │   ├── auth
 │   ├── footer
-│   │   └── Footer.js
+│   │   ├── Footer.js
+│   │   └── index.js
 │   ├── header
 │   │   ├── Header.js
 │   │   └── index.js
@@ -45,16 +60,15 @@ main ── develop ── feature/"
 │       ├── TopBar.js
 │       └── index.js
 ├── index.js
-├── pages
-│   ├── auth
-│   │   ├── SignInPage.js
-│   │   └── index.js
-│   ├── index.js
-│   └── main
-│       ├── MainPage.js
-│       └── index.js
-├── reportWebVitals.js
-└── setupTests.js
+└── pages
+    ├── auth
+    │   ├── NaverLogin.js
+    │   ├── SignInPage.js
+    │   └── index.js
+    ├── index.js
+    └── main
+        ├── MainPage.js
+        └── index.js
 ```
 
 ### 📌 Commit Convention

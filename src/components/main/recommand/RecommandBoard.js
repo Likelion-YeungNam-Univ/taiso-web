@@ -21,9 +21,9 @@ const ThumbUpIcon = styled(ThumbUp)`
 const Nav = styled.div`
     width: 1136px;
     height: 600px;
-    position: absolute;
+    /* position: absolute; */
     left: 50%;
-    transform: translateX(-50%);
+    /* transform: translateX(-50%); */
 `
 
 function RecommandBoard() {
