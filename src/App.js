@@ -6,6 +6,9 @@ import { MainPage } from "pages";
 // import SignInPage from "./pages/auth/SignInPage";
 
 
+import RecommandBoard from "components/main/recommand/RecommandBoard";
+import SignInPage from "./pages/auth/SignInPage";
+import ReviewBoard from "components/main/review/ReviewBoard";
 
 function App() {
   return (
@@ -20,6 +23,7 @@ function App() {
       <MainPage/>
     </div>
       <Footer/>
+      <ReviewBoard/>
     </div>
   
   );
