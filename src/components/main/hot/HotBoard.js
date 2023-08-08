@@ -4,9 +4,10 @@ import { ReactComponent as Fire } from "assets/images/Hot/tires/Fire.svg";
 
 const Title = styled.div`
     height: 100px;
-    display: flex;
-    align-items: center;
+     display: flex;
+   // align-items: center;
     padding: 0.5rem;
+    margin-top:5px;
     margin-bottom: 2rem;
     h1 {
         padding: 1rem;
@@ -17,13 +18,12 @@ const Title = styled.div`
 `;
 const FireIcon = styled(Fire)`
     margin-left: 2rem;
+    
 `;
 const Nav = styled.div`
     width: 1136px;
     height: 900px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    margin: 0 auto;
 `
 
 function HotBoard() {

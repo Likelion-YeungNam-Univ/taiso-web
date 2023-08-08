@@ -8,7 +8,8 @@ import { ReactComponent as Continental } from "assets/images/recommand/brand/Con
 
 const List = styled.div`
     display: flex;
-    height: 448px;
+    height: 700px;
+    width: 400px;
 `
 
 function HotList() {

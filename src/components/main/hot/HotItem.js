@@ -2,47 +2,52 @@ import { styled } from "styled-components";
 import { FaStar } from "react-icons/fa";
 
 const Container = styled.div`
-    width: 100%;
-    height: 100%;
-    padding: 0.5rem;
+    // padding: 0.5rem;
     border-radius: 20px;
-    margin-right: 2rem;
-    box-shadow: 0.5px 0.5px 50px 10px #EFEFF1;
+    margin-right: 20px;
+    //margin: 1 auto;
+    box-shadow: 0.5px 0.5px 20px 10px #EFEFF1;
 `
 const ImageBox = styled.div`    
     display: flex;
+     margin: 0 auto;
     justify-content: center;
     align-items: center;
+    width: 250px;
+    height: 300px;
 `
 const ContentBox = styled.div`
-      height: 30%;
+ width: 400px;
+ height: 400px;
+    margin: 0 auto;
 `
 const TitleBox = styled.div`
-width: 100%; 
-display: flex;
-margin-left: 10px;
+padding-bottom:10px;
     h1 {
-        font-size: 32px;
-        white-space: pre-line;
+        font-size: 27px;
         text-align: center;
         font-family: 'IBM Plex Sans KR', sans-serif;
+        margin-left: 10px;
     }
 `
 const InnerBox = styled.div`
-height:40%;
-text-align: center;
     h4 {
-        font-size: 1.5rem;
+        font-size: 1rem;
         font-family: 'IBM Plex Sans KR', sans-serif;
+        text-align: center;
     }
     p{
-        font-size: 1rem;
+        font-size: 1.2rem;
         font-family: 'IBM Plex Sans KR', sans-serif; 
+        text-align: center;
+        margin: 5px 5px 20px 5px;
     }
 `
 const KeywordContainer = styled.div`
-    display: flex;
-    margin: 20px 5px 10px 5px ;
+     display: flex;
+  padding-top:10px;
+     padding-bottom:20px;
+     padding-left: 5px;
 `
 const Keyword = styled.div`
     width: 108px;
@@ -53,10 +58,10 @@ const Keyword = styled.div`
     text-align: center;
     border-radius: 20px;
     border: 2px solid black;
-    margin-right: 10px;
+    margin-left: 15px;
 `
 const Grade = styled.h1`
-    margin-left: 5px;
+ margin-left: 8px;
     font-size: 24px;
     font-family: 'IBM Plex Sans KR', sans-serif;
 `
@@ -64,11 +69,12 @@ const Grade = styled.h1`
 function HotItem(props) {
     return (
         <Container>
+            {props.brand}
              <ImageBox>{props.img}</ImageBox>
             <ContentBox>
                 <TitleBox>
-                {props.brand}
-                 <h1>{props.tirename}</h1>
+                {/* {props.brand} */}
+                <h1>{props.tirename}</h1>
                 </TitleBox>
                  <InnerBox>
                  <p>{props.p1}<br/>{props.p2}</p>
