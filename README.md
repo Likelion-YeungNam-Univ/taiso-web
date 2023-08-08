@@ -17,6 +17,13 @@ main ── develop ── feature/"
 │   ├── images
 │   │   ├── FooterLogo.svg
 │   │   ├── HeaderLogo.svg
+│   │   ├── mainpage
+│   │   │   ├── SlideLogo.svg
+│   │   │   ├── SwiperSlide1.png
+│   │   │   ├── SwiperSlide2.jpg
+│   │   │   ├── SwiperSlide3.jpg
+│   │   │   ├── SwiperSlide4.jpg
+│   │   │   └── SwiperSlide5.jpg
 │   │   └── recommand
 │   │       ├── ThumbUp.svg
 │   │       ├── brand
@@ -68,6 +75,7 @@ main ── develop ── feature/"
     ├── index.js
     └── main
         ├── MainPage.js
+        ├── Slider.js
         └── index.js
 ```
 
