@@ -53,8 +53,8 @@ const Header = () => {
                 <ul>
                     <li onClick={() => {("")}}>홈</li>
                     <li onClick={() => {("")}}>타이어 검색</li>
-                    {/* <li onClick={() => {("")}}>커뮤니티</li>
-                    <li onClick={() => {("")}}>뉴스</li> */}
+                    {/* <li onClick={() => {("")}}>커뮤니티</li> */}
+                    <li onClick={() => {("")}}>뉴스</li>
                     <li onClick={() => {("")}}>로그인</li>
                 </ul>
             </Gnb>    

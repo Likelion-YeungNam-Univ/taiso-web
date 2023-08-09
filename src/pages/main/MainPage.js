@@ -1,6 +1,8 @@
 import Slider from "./Slider";
-import RecommandBoard from "components/main/recommand/RecommandBoard";
 import HotBoard from "components/main/hot/HotBoard";
+import StoryBoard from "components/main/story/StoryBoard";
+import RecommandBoard from "components/main/recommand/RecommandBoard";
+import AdPart from "./AdPart";
 
 
 const MainPage = () => {
@@ -8,7 +10,9 @@ const MainPage = () => {
     <div>
         <Slider/> 
         <HotBoard/>
+        <AdPart/>
         <RecommandBoard/>
+       <StoryBoard/>
     </div>
   );
 };

@@ -12,6 +12,7 @@ const Title = styled.div`
     margin-bottom: 2rem;
     h1 {
         padding: 1rem;
+        padding-top: 50px;
         font-size: 40px;
         font-weight: 600;
         font-family: 'IBM Plex Sans KR', sans-serif;

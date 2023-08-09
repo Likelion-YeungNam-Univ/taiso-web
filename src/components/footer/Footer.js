@@ -11,7 +11,7 @@ const Foot = styled.div`
     bottom: 0;
     left:0;  */
     font-family: 'Noto Sans KR', sans-serif;
-    /* position:absolute;  */
+    position:absolute; 
     /* margin-top: 800px; */
 `
 const Inner = styled.div`

@@ -8,6 +8,7 @@ const Title = styled.div`
     display: flex;
     h1 {
         padding: 1rem;
+        padding-top: 25px;
         font-size: 40px;
         font-weight: 600;
         font-family: 'IBM Plex Sans KR', sans-serif;
@@ -19,9 +20,9 @@ const StoryIcon = styled(Story)`
 const Nav = styled.div`
     width: 1136px;
     height: 650px;
-    position: absolute;
+    margin: 0 auto;
     left: 50%;
-    transform: translateX(-50%);
+    
 `
 const Button = styled.button`
     width: 176px;
@@ -31,8 +32,9 @@ const Button = styled.button`
     background: white;
     border-radius: 30px;
     border: 2px solid black;
-    margin-left: 13rem;
-    margin-top: 1.5rem;
+    margin-left: auto;
+    /* margin-top: 1.5rem; */
+    margin-top:32px;
 `
 function StoryBoard() {
     return (
