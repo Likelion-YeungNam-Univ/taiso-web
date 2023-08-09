@@ -2,6 +2,7 @@ import { styled } from "styled-components";
 import { FaStar } from "react-icons/fa";
 
 const Container = styled.div`
+width: 368px;
     // padding: 0.5rem;
     border-radius: 20px;
     margin-right: 20px;
@@ -17,7 +18,7 @@ const ImageBox = styled.div`
     height: 300px;
 `
 const ContentBox = styled.div`
- width: 400px;
+ width: 368px;
  height: 400px;
     margin: 0 auto;
 `
@@ -50,7 +51,7 @@ const KeywordContainer = styled.div`
      padding-left: 5px;
 `
 const Keyword = styled.div`
-    width: 108px;
+    width: 100px;
     height: 38px;
     background: ${props => props.color || "white"};
     font-size: 20px;
@@ -58,7 +59,7 @@ const Keyword = styled.div`
     text-align: center;
     border-radius: 20px;
     border: 2px solid black;
-    margin-left: 15px;
+    margin-left: 11px;
 `
 const Grade = styled.h1`
  margin-left: 8px;

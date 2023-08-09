@@ -21,9 +21,10 @@ const FireIcon = styled(Fire)`
     
 `;
 const Nav = styled.div`
-    width: 1136px;
+    width: 1137px;
     height: 900px;
     margin: 0 auto;
+    margin-top: 20px;
 `
 
 function HotBoard() {
