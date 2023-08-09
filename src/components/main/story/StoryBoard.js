@@ -39,8 +39,8 @@ function StoryBoard() {
         <Nav>
             <Title>
                 <StoryIcon/>
-                <h1>타이어 후기는 타이소 커뮤니티에서</h1>
-                <Button>후기 더보기 +</Button>
+                <h1>나도 몰랐던 타이어 이야기</h1>
+                <Button>소식 더보기 +</Button>
             </Title>
             <StoryList/>
         </Nav>
