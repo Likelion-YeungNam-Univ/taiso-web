@@ -16,6 +16,8 @@ function HotList() {
     return (
         <List>
             <HotItem
+                best = "BEST"
+                bestbackground = "#E2BE45"
                 img = {<Tire1/>}
                 brandcolor = "#FF0000"
                 brand = "금호"
