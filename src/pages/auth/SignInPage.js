@@ -1,65 +1,103 @@
 import React from "react";
-import tireLogo from "../../assets/tireLogo.jpg"; 
-import naverLogo from "../../assets/naverLogo.png"; 
-import kakaoLogo from "../../assets/kakaoLogo.png"; 
-import googleLogo from "../../assets/googleLogo.png"; 
+import TireLogo from "../../assets/images/Login/TireLogo.jpg"; 
+import NaverIcon from "../../assets/images/Login/NaverIcon.png";
+// import NaverLogo from "../../assets/images/Login/NaverLogo.png"; 
+import KakaoIcon from "../../assets/images/Login/KakaoIcon.png"; 
+// import KakaoLogo from "../../assets/images/Login/KakaoLogo.png";
+import GoogleIcon from "../../assets/images/Login/GoogleIcon.png"; 
 import styled from "styled-components";
 
 const Container = styled.div`
-  display: flex;
+// display: flex;
   flex-direction: column;
+  //justify-content: center;
+  text-align: center;
   align-items: center;
+  // margin: 0 auto;
+  // align-items: center;
 `;
 
 const TireLogoStyle = styled.img`
   width: 265px;
   height: 75px;
+  // margin-top: 80px;
+  margin: 0 auto;
+  margin-bottom: 100px;
 `;
 
-const LoginBtnStyle = styled.div`
-display: flex;
+const BtnStyleWrapper = styled.div`
+  // display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  display: flex;
 align-items: center;
 `;
 
-const BtnSytle = styled.button`
-
-//color: ${({ theme }) => theme.White};
-
-  align-items: center;
-  justify-content: center;
-  width: 300px;
-  height: 56px;
-  background-color: white;
-  border: none;
-  border-radius: 6px;
+const BtnStyle = styled.button`
+  width: 309px;
+  height: 57px;
+  margin: 0 auto;
+  border-radius: 4px;
+  border: none; 
+  margin-bottom: 80px; 
   cursor: pointer;
+  background: ${props => props.backgroundColor || '#03C75A'};
+  border: 1px solid rgba(111, 111, 111, 0.51);
 `;
 
+const ButtonText = styled.span`
+ margin-left:20px;
+text-align: left;
+color: ${props => (props.isKakao ? "#FFF" : "#000")};
+text-align: center;
+font-family: Noto Sans KR;
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: 160%;
+// display: flex;
+// align-items: center;
+`;
+
+const LogoImg = styled.img`
+  width: 30px; 
+  height: auto; 
+`;
+
+const GoogleIconImg = styled.img`
+  width: 20px;
+  height: auto;
+`;
+
+const LoginButton = ({ logoSrc, altText, buttonText, backgroundColor}) => (
+  <BtnStyle backgroundColor={backgroundColor}>
+    {logoSrc === GoogleIcon ? (
+      <GoogleIconImg src={logoSrc} alt={altText} />
+    ) : (
+      <LogoImg src={logoSrc} alt={altText} />
+    )}
+    <ButtonText>{buttonText}</ButtonText>
+  </BtnStyle>
+);
+
+
+// const LoginButton = ({ logoSrc, altText, buttonText, backgroundColor  }) => (
+//   <BtnStyle backgroundColor={backgroundColor}>
+//     <LogoImg src={logoSrc} alt={altText}/>
+//     <ButtonText>{buttonText}</ButtonText>
+//   </BtnStyle>
+// );
 
 const SignInPage = () => {
-
-
   return (
     <Container>
       <h1>더 이상 추천받지 않는 안전을 위하여,</h1>
-      <TireLogoStyle src={tireLogo} alt = "로고" />
-      <BtnSytle>
-      <LoginBtnStyle>
-        <button>
-        <img src={naverLogo} alt = "네이버 로고" />
-      </button>
-    </LoginBtnStyle>
-    <LoginBtnStyle>
-        <button>
-        <img src={kakaoLogo} alt = "카카오 로고" />
-      </button>
-    </LoginBtnStyle>
-    <LoginBtnStyle>
-        <button>
-        <img src={googleLogo} alt = "구글 로고" />
-        </button>
-    </LoginBtnStyle>
-    </BtnSytle>
+      <TireLogoStyle src={TireLogo} alt="로고" />
+      <BtnStyleWrapper>
+        <LoginButton logoSrc={NaverIcon} altText="네이버 로그인" buttonText="네이버 로그인" backgroundColor="#03C75A"/>
+        <LoginButton logoSrc={KakaoIcon} altText="카카오 로그인" buttonText="카카오 로그인" backgroundColor="#FEE500" />
+        <LoginButton logoSrc={GoogleIcon} altText="구글 로그인"  buttonText="구글 로그인"backgroundColor=" #FFFFFF"/>
+      </BtnStyleWrapper>
     </Container>
   );
 };
