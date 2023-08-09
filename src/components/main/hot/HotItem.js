@@ -9,7 +9,7 @@ width: 368px;
     //margin: 1 auto;
     box-shadow: 0.5px 0.5px 20px 10px #EFEFF1;
 `
-const ImageBox = styled.div`    
+const ImageBox = styled.div`   
     display: flex;
      margin: 0 auto;
     justify-content: center;
@@ -105,7 +105,7 @@ color: white;
 justify-content: center;
 align-items: center;
 border-radius: 32px;
-background: ${props => props.bestbackground || "red"};
+background: ${props => props.bestbackground || "#E2BE45"};
 border: 1px;
      font-family: 'IBM Plex Sans KR', sans-serif;
      align-items: center;
