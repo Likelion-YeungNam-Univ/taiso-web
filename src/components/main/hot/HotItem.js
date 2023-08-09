@@ -22,13 +22,24 @@ const ContentBox = styled.div`
  height: 400px;
     margin: 0 auto;
 `
-const TitleBox = styled.div`
+const TitleBox = styled.span`
 padding-bottom:10px;
     h1 {
         font-size: 27px;
         text-align: center;
         font-family: 'IBM Plex Sans KR', sans-serif;
         margin-left: 10px;
+    }
+    p{
+        display: inline;
+        color: #000;
+text-align: center;
+font-family: IBM Plex Sans KR;
+font-size: 25px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+margin-left:15px;
     }
 `
 const InnerBox = styled.div`
@@ -42,6 +53,7 @@ const InnerBox = styled.div`
         font-family: 'IBM Plex Sans KR', sans-serif; 
         text-align: center;
         margin: 5px 5px 20px 5px;
+        
     }
 `
 const KeywordContainer = styled.div`
@@ -66,16 +78,33 @@ const Grade = styled.h1`
     font-size: 24px;
     font-family: 'IBM Plex Sans KR', sans-serif;
 `
+const Brand = styled.span`
+width: 67px;
+height: 30px;
+display: inline-flex;
+padding: 5px 5px 5px 5px;
+margin-left: 15px;
+margin-bottom:10px;
+color: #F00;
+justify-content: center;
+align-items: center;
+border-radius: 32px;
+background: #FFF;
+border: 1px;
+box-shadow: 0px 5px 20px 0px #999;
+     font-family: 'IBM Plex Sans KR', sans-serif;
+     align-items: center;
+`
 
 function HotItem(props) {
     return (
         <Container>
-            {props.brand}
+            {/* {props.brand} */}
              <ImageBox>{props.img}</ImageBox>
             <ContentBox>
                 <TitleBox>
-                {/* {props.brand} */}
-                <h1>{props.tirename}</h1>
+                <Brand>{props.brand}</Brand>
+                <p>{props.tirename}</p>
                 </TitleBox>
                  <InnerBox>
                  <p>{props.p1}<br/>{props.p2}</p>

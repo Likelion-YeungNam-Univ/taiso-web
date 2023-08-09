@@ -17,7 +17,9 @@ function HotList() {
         <List>
             <HotItem
                 img = {<Tire1/>}
-                brand = {<Kumho/>}
+                brandcolor = "#FF0000"
+                brand = "금호"
+                // width = "36px"
                 tirename = {`크루젠 HP71`}
                 p1 = {'마제스티 솔루스의 후속!'}
                 p2 = { '승차감과 소음 모두 잡은 프리미엄 타이어'}
@@ -29,7 +31,9 @@ function HotList() {
             />
             <HotItem
                 img={<Tire2/>} 
-                brand = {<Continental/>}
+                brandcolor = "#FF0000"
+                brand = "넥슨"
+                width = "70px"
                 tirename = {`익스트림 컨택트 DW506`}
                 p1 = {'중대형 세단을 위한 '}
                 p2 = { '최적의 승차감과 저소음 성능'}
@@ -41,7 +45,9 @@ function HotList() {
             />
             <HotItem
                 img={<Tire3/>} 
-                brand = {<Continental/>}
+                brandcolor = "#FF0000"
+                brand = "한국"
+                width = "70px"
                 tirename = {`벤투스 S2 AS H462`}
                 p1 = {'안락함과 정숙성, 고속 주행 성능 '}
                 p2 = { '모두 갖춘 프리미엄 타이어'}
