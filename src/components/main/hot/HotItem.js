@@ -95,11 +95,27 @@ box-shadow: 0px 5px 20px 0px #999;
      font-family: 'IBM Plex Sans KR', sans-serif;
      align-items: center;
 `
-
+const Best = styled.p`
+width: 103px;
+height: 38px;
+display: inline-flex;
+padding: 5px 5px 5px 5px;
+margin-bottom:10px;
+color: white;
+justify-content: center;
+align-items: center;
+border-radius: 32px;
+background: ${props => props.bestbackground || "red"};
+border: 1px;
+     font-family: 'IBM Plex Sans KR', sans-serif;
+     align-items: center;
+     font-size: 20px;
+`
 function HotItem(props) {
     return (
         <Container>
             {/* {props.brand} */}
+            <Best>{props.best}</Best>
              <ImageBox>{props.img}</ImageBox>
             <ContentBox>
                 <TitleBox>
