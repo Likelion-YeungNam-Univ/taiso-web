@@ -19,9 +19,8 @@ const ReviewIcon = styled(Review)`
 const Nav = styled.div`
     width: 1136px;
     height: 650px;
-    position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    margin: 0 auto;
 `
 const Button = styled.button`
     width: 176px;
