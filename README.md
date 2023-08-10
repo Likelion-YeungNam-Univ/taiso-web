@@ -13,29 +13,53 @@ main ── develop ── feature/"
 ├── App.js
 ├── App.test.js
 ├── assets
-│   ├── googleLogo.png
-│   ├── images
-│   │   ├── FooterLogo.svg
-│   │   ├── HeaderLogo.svg
-│   │   ├── mainpage
-│   │   │   ├── SlideLogo.svg
-│   │   │   ├── SwiperSlide1.png
-│   │   │   ├── SwiperSlide2.jpg
-│   │   │   ├── SwiperSlide3.jpg
-│   │   │   ├── SwiperSlide4.jpg
-│   │   │   └── SwiperSlide5.jpg
-│   │   └── recommand
-│   │       ├── ThumbUp.svg
-│   │       ├── brand
-│   │       │   ├── Continental.svg
-│   │       │   └── Kumho.svg
-│   │       └── tires
-│   │           ├── ct_dw506.svg
-│   │           └── kh_hp71.svg
-│   ├── kakaoLogo.png
-│   ├── naverLogo.png
-│   ├── tire1.png
-│   └── tireLogo.jpg
+│   └── images
+│       ├── hot
+│       │   └── tires
+│       │       ├── Fire.svg
+│       │       ├── tire1.svg
+│       │       ├── tire2.svg
+│       │       └── tire3.svg
+│       ├── login
+│       │   ├── GoogleIcon.png
+│       │   ├── GoogleLogo.png
+│       │   ├── KakaoIcon.png
+│       │   ├── KakaoLogo.png
+│       │   ├── Mask group.svg
+│       │   ├── NaverIcon.png
+│       │   ├── NaverLogo.png
+│       │   └── TireLogo.jpg
+│       ├── logo
+│       │   ├── FooterLogo.svg
+│       │   └── HeaderLogo.svg
+│       ├── mainpage
+│       │   ├── Ad.svg
+│       │   ├── SlideLogo.svg
+│       │   ├── SwiperSlide1.png
+│       │   ├── SwiperSlide2.jpg
+│       │   ├── SwiperSlide3.jpg
+│       │   ├── SwiperSlide4.jpg
+│       │   └── SwiperSlide5.jpg
+│       ├── recommand
+│       │   ├── ThumbUp.svg
+│       │   ├── brand
+│       │   │   ├── Continental.svg
+│       │   │   └── Kumho.svg
+│       │   └── tires
+│       │       ├── ct_dw506.svg
+│       │       └── kh_hp71.svg
+│       ├── review
+│       │   ├── ReviewIcon.svg
+│       │   ├── person1.svg
+│       │   ├── person2.svg
+│       │   ├── person3.svg
+│       │   ├── person4.svg
+│       │   ├── person5.svg
+│       │   └── person6.svg
+│       └── story
+│           ├── StoryIcon.svg
+│           ├── picture1.svg
+│           └── picture2.svg
 ├── components
 │   ├── auth
 │   ├── footer
@@ -50,11 +74,14 @@ main ── develop ── feature/"
 │   │   ├── hot
 │   │   │   ├── HotBoard.js
 │   │   │   ├── HotItem.js
-│   │   │   └── HotList.js
+│   │   │   ├── HotList.js
+│   │   │   └── index.js
+│   │   ├── index.js
 │   │   ├── recommand
 │   │   │   ├── RecommandBoard.js
 │   │   │   ├── RecommandItem.js
-│   │   │   └── RecommandList.js
+│   │   │   ├── RecommandList.js
+│   │   │   └── index.js
 │   │   ├── review
 │   │   │   ├── ReviewBoard.js
 │   │   │   ├── ReviewItem.js
@@ -62,20 +89,29 @@ main ── develop ── feature/"
 │   │   └── story
 │   │       ├── StoryBoard.js
 │   │       ├── StoryItem.js
-│   │       └── StoryList.js
+│   │       ├── StoryList.js
+│   │       └── index.js
+│   ├── news
+│   │   ├── HotNews.js
+│   │   ├── RecentNews.js
+│   │   ├── Title.js
+│   │   └── index.js
 │   └── topbar
 │       ├── TopBar.js
 │       └── index.js
 ├── index.js
 └── pages
     ├── auth
-    │   ├── NaverLogin.js
     │   ├── SignInPage.js
     │   └── index.js
     ├── index.js
-    └── main
-        ├── MainPage.js
-        ├── Slider.js
+    ├── main
+    │   ├── AdPart.js
+    │   ├── MainPage.js
+    │   ├── Slider.js
+    │   └── index.js
+    └── news
+        ├── NewsPage.js
         └── index.js
 ```
 

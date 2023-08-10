@@ -5,7 +5,6 @@ const MiddleAd = styled.div`
   display:flex;
   align-items: center;
   justify-content:center;
-  margin: 50px;
 `
 const AdPart = () => {
     return (

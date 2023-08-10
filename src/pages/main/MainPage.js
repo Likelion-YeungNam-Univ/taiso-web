@@ -1,12 +1,12 @@
 import Slider from "./Slider";
 import AdPart from "./AdPart";
-import { HotBoard, RecommandBoard, StoryBoard, SearchForm } from "components";
+import { HotBoard, RecommandBoard, StoryBoard } from "components";
 
 const MainPage = () => {
   return (
     <div>
         <Slider/> 
-        <SearchForm/>
+    
         <HotBoard/>
         <AdPart/>
         <RecommandBoard/>
