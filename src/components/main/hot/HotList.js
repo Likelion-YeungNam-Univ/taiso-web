@@ -8,7 +8,7 @@ import { ReactComponent as Continental } from "assets/images/recommand/brand/Con
 
 const List = styled.div`
     display: flex;
-    height: 700px;
+    height: 620px;
     width: 400px;
 `
 
@@ -16,7 +16,7 @@ function HotList() {
     return (
         <List>
             <HotItem
-                best = "BEST"
+                best = "BEST1"
                 bestbackground = "#E2BE45"
                 img = {<Tire1/>}
                 brandcolor = "#FF0000"
@@ -32,6 +32,7 @@ function HotList() {
                 grade = "4.7 (2,165)"
             />
             <HotItem
+                best = "BEST2"
                 img={<Tire2/>} 
                 brandcolor = "#FF0000"
                 brand = "넥슨"
@@ -46,6 +47,7 @@ function HotList() {
                 grade = "4.7 (2,165)"
             />
             <HotItem
+            best = "BEST3"
                 img={<Tire3/>} 
                 brandcolor = "#FF0000"
                 brand = "한국"

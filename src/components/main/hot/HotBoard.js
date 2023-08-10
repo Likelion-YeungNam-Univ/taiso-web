@@ -17,7 +17,7 @@ const Title = styled.div`
     }
 `;
 const FireIcon = styled(Fire)`
-    margin-left: 2rem;
+     margin-left: 1rem;
     
 `;
 const Nav = styled.div`
