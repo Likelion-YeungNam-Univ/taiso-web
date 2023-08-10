@@ -28,6 +28,7 @@ const Nav = styled.div`
     /* left: 50%; */
     /* transform: translateX(-50%); */
     margin: auto;
+    margin-top: 80px;
 `
 
 function RecommandBoard() {

@@ -22,6 +22,7 @@ const Nav = styled.div`
     height: 650px;
     margin: 0 auto;
     left: 50%;
+    margin-top: 80px;
     
 `
 const Button = styled.button`

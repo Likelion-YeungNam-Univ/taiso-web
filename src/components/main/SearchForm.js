@@ -6,10 +6,14 @@ const Nav = styled.div`
     height: 209px;
     border-radius: 100px;
     background: #FFFFFF;
-    box-shadow: 0.5px 0.5px 40px 10px #EFEFF1;
+    /* box-shadow: 0.5px 0.5px 10px 10px #EFEFF1; */
+    box-shadow: 0px 16px 40px 0px rgba(112, 144, 176, 0.20);
     margin: 0 auto;
     display: grid;
     place-content: center;
+    position: relative;
+    /* z-index: 1; */
+    /* transform: translate(500px, -100px); */
     p {
         font-size: 30px;
         font-family: 'IBM Plex Sans KR', sans-serif;

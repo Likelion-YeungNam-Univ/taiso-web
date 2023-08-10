@@ -23,23 +23,28 @@ const ContentBox = styled.div`
     margin: 0 auto;
 `
 const TitleBox = styled.span`
-padding-bottom:10px;
+    /* padding-bottom:10px; */
+    display:flex;
+    align-items: center;
     h1 {
         font-size: 27px;
         text-align: center;
         font-family: 'IBM Plex Sans KR', sans-serif;
         margin-left: 10px;
+    
     }
     p{
-        display: inline;
-        color: #000;
-text-align: center;
-font-family: IBM Plex Sans KR;
-font-size: 25px;
-font-style: normal;
-font-weight: 600;
-line-height: normal;
-margin-left:15px;
+    display: inline;
+    color: #000;
+    text-align: center;
+    font-family: IBM Plex Sans KR;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-left:13px;
+    margin-bottom: 10px;
+  
     }
 `
 const InnerBox = styled.div`
@@ -57,10 +62,11 @@ const InnerBox = styled.div`
     }
 `
 const KeywordContainer = styled.div`
-     display: flex;
-  padding-top:10px;
-     padding-bottom:20px;
-     padding-left: 5px;
+    display: flex;
+    padding-top:10px;
+    padding-bottom:px;
+    padding-left: 5px;
+    
 `
 const Keyword = styled.div`
     width: 100px;
@@ -72,44 +78,47 @@ const Keyword = styled.div`
     border-radius: 20px;
     border: 2px solid black;
     margin-left: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `
 const Grade = styled.h1`
- margin-left: 8px;
+    margin-left: 8px;
     font-size: 24px;
     font-family: 'IBM Plex Sans KR', sans-serif;
 `
 const Brand = styled.span`
-width: 67px;
-height: 30px;
-display: inline-flex;
-padding: 5px 5px 5px 5px;
-margin-left: 15px;
-margin-bottom:10px;
-color: #F00;
-justify-content: center;
-align-items: center;
-border-radius: 32px;
-background: #FFF;
-border: 1px;
-box-shadow: 0px 5px 20px 0px #999;
-     font-family: 'IBM Plex Sans KR', sans-serif;
-     align-items: center;
+    width: 67px;
+    height: 30px;
+    display: inline-flex;
+    padding: 5px 5px 5px 5px;
+    margin-left: 15px;
+    margin-bottom:10px;
+    color: #F00;
+    justify-content: center;
+    align-items: center;
+    border-radius: 32px;
+    background: #FFF;
+    border: 1px;
+    box-shadow: 0px 5px 20px 0px #999;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    align-items: center;
 `
 const Best = styled.p`
-width: 103px;
-height: 38px;
-display: inline-flex;
-padding: 5px 5px 5px 5px;
-margin-bottom:10px;
-color: white;
-justify-content: center;
-align-items: center;
-border-radius: 32px;
-background: ${props => props.bestbackground || "#E2BE45"};
-border: 1px;
-     font-family: 'IBM Plex Sans KR', sans-serif;
-     align-items: center;
-     font-size: 20px;
+    width: 103px;
+    height: 38px;
+    display: inline-flex;
+    padding: 5px 5px 5px 5px;
+    margin-bottom:10px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    border-radius: 18px 0px 18px 18px;
+    background: ${props => props.bestbackground || "#E2BE45"};
+    border: 1px;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    align-items: center;
+    font-size: 20px;
 `
 function HotItem(props) {
     return (
