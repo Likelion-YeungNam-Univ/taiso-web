@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import HotList from "./HotList";
-import { ReactComponent as Fire } from "assets/images/Hot/tires/Fire.svg";
+import { ReactComponent as Fire } from "assets/images/hot/tires/Fire.svg";
 
 const Title = styled.div`
     height: 100px;

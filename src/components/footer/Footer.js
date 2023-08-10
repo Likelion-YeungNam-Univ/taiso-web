@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as FooterLogo } from "assets/images/FooterLogo.svg";
+import { ReactComponent as FooterLogo } from "assets/images/logo/FooterLogo.svg";
 import { BiLogoFacebook } from 'react-icons/bi';
 import { AiOutlineInstagram } from 'react-icons/ai';
 

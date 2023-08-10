@@ -1,7 +1,6 @@
 import { Header, TopBar, Footer} from "components";
 import { MainPage } from "pages";
-import SignInPage from "pages/auth/SignInPage";
-
+import { SignInPage } from "pages";
 
 const App = () => {
   return (

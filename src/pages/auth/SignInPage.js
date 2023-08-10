@@ -1,14 +1,12 @@
 import React from "react";
-import TireLogo from "../../assets/images/Login/TireLogo.jpg"; 
-import NaverIcon from "../../assets/images/Login/NaverIcon.png";
-// import NaverLogo from "../../assets/images/Login/NaverLogo.png"; 
-import KakaoIcon from "../../assets/images/Login/KakaoIcon.png"; 
-// import KakaoLogo from "../../assets/images/Login/KakaoLogo.png";
-import GoogleIcon from "../../assets/images/Login/GoogleIcon.png"; 
+import TireLogo from "../../assets/images/login/TireLogo.jpg"; 
+import NaverIcon from "../../assets/images/login/NaverIcon.png";
+import KakaoIcon from "../../assets/images/login/KakaoIcon.png"; 
+import GoogleIcon from "../../assets/images/login/GoogleIcon.png"; 
 import styled from "styled-components";
 
 const Container = styled.div`
-// display: flex;
+  // display: flex;
   flex-direction: column;
   //justify-content: center;
   text-align: center;
