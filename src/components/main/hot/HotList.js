@@ -1,10 +1,8 @@
 import { styled } from "styled-components";
 import HotItem from "./HotItem";
 import { ReactComponent as Tire1 } from "assets/images/recommand/tires/kh_hp71.svg";
-import { ReactComponent as Tire2 } from "assets/images/Hot/tires/tire2.svg";
-import { ReactComponent as Tire3 } from "assets/images/Hot/tires/tire3.svg";
-import { ReactComponent as Kumho } from "assets/images/recommand/brand/Kumho.svg";
-import { ReactComponent as Continental } from "assets/images/recommand/brand/Continental.svg";
+import { ReactComponent as Tire2 } from "assets/images/hot/tires/tire2.svg";
+import { ReactComponent as Tire3 } from "assets/images/hot/tires/tire3.svg";
 
 const List = styled.div`
     display: flex;

@@ -1,4 +1,4 @@
-import { ReactComponent as HeaderLogo } from "assets/images/HeaderLogo.svg";
+import { ReactComponent as HeaderLogo } from "assets/images/logo/HeaderLogo.svg";
 import styled from "styled-components";
 
 const Nav = styled.div`

@@ -1,5 +1,3 @@
-// import { SignInPage } from "./pages";
-
-// export default SignInPage;
-
+export * from "./auth";
 export * from "./main";
+export * from "./news";
