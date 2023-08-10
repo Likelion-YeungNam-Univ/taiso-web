@@ -4,6 +4,7 @@ import NaverIcon from "../../assets/images/login/NaverIcon.png";
 import KakaoIcon from "../../assets/images/login/KakaoIcon.png"; 
 import GoogleIcon from "../../assets/images/login/GoogleIcon.png"; 
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   // display: flex;
@@ -21,6 +22,7 @@ const TireLogoStyle = styled.img`
   // margin-top: 80px;
   margin: 0 auto;
   margin-bottom: 100px;
+  cursor: pointer;
 `;
 
 const BtnStyleWrapper = styled.div`
@@ -87,10 +89,17 @@ const LoginButton = ({ logoSrc, altText, buttonText, backgroundColor}) => (
 // );
 
 const SignInPage = () => {
+
+  const movePage = useNavigate();
+
+    function goMain() {
+        movePage('/main');
+    }
+
   return (
     <Container>
       <h1>더 이상 추천받지 않는 안전을 위하여,</h1>
-      <TireLogoStyle src={TireLogo} alt="로고" />
+      <TireLogoStyle src={TireLogo} alt="로고" onClick={goMain}/>
       <BtnStyleWrapper>
         <LoginButton logoSrc={NaverIcon} altText="네이버 로그인" buttonText="네이버 로그인" backgroundColor="#03C75A"/>
         <LoginButton logoSrc={KakaoIcon} altText="카카오 로그인" buttonText="카카오 로그인" backgroundColor="#FEE500" />

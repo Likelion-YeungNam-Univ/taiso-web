@@ -1,14 +1,14 @@
 import { Header, TopBar, Footer } from "components";
 
-const NewsPage = () => {
+const SearchPage = () => {
     return(
         <div>
             <TopBar/>
             <Header/>
-            뉴스 페이지입니다.
+            타이어 검색 페이지입니다.
             {/*<Footer/>*/}
         </div>
     );
 }
 
-export default NewsPage;
+export default SearchPage;

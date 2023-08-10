@@ -1,16 +1,18 @@
 import Slider from "./Slider";
 import AdPart from "./AdPart";
-import { HotBoard, RecommandBoard, StoryBoard } from "components";
+import { Footer, Header, HotBoard, RecommandBoard, StoryBoard, TopBar } from "components";
 
 const MainPage = () => {
   return (
     <div>
-        <Slider/> 
-    
-        <HotBoard/>
-        <AdPart/>
-        <RecommandBoard/>
-        <StoryBoard/>
+      <TopBar/>
+      <Header/>
+      <Slider/> 
+      <HotBoard/>
+      <AdPart/>
+      <RecommandBoard/>
+      <StoryBoard/>
+      <Footer/>
     </div>
   );
 };
