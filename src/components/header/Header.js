@@ -4,10 +4,7 @@ import styled from "styled-components";
 const Nav = styled.div`
     width: 100%;
     height: 133px;
-    background: pink;
     position: sticky;
-    /* padding-top: 32px;
-    top: -32px; */
     display: flex;
     align-items: center;
     font-family: 'Nunito', sans-serif;
@@ -56,7 +53,7 @@ const Header = () => {
                 <ul>
                     <li onClick={() => {("")}}>홈</li>
                     <li onClick={() => {("")}}>타이어 검색</li>
-                    <li onClick={() => {("")}}>커뮤니티</li>
+                    {/* <li onClick={() => {("")}}>커뮤니티</li> */}
                     <li onClick={() => {("")}}>뉴스</li>
                     <li onClick={() => {("")}}>로그인</li>
                 </ul>

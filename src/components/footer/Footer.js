@@ -7,13 +7,17 @@ const Foot = styled.div`
     background: #2D2926;
     width: 100%;
     height: 476px;
-    position: absolute;
+    /* position: fixed;    
     bottom: 0;
+    left:0;  */
     font-family: 'Noto Sans KR', sans-serif;
+    position:absolute; 
+    /* margin-top: 800px; */
 `
 const Inner = styled.div`
     padding-right: 300px;
     padding-left: 300px;
+    
 `
 
 const Inner1 = styled.div`

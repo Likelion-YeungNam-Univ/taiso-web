@@ -2,8 +2,8 @@ import { styled } from "styled-components";
 import RecommandItem from "./RecommandItem";
 import { ReactComponent as Tire1 } from "assets/images/recommand/tires/kh_hp71.svg";
 import { ReactComponent as Tire2 } from "assets/images/recommand/tires/ct_dw506.svg";
-import { ReactComponent as Kumho } from "assets/images/recommand/brand/Kumho.svg";
-import { ReactComponent as Continental } from "assets/images/recommand/brand/Continental.svg";
+// import { ReactComponent as Kumho } from "assets/images/recommand/brand/Kumho.svg";
+// import { ReactComponent as Continental } from "assets/images/recommand/brand/Continental.svg";
 
 const List = styled.div`
     display: flex;

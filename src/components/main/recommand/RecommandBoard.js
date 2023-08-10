@@ -6,10 +6,13 @@ const Title = styled.div`
     height: 100px;
     display: flex;
     align-items: center;
+    
+    
     padding: 0.5rem;
     margin-bottom: 2rem;
     h1 {
         padding: 1rem;
+        padding-top: 50px;
         font-size: 40px;
         font-weight: 600;
         font-family: 'IBM Plex Sans KR', sans-serif;
@@ -21,9 +24,10 @@ const ThumbUpIcon = styled(ThumbUp)`
 const Nav = styled.div`
     width: 1136px;
     height: 600px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    /* position: absolute; */
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    margin: auto;
 `
 
 function RecommandBoard() {
