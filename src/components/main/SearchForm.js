@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {BsFillArrowRightCircleFill} from "react-icons/bs"
 
 const Nav = styled.div`
     width: 951px;
@@ -6,42 +7,46 @@ const Nav = styled.div`
     border-radius: 100px;
     background: #FFFFFF;
     box-shadow: 0.5px 0.5px 40px 10px #EFEFF1;
-    display: flex;
-    align-items: center;
-    flex-flow: wrap;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-
-    h2 {
+    margin: 0 auto;
+    display: grid;
+    place-content: center;
+    p {
         font-size: 30px;
         font-family: 'IBM Plex Sans KR', sans-serif;
+        text-align: center;
     }
-
-    div {
-        width: 402px;
-        height: 91px;
-        box-shadow: 0.5px 0.5px 50px 10px #EFEFF1;
-        border-radius: 30px;
-    }
+`
+const Button = styled.div`
+    width: 575px;
+    height: 91px;
+    border-radius: 30px;
+    background: black;
+    margin: 0 auto;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     h1 {
         font-size: 40px;
         font-family: 'IBM Plex Sans KR', sans-serif;
-        color: ${props => props.textcolor || "white"};
+        color: white;
+    }
+
+    .arrow{
+        color: #7C7C7C; 
+        margin-left: 1.5rem;
     }
 `
-
-function SearchForm(props) {
+function SearchForm() {
     return (
         <Nav>
-            <h2>총 7,777개의 멋진 타이어들이 검색만 기다리고 있대요.</h2>
-            <div background="#111111">
-                <h1 color="#FFFFFF">차종으로 찾기</h1>
-            </div>
-            <div background="#FFFFFF">
-                <h1 color="#6F6F6F">사이즈로 찾기</h1>
-            </div>
+            <p>총 7,777개의 멋진 타이어들이 검색만 기다리고 있대요.</p>
+            <Button>
+                <h1>조건에 맞는 타이어 찾기</h1>
+                <BsFillArrowRightCircleFill className="arrow" size="50"/>
+            </Button>
         </Nav>
     );  
 }
