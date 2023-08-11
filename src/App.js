@@ -7,15 +7,14 @@ const App = () => {
     <div>
       <TopBar/>
       <Header/>
-      <Routes>
-        <Route path="/" element={<SignInPage/>}></Route>
-        <Route path="/main" element={<MainPage/>}></Route>
-        <Route path="/news" element={<NewsPage/>}></Route>
-        <Route path="/search" element={<SearchPage/>}></Route>
-      </Routes>
-      <Footer/>
-    </div>
-      
+<Routes>
+      <Route path="/" element={<SignInPage/>}></Route>
+      <Route path="/main" element={<MainPage/>}></Route>
+      <Route path="/news" element={<NewsPage/>}></Route>
+      <Route path="/search" element={<SearchPage/>}></Route>
+    </Routes> 
+    <Footer/>
+    </div> 
   );
 };
 
