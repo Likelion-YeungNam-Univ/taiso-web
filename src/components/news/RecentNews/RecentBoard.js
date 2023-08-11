@@ -2,23 +2,27 @@ import styled from "styled-components";
 import RecentList from "./RecentList"
 
 const Nav = styled.div`
-width: 1920px;
-height: 2500px;
+margin: 0 auto;
+width: 1170px;
+height: 724;
+margin-top: 30px;
 `
 const Title = styled.span`
-width: 201px;
-height: 40px;
 font-family: IBM Plex Sans KR;
 font-size: 36px;
 font-style: normal;
 font-weight: 600;
 line-height: normal;
+h4{
+   margin-left:20px;
+    
+}
 `
 
 function RecentBoard() {
     return (
         <Nav>
-            <Title><h1>최신 뉴스</h1></Title>
+            <Title><h4>최신 뉴스</h4></Title>
             <RecentList></RecentList>
         </Nav>
     );
