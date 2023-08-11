@@ -1,5 +1,4 @@
-import Title from "./Title";
-import HotNews from "./HotNews";
-import RecentNews from "./RecentNews";
+import { HotNBoard } from "./HotNews"
+import { RecentBoard } from "./RecentNews";
 
-export { Title, HotNews, RecentNews }
+export {  HotNBoard , RecentBoard }
