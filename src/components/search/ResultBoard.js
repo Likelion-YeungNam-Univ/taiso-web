@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import ResultList from "./ResultList";
 
 const Container = styled.div`
     width: 853px;
@@ -17,7 +18,7 @@ const Top = styled.div`
     }
 `
 const Select = styled.select`
-    width: 85px;
+    width: 100px;
     height: 39px;
     border-radius: 10px;
     p {
@@ -54,6 +55,7 @@ const ResultBoard = () => {
                 <h2>32건의 검색결과</h2>
                 <SelectBox classname="select" options={OPTIONS} defaultValue="등록순"></SelectBox>
             </Top>
+            <ResultList/>
         </Container>
     );
 };
