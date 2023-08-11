@@ -1,14 +1,12 @@
-import { Header, TopBar, Footer } from "components";
+import { RecentBoard, HotNBoard } from "components";
 
 const NewsPage = () => {
-    return(
+    return (
         <div>
-            <TopBar/>
-            <Header/>
-            뉴스 페이지입니다.
-            {/*<Footer/>*/}
+            <HotNBoard/>
+            <RecentBoard/>
         </div>
     );
-}
-
+};
+  
 export default NewsPage;
