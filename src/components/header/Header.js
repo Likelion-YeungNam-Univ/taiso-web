@@ -1,5 +1,6 @@
 import { ReactComponent as HeaderLogo } from "assets/images/logo/HeaderLogo.svg";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const Nav = styled.div`
     width: 100%;
@@ -14,6 +15,7 @@ const Logo = styled.div`
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+    cursor: pointer;
 `
 
 const Gnb = styled.div`
@@ -44,18 +46,23 @@ const Gnb = styled.div`
 `
 
 const Header = () => {
+    const movePage = useNavigate();
+
+    function goNews() {
+        movePage('/news');
+    }
     return (
         <Nav>
-            <Logo>
+            <Logo onClick={() => {movePage("/main")}}>
                 <HeaderLogo/>
             </Logo>
             <Gnb>
                 <ul>
-                    <li onClick={() => {("")}}>홈</li>
-                    <li onClick={() => {("")}}>타이어 검색</li>
+                    <li onClick={() => {movePage("/main")}}>홈</li>
+                    <li onClick={() => {movePage("/search")}}>타이어 검색</li>
                     {/* <li onClick={() => {("")}}>커뮤니티</li> */}
-                    <li onClick={() => {("")}}>뉴스</li>
-                    <li onClick={() => {("")}}>로그인</li>
+                    <li onClick={goNews}>뉴스</li>
+                    <li onClick={() => {movePage("/")}}>로그인</li>
                 </ul>
             </Gnb>    
         </Nav>

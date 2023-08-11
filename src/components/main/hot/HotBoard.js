@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import HotList from "./HotList";
 import { ReactComponent as Fire } from "assets/images/hot/tires/Fire.svg";
-
+import { useNavigate } from "react-router-dom";
 
 const Title = styled.div`
     height: 100px;
@@ -39,15 +39,27 @@ const Button = styled.button`
     margin-left: auto;
     /* margin-top: 1.5rem; */
     margin-top: 40px;
+    cursor: pointer; 
+    &:hover,
+    &:active {
+        background: black;
+        color: white;
+   }
 `
 
 function HotBoard() {
+    const movePage = useNavigate();
+
+    function goSearch() {
+        movePage('/search');
+    }
+
     return (
         <Nav>
             <Title>
                 <FireIcon/>
                 <h1>지금 이 순간, 가장 인기 있는 타이어</h1>
-                <Button>타이어 더보기 +</Button>
+                <Button onClick={goSearch}>타이어 더보기 +</Button>
             </Title>
             <HotList/>
         </Nav>

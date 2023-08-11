@@ -1,6 +1,7 @@
 import { ReactComponent as Story } from "assets/images/story/StoryIcon.svg";
 import styled from "styled-components";
 import StoryList from "./StoryList";
+import { useNavigate } from "react-router-dom";
 
 const Title = styled.div`
     width: 100%;
@@ -36,14 +37,25 @@ const Button = styled.button`
     margin-left: auto;
     /* margin-top: 1.5rem; */
     margin-top:32px;
+    cursor: pointer; 
+    &:hover,
+    &:active {
+        background: black;
+        color: white;
+   }
 `
 function StoryBoard() {
+    const movePage = useNavigate();
+
+    function goNews() {
+        movePage('/news');
+    }
     return (
         <Nav>
             <Title>
                 <StoryIcon/>
                 <h1>나도 몰랐던 타이어 이야기</h1>
-                <Button>소식 더보기 +</Button>
+                <Button onClick={goNews}>소식 더보기 +</Button>
             </Title>
             <StoryList/>
         </Nav>

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {BsFillArrowRightCircleFill} from "react-icons/bs"
+import { useNavigate } from "react-router-dom";
 
 const Nav = styled.div`
     width: 951px;
@@ -40,13 +41,21 @@ const Button = styled.div`
         color: #7C7C7C; 
         margin-left: 1.5rem;
     }
+    cursor: pointer;
 `
 function SearchForm() {
+
+    const movePage = useNavigate();
+
+    function goSearch() {
+        movePage('/search');
+    }
+
     return (
         <Nav>
             <p>총 7,777개의 멋진 타이어들이 검색만 기다리고 있대요.</p>
-            <Button>
-                <h1>조건에 맞는 타이어 찾기</h1>
+            <Button onClick={goSearch}>
+                <h1 onClick={goSearch}>조건에 맞는 타이어 찾기</h1>
                 <BsFillArrowRightCircleFill className="arrow" size="50"/>
             </Button>
         </Nav>
