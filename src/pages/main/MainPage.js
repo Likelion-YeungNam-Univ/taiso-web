@@ -5,14 +5,11 @@ import { Footer, Header, HotBoard, RecommandBoard, StoryBoard, TopBar } from "co
 const MainPage = () => {
   return (
     <div>
-      <TopBar/>
-      <Header/>
       <Slider/> 
       <HotBoard/>
       <AdPart/>
       <RecommandBoard/>
       <StoryBoard/>
-      <Footer/>
     </div>
   );
 };

@@ -1,3 +1,4 @@
 export * from "./auth";
 export * from "./main";
-export * from "./News";
+export * from "./news";
+export * from "./search";

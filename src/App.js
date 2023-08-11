@@ -1,6 +1,5 @@
 import { Header, TopBar, Footer} from "components";
-import { SignInPage, MainPage, NewsPage } from "pages";
-import { SearchPage } from "pages/search";
+import { SignInPage, MainPage, NewsPage, SearchPage } from "pages";
 import { Routes, Route } from "react-router-dom";
 
 const App = () => {
