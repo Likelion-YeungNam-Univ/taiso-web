@@ -14,9 +14,13 @@ import SwiperSlide3 from "assets/images/mainpage/SwiperSlide3.jpg"
 import SwiperSlide4 from "assets/images/mainpage/SwiperSlide4.jpg"
 import SwiperSlide5 from "assets/images/mainpage/SwiperSlide5.jpg"
 import { ReactComponent as SlideLogo } from "assets/images/mainpage/SlideLogo.svg";
+import { SearchForm } from 'components';
+
 
 const MainPageSwiper = styled.div`
-
+ 
+    position: relative;
+    margin-bottom: 150px;
     img {
         width: 100%;
         height: 800px;
@@ -27,7 +31,7 @@ const MainPageSwiper = styled.div`
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-110%, -130%);
+        transform: translate(-80%, -100%);
         color: white;
         padding: 10px;
         font-size: 85px;
@@ -35,12 +39,53 @@ const MainPageSwiper = styled.div`
 
     .slide-logo {
         position: absolute;
-        
         top: 50%;
         left: 50%;
-        transform: translate(60%, 40%);
+        transform: translate(20%, 40%);
         
     };
+
+    .swiper-pagination{
+        margin-bottom: 130px;
+        display:flex;
+        justify-content: center;
+        font-size: 40px;
+     
+    };
+
+    .swiper-pagination-bullet {
+        background: #FFFFFF !important;
+        width: 20px;
+        height: 20px;
+        margin: 40px;
+       
+    };
+
+    .swiper-button-prev,
+    .swiper-button-next {
+    background: var(--white-15, rgba(255, 255, 255, 0.15));
+    opacity: 1;
+    padding: 6px 15px ;
+    border-radius: 50%;
+    color: #FFFFFF !important;
+    margin-left: 120px;
+    margin-right: 120px;
+    };
+
+    .swiper-button-prev:after,
+    .swiper-button-next:after {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+}
+`
+const Nav = styled.div`
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    align-items:center;
+    justify-items: center;
+    transform: translate(58%, -50%);
+
 `
 
 export default function MainPage() {
@@ -84,6 +129,10 @@ export default function MainPage() {
             <img src={SwiperSlide5} alt=""></img>
         </SwiperSlide>
       </Swiper>
+      <Nav>
+         <SearchForm/>
+      </Nav>
     </MainPageSwiper>
   );
 };
+

@@ -1,23 +1,17 @@
 import { Header, TopBar, Footer} from "components";
-import { MainPage } from "pages";
-import { NewsPage } from "pages"
+import { SignInPage, MainPage, NewsPage } from "pages";
+import { SearchPage } from "pages/search";
+import { Routes, Route } from "react-router-dom";
 
 const App = () => {
   return (
-    <div className="App">
-    <div>
-      <TopBar/>
-    </div>
-    <div>
-      <Header/>
-    </div>
-    <div>
-      <MainPage/>
-    </div>
-      <Footer/>
-    </div>
-  // <NewsPage></NewsPage>
-     );
+    <Routes>
+      <Route path="/" element={<SignInPage/>}></Route>
+      <Route path="/main" element={<MainPage/>}></Route>
+      <Route path="/news" element={<NewsPage/>}></Route>
+      <Route path="/search" element={<SearchPage/>}></Route>
+    </Routes>  
+  );
 };
 
 export default App;
