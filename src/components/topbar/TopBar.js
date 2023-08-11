@@ -15,6 +15,8 @@ const Top = styled.div`
     align-items: center;
     font-size: 12px;
     justify-content: center;
+    
+    
 `
 
 const TopCenter = styled.div`

@@ -9,11 +9,11 @@ import 'swiper/css/navigation';
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper';
 import SwiperSlide1 from "assets/images/mainpage/SwiperSlide1.png"
-import SwiperSlide2 from "assets/images/mainpage/SwiperSlide2.jpg"
+import SwiperSlide2 from "assets/images/mainpage/SwiperSlide2.png"
 import SwiperSlide3 from "assets/images/mainpage/SwiperSlide3.jpg"
 import SwiperSlide4 from "assets/images/mainpage/SwiperSlide4.jpg"
 import SwiperSlide5 from "assets/images/mainpage/SwiperSlide5.jpg"
-import { ReactComponent as SlideLogo } from "assets/images/mainpage/SlideLogo.svg";
+// import { ReactComponent as SlideLogo } from "assets/images/mainpage/SlideLogo.svg";
 import { SearchForm } from 'components';
 
 
@@ -21,6 +21,8 @@ const MainPageSwiper = styled.div`
  
     position: relative;
     margin-bottom: 150px;
+    display: flex;
+    justify-content: center;
     img {
         width: 100%;
         height: 800px;
@@ -28,21 +30,28 @@ const MainPageSwiper = styled.div`
     };
 
     .title-content {
-        position: absolute;
-        top: 50%;
+        /* position: absolute; */
+        /* top: 50%;
         left: 50%;
         transform: translate(-80%, -100%);
         color: white;
         padding: 10px;
-        font-size: 85px;
+        font-size: 85px; */
+        /* display: flex;
+        align-items: center;
+        justify-content: center; */
     };
 
     .slide-logo {
-        position: absolute;
+        /* position: absolute;
+        z-index: 1;
         top: 50%;
-        left: 50%;
+        left: 50%; 
         transform: translate(20%, 40%);
-        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+         */
     };
 
     .swiper-pagination{
@@ -70,6 +79,7 @@ const MainPageSwiper = styled.div`
     color: #FFFFFF !important;
     margin-left: 120px;
     margin-right: 120px;
+    margin-bottom: 50px;
     };
 
     .swiper-button-prev:after,
@@ -81,11 +91,7 @@ const MainPageSwiper = styled.div`
 const Nav = styled.div`
     position: absolute;
     z-index: 1;
-    display: flex;
-    align-items:center;
-    justify-items: center;
-    transform: translate(58%, -50%);
-
+    margin-top: 700px;
 `
 
 export default function MainPage() {
@@ -106,14 +112,14 @@ export default function MainPage() {
         className="mySwiper"
       >
         <SwiperSlide>
-            <div>
+            <div className= "slider1">
                 <img src={SwiperSlide1} alt=""/>
-                <div className="title-content">
+                {/* <div className="title-content">
                     <h3>더 이상 추천받지 않는 <br/>안전을 위하여,</h3>
                 </div>
                 <div className="slide-logo">
                     <SlideLogo/>
-                </div>
+                </div> */}
             </div>
         </SwiperSlide>
         <SwiperSlide>
