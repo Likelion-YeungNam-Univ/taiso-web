@@ -1,6 +1,6 @@
 import Slider from "./Slider";
 import AdPart from "./AdPart";
-import { Footer, Header, HotBoard, RecommandBoard, StoryBoard, TopBar } from "components";
+import { HotBoard, RecommandBoard, StoryBoard } from "components";
 
 const MainPage = () => {
   return (
