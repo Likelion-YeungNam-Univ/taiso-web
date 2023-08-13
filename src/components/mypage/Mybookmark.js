@@ -25,9 +25,15 @@ line-height: normal;
 }
 `
 
+const PageTitle = styled.div`
+width: 1200px;
+height: 133px;
+`
+
 function Mybookmark() {
     return (
       <Container>
+         <PageTitle><h1>마이페이지</h1></PageTitle>
         <MyProfile/>
         <Content>
         <Title><p>만나서 반갑습니다, 진우님!</p></Title>
