@@ -1,4 +1,4 @@
-import Mybookmark from "components/mypage";
+import { Mybookmark } from "components/mypage";
 
 
 const MyPage = () => {

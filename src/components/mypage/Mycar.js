@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import React from "react";
 import { PlusCircleOutlined } from "@ant-design/icons";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
 width: 866px;
@@ -60,16 +61,24 @@ align-items:center;
 `
 
 const Button  = styled.button`
-width: 25px;
-height: 25px;
+width: 50px;
+height: 50px;
 padding: 2.083px;
 border:none;
 background-color: white;
 margin-left:15px;
+cursor: pointer;
 `
 
 
 function Mycar() {
+    
+    const movePage = useNavigate();
+
+    function goRegister() {
+        movePage('/register/car');
+    }
+
     return (
       <Container>
         <Title>
@@ -81,7 +90,7 @@ function Mycar() {
                 <Keyword><p> 24나 7777 ┃ 5인승 ┃ 포르쉐  ┃ 카이엔(3세대) ┃ 디젤 ┃ 265/55/R19</p></Keyword>
             </MainCarContent>
             <AddCarContent>
-                <Button><PlusCircleOutlined/></Button>
+                <Button onClick={goRegister}><PlusCircleOutlined className="button" size="30"/></Button>
                 <Keyword><p>새 차량 정보 등록하기</p></Keyword>
             </AddCarContent>
       </Container>
