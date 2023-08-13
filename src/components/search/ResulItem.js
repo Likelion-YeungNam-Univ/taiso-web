@@ -5,6 +5,7 @@ const ImageBox = styled.div`
     width: 265px;
     height: 322px;
     border-radius: 10px;
+    background: "#E5E1E1";
 `
 const ImageInnerBox = styled.div`
 `
