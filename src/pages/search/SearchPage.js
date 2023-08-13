@@ -1,8 +1,11 @@
-import { Header, TopBar, Footer, ResultBoard } from "components";
+// import { ResultBoard } from "components";
+import SearchHeader from "pages/search/SearchHeader"
+import { ResultBoard } from "components";
 
 const SearchPage = () => {
     return(
         <div>
+            <SearchHeader/>
             <ResultBoard/>
         </div>
     );
