@@ -1,8 +1,8 @@
 import { styled } from "styled-components";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { useState } from "react";
-import { ReactComponent as EmptyHeart } from "assets/images/search-result/emptylike.svg"
-import { ReactComponent as FillHeart } from "assets/images/search-result/filllike.svg"
+import { ReactComponent as EmptyHeart } from "assets/images/search/emptylike.svg"
+import { ReactComponent as FillHeart } from "assets/images/search/filllike.svg"
 import { FaStar } from "react-icons/fa";
 
 const Container = styled.div`
