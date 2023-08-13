@@ -1,26 +1,49 @@
 import ResultItem from "./ResultItem";
 import { styled } from "styled-components";
-import { ReactComponent as Tire1 } from "assets/images/recommand/tires/kh_hp71.svg";
+import Pagination from "./Pagination";
+import { useState } from "react";
+import { Tires } from "./Tires";
 
 const Container = styled.div`
-    width: 853px;
+    width: 885px;
+
+    .item-container {
+        display: flex;
+        flex-flow: wrap;
+    }
 `
 
 const ResultList = () => {
+    const [page, setPage] = useState(1);
+    const offset = (page - 1) * 6;
+
     return (
         <Container>
-            <ResultItem 
-                img={<Tire1/>} 
-                brandcolor = "#FF0000"
-                brand = "금호"
-                width = "50px"
-                tirename = {`크루젠 HP71`}
-                keyword1 = {`사계절용`}
-                keyword2 = {`SUV`}
-                keyword3 = {`고급형`}
-                keyword4 = {`연비짱`}
-                color = "#E2BE45"
-                grade = "4.7 (2,165)"/>
+            <Container className="item-container">
+                {Tires.slice(offset, offset + 6).map(({ id, image, brand, name, keyword1, keyword2, keyword3, keyword4, rate }) => (
+                    <ResultItem  key={id}
+                    img={image} 
+                    brandcolor = "#FF0000"
+                    brand = {brand}
+                    width = "50px"
+                    tirename = {name}
+                    keyword1 = {keyword1}
+                    keyword2 = {keyword2}
+                    keyword3 = {keyword3}
+                    keyword4 = {keyword4}
+                    color = "#E2BE45"
+                    grade = {rate} />
+                ))}
+            </Container>
+
+            <footer>
+                <Pagination
+                total={Tires.length}
+                limit={6}
+                page={page}
+                setPage={setPage}
+                />    
+            </footer>
         </Container>
     );
 }
