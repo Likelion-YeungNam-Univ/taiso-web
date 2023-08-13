@@ -7,7 +7,7 @@ h4{
     text-align: center;
    font-family: IBM Plex Sans KR;
     font-size: 36px;
-    ont-style: normal;
+    font-style: normal;
     font-weight: 600;
     line-height: normal;
 }
