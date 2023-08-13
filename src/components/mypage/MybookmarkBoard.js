@@ -11,6 +11,7 @@ box-shadow: 0px 16px 40px 0px rgba(112, 144, 176, 0.20);
 const Title = styled.div`
 margin-left:20px;
 margin-top:10px;
+padding-top:10px;
 p{
     color: #484848;
 font-family: IBM Plex Sans KR;
