@@ -10,17 +10,22 @@ const Container = styled.div`
     .item-container {
         display: flex;
         flex-flow: wrap;
+        align-content: space-around;
+    }
+
+    footer {
+        margin-top: 150px;
     }
 `
 
 const ResultList = () => {
     const [page, setPage] = useState(1);
-    const offset = (page - 1) * 6;
+    const offset = (page - 1) * 9;
 
     return (
         <Container>
             <Container className="item-container">
-                {Tires.slice(offset, offset + 6).map(({ id, image, brand, name, keyword1, keyword2, keyword3, keyword4, rate }) => (
+                {Tires.slice(offset, offset + 9).map(({ id, image, brand, name, keyword1, keyword2, keyword3, keyword4, rate }) => (
                     <ResultItem  key={id}
                     img={image} 
                     brandcolor = "#FF0000"
@@ -39,7 +44,7 @@ const ResultList = () => {
             <footer>
                 <Pagination
                 total={Tires.length}
-                limit={6}
+                limit={9}
                 page={page}
                 setPage={setPage}
                 />    

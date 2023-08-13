@@ -1,5 +1,4 @@
 import { styled } from "styled-components";
-import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { useState } from "react";
 import { ReactComponent as EmptyHeart } from "assets/images/search/emptylike.svg"
 import { ReactComponent as FillHeart } from "assets/images/search/filllike.svg"
@@ -16,6 +15,7 @@ const Container = styled.div`
         margin-left: 15px;
     }
     justify-content: center;
+    margin-top: 50px;
 `
 const ImageBox = styled.div`
     width: 265px;
@@ -28,6 +28,9 @@ const ImageBox = styled.div`
         color: gray;
         cursor: pointer;
         transition: transform 300ms ease;
+        position: relative;
+        top: 15px;
+        left: 215px;
     }
     .emptyheart:hover {
         transform: scale(1.1);
@@ -37,23 +40,29 @@ const ImageBox = styled.div`
         height: 30px;
         color: red;
         cursor: pointer;
+        position: relative;
+        top: 15px;
+        left: 215px;
     }
     .fillheart:hover {
         transform: scale(1.1);
     }
     margin: 0 auto;
+    position: relative;
 `
-const ImageInnerBox = styled.div`
+const TireImageBox = styled.div`
     width: 221px;
     height: 244px;
+    margin: 0 auto;
 `
 const BottomBox = styled.div`
     width: 265px;
     height: 228px;
-    background-color: blue;
+    //background-color: blue;
     margin: 0 auto;
+    margin-top: 5px;
 `
-const Brand = styled.div`
+const Brand = styled.span`
     width: ${props => props.width || "auto"};
     height: 39px;
     border-radius: 20px;
@@ -65,11 +74,18 @@ const Brand = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 10px;
 `
 const KeywordContainer = styled.div`
     display: flex;
     margin: 0 auto;
     margin-top: 5px;
+    .rate {
+        margin-top: 5px;
+    }
+    .star {
+        margin-left: 10px;
+    }
 `
 const Keyword = styled.div`
     width: 108px;
@@ -85,10 +101,10 @@ const Keyword = styled.div`
     margin-right: 15px;
     margin: 0 auto;
 `
-const Grade = styled.h1`
+const Grade = styled.p`
     font-size: 24px;
     font-family: 'IBM Plex Sans KR', sans-serif;
-    margin-left: 15px;
+    margin-left: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -103,12 +119,12 @@ function RecommandItem(props) {
     return (
         <Container>
             <ImageBox>
-                <ImageInnerBox>{props.img}</ImageInnerBox>
                 {like ? (
                     <FillHeart className="fillheart" onClick={toggleLike} />
                 ) : (
                     <EmptyHeart className="emptyheart" onClick={toggleLike}/>
                 )}
+                <TireImageBox>{props.img}</TireImageBox>
             </ImageBox>
             <BottomBox>
             <Brand width={props.width} height={props.height} color={props.brandcolor}>{props.brand}</Brand>
@@ -121,8 +137,8 @@ function RecommandItem(props) {
                 <Keyword>{props.keyword3}</Keyword>
                 <Keyword color={props.color}>{props.keyword4}</Keyword>
             </KeywordContainer>
-            <KeywordContainer>
-                <FaStar color="#E2BE45" size="30"/>
+            <KeywordContainer className="rate">
+                <FaStar className="star" color="#E2BE45" size="30"/>
                 <Grade>{props.grade}</Grade>
             </KeywordContainer>
             </BottomBox>
