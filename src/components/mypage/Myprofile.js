@@ -4,7 +4,7 @@ import { ReactComponent as MyFace } from "../../assets/images/mypage/Image.svg";
 
 const Container = styled.div`
   width: 279px;
-  height: 566px;
+  height: 610px;
   border-radius: 8px;
   background-color: lightgray;
   display: flex;

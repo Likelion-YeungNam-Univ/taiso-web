@@ -14,6 +14,8 @@ font-size: 24px;
 font-style: normal;
 font-weight: 700;
 line-height: normal;
+margin-bottom:10px;
+margin-top:10px;
 `
 const Date = styled.span`
 p{

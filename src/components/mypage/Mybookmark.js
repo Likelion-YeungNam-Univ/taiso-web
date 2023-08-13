@@ -9,12 +9,24 @@ flex-Direction: row;
 width:1168px;
 margin: 0 auto;
 justify-content: space-between;
+margin-bottom:20px;
 `
 const Content = styled.div`
-flex-Direction: column;
+ display:flex;
+ margin-top:10px;
 `
+const OutContent = styled.div`
+width:1200px;
+h1{
+  border-bottom: 1px solid #e0e0e0; /* 밑줄 추가 */
+}
+`
+const InnerContent = styled.div`
+margin-left:15px;
+`
+
 const Title = styled.div`
-margin-top:5px;
+margin-left:15px;
 p{
 color: #484848;
 font-family: IBM Plex Sans KR;
@@ -33,14 +45,20 @@ height: 133px;
 function Mybookmark() {
     return (
       <Container>
-         <PageTitle><h1>마이페이지</h1></PageTitle>
-        <MyProfile/>
+        <OutContent>
+        <h1> 마이 페이지 </h1>
         <Content>
+        <MyProfile/>
+        {/* <Content> */}
+        <InnerContent>
         <Title><p>만나서 반갑습니다, 진우님!</p></Title>
-            <Mycar/>
-            <MybookmarkBoard/>
-        </Content> 
-      </Container>
+             <Mycar/>
+              <MybookmarkBoard/>
+        </InnerContent>
+         </Content> 
+         </OutContent>
+       </Container>
+      // </OutContent>
     );
   }
 

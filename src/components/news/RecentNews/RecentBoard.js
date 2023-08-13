@@ -13,6 +13,7 @@ font-size: 36px;
 font-style: normal;
 font-weight: 600;
 line-height: normal;
+padding-bottom:20px;
 h4{
    margin-left:20px;
     
