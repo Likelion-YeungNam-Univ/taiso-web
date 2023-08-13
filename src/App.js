@@ -5,8 +5,8 @@ import { Routes, Route } from "react-router-dom";
 const App = () => {
   return (
     <div>
-      <TopBar/>
-      <Header/>
+      <TopBar />
+      <Header />
 <Routes>
       <Route path="/" element={<SignInPage/>}></Route>
       <Route path="/main" element={<MainPage/>}></Route>
