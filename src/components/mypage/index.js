@@ -1,5 +1,3 @@
-import Mybookmark from "./MybookmarkBoard"
-import Mycar from "./MybookmarkBoard"
-import Myprofile from "./MybookmarkBoard"
+import Mybookmark from "./Mybookmark"
 
-export {Mybookmark,Mycar,Myprofile};
+export default Mybookmark;

@@ -1,16 +1,15 @@
-// import { Header, TopBar, Footer} from "components";
+import { Header, TopBar, Footer} from "components";
 // import { SignInPage, MainPage, NewsPage, SearchPage } from "pages";
 // import { Routes, Route } from "react-router-dom";
-import MyProfile from "components/mypage/myprofile";
-import Mycar from "components/mypage/mycar";
-import MybookmarkBoard from "components/mypage/mybookmarkBoard";
+import Mybookmark from "components/mypage";
 
 const App = () => {
   return (
     <div>
-    <MyProfile></MyProfile>
-    <Mycar></Mycar>
-    <MybookmarkBoard></MybookmarkBoard>
+      <Header/>
+<TopBar/>
+<Mybookmark/>
+<Footer/>
     </div>
 
 

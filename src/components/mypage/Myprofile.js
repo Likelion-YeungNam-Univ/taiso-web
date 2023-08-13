@@ -7,13 +7,12 @@ const Container = styled.div`
   height: 566px;
   border-radius: 8px;
   background-color: lightgray;
-  margin-left: 376px;
-  margin-right: 360px;
-  margin-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top:5px;
+
 `;
 
 const Imagebox = styled.div`
@@ -36,6 +35,8 @@ const Content = styled.div`
 `;
 
 const Title = styled.span`
+margin-bottom:10px;
+padding:5px;
 h4{
     color: #484848;
 text-align: center;
@@ -83,6 +84,7 @@ function MyProfile() {
       <Content>
         <Title>
           <h4>이진우</h4>
+          <p>binarywoo@gmail.com</p>
         </Title>
         <Title>
           <p>이메일 인증 완료<br />차량 정보 등록 완료<br />타이어 사이즈 등록 완료</p>
