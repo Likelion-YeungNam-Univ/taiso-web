@@ -1,5 +1,5 @@
 import { Header, TopBar, Footer} from "components";
-import RegisterCar from "components/mypage/RegisterCar";
+// import RegisterCar from "components/mypage/RegisterCar";
 import { SignInPage, MainPage, NewsPage, SearchPage, MyPage, RegisterCarPage } from "pages";
 import { Routes, Route } from "react-router-dom";
 

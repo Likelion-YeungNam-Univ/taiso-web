@@ -15,6 +15,7 @@ const Container = styled.div`
 
     footer {
         margin-top: 150px;
+        
     }
 `
 

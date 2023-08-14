@@ -33,6 +33,7 @@ const Nav = styled.nav`
   align-items: center;
   gap: 4px;
   margin: 16px;
+  
 `;
 
 const Button = styled.button`
@@ -46,6 +47,7 @@ const Button = styled.button`
   color: black;
   font-size: 17px;
   font-family: 'IBM Plex Sans KR', sans-serif;
+  margin-bottom: 150px;
 
   &:hover {
     cursor: pointer;

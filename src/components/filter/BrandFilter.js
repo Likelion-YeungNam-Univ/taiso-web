@@ -1,8 +1,8 @@
 import { styled } from "styled-components";
 import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai';
-import { useState } from "react";
 import { ImCheckboxUnchecked, ImCheckboxChecked } from 'react-icons/im';
 import cn from 'classnames';
+import { useState,  forwardRef } from 'react';
 
 const Filter = styled.div`
     width: 306px;
@@ -75,11 +75,8 @@ const ItemText = styled.div`
     line-height: normal;
     margin-left: 30px;
 `
-
-const BrandFilter = () => {
+const BrandFilter = forwardRef((props, ref) => { 
     const [isOpen, setIsOpen] = useState(false);
-
-    // Separate checked states for each checkbox
     const [checkedStates, setCheckedStates] = useState({
         kumho: false,
         nexen: false,
@@ -91,17 +88,30 @@ const BrandFilter = () => {
             ...prevState,
             [checkbox]: !prevState[checkbox],
         }));
-};
+    };
+
+    const resetFilter = () => {
+        setCheckedStates({
+            kumho: false,
+            nexen: false,
+            korea: false,
+        });
+    };
+
+    if (ref) {
+        ref.current = {
+            resetFilter: resetFilter
+        };
+    }
 
     return (
         <Filter>
             <FilterBox>
-                <FilterBtn onClick={()=> setIsOpen((prev) => !prev)}>
+                <FilterBtn onClick={() => setIsOpen((prev) => !prev)}>
                     <Btntext>브랜드</Btntext>
                     <DownIcon>
                         {!isOpen ? (<AiOutlineDown/>) : (<AiOutlineUp/>)}
                     </DownIcon>
-                    
                 </FilterBtn> 
 
                 {isOpen && (
@@ -139,6 +149,6 @@ const BrandFilter = () => {
             </FilterBox>
         </Filter>
     );
-};
+});
 
 export default BrandFilter;

@@ -37,10 +37,10 @@ line-height: normal;
 }
 `
 
-const PageTitle = styled.div`
-width: 1200px;
-height: 133px;
-`
+// const PageTitle = styled.div`
+// width: 1200px;
+// height: 133px;
+// `
 
 function Mybookmark() {
     return (

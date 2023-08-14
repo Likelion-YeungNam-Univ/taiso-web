@@ -1,13 +1,34 @@
-// import { ResultBoard } from "components";
-import SearchHeader from "pages/search/SearchHeader"
-import { ResultBoard } from "components";
+import SearchHeader from "pages/search/SearchHeader";
+import { ResultBoard, SearchFilter, SearchReacommendBoard} from "components";
+import styled from "styled-components";
+import PageAd from "./PageAd";
+
+const Page = styled.div`
+    
+`
+
+const Nav = styled.div`
+    display: flex;
+    align-self: center;
+    justify-content: center;
+`
+const Board = styled.div``
 
 const SearchPage = () => {
     return(
-        <div>
+        <Page>
             <SearchHeader/>
-            <ResultBoard/>
-        </div>
+            <Nav>
+                <SearchFilter/>
+                <Board>
+                    <SearchReacommendBoard/>
+                    <PageAd/>
+                    <ResultBoard/>
+                </Board>
+               
+            </Nav>
+            
+        </Page>
     );
 }
 

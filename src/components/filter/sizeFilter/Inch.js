@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { useState, forwardRef } from "react";
 import { BiChevronDown, BiChevronUp } from 'react-icons/bi';
 
   
@@ -75,14 +75,25 @@ const optionData =[
            
 ];
 
-const SectionWidth = () => {
+const SectionWidth = forwardRef((props, ref) => {
     const [currentValue, setCurrentValue] = useState('휠 지름(인치)');
     const [showOptions, setShowOptions] = useState(false);
 
     const handleOnChangeSelectValue = (selectedValue) => {
         setCurrentValue(selectedValue);
-        setShowOptions(true); // Always show options when any option is selected
+        setShowOptions(true); 
     };
+
+    const resetFilter = () => {
+        setCurrentValue('휠 지름(인치)'); 
+        setShowOptions(false); 
+    };
+
+    if (ref) {
+        ref.current = {
+            resetFilter: resetFilter
+        };
+    }
 
     return (
         <SelectBox onClick={() => setShowOptions((prev) => !prev)}>
@@ -105,7 +116,7 @@ const SectionWidth = () => {
             </SelectOptions>
         </SelectBox>
     );
-};
+});
 
 export default SectionWidth;
    
