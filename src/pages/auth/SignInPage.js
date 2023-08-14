@@ -26,12 +26,14 @@ const BtnStyleWrapper = styled.div`
   margin-top: 20px;
   display: flex;
 align-items: center;
+margin-bottom:100px;
 `;
 
 const LoginLogo = styled.div`
 width: 250px;
 height:57px;
 padding: 10px;
+margin-bottom:10px;
 img {
   background: #E5E1E1;
   width: 100%;
@@ -45,13 +47,17 @@ const OnNaverSignClick = () =>{
   //   axios.get('https://208d-175-119-150-172.ngrok-free.app/oauth2/authorization/naver')
   // })
   // axios.get("https://208d-175-119-150-172.ngrok-free.app/oauth2/authorization/naver");
-  axios.get('https://208d-175-119-150-172.ngrok-free.app/oauth2/authorization/naver');
+  // https://d0d7-175-119-150-172.ngrok-free.app/swagger-ui/index.html#/OAuth/naverLogin
+  // https://d0d7-175-119-150-172.ngrok-free.app/oauth2/authorization/naver
+  // /api'+'/oauth2/authorization/naver
+  axios.get('https://d0d7-175-119-150-172.ngrok-free.app/oauth2/authorization/naver',{withCredentials: true});
+  
 }
 const OnKakaorSignClick = () =>{
-  axios.get("https://208d-175-119-150-172.ngrok-free.app/oauth2/authorization/kakao");
+  axios.get("https://208d-175-119-150-172.ngrok-free.app/oauth2/authorization/kakao",{withCredentials: true});
 }
 const OnGoogleSignClick = () =>{
-  axios.get("https://208d-175-119-150-172.ngrok-free.app/oauth2/authorization/google");
+  axios.get("https://208d-175-119-150-172.ngrok-free.app/oauth2/authorization/google",{withCredentials: true});
 }
 
 const SignInPage = () => {
@@ -68,8 +74,8 @@ const SignInPage = () => {
       <h1>더 이상 추천받지 않는 안전을 위하여,</h1>
       <TireLogoStyle src={TireLogo} alt="로고" onClick={goMain}/>
       <BtnStyleWrapper>
-        <LoginLogo onClick={OnNaverSignClick}><img src={Kakao}/></LoginLogo>
-        <LoginLogo onClick={OnKakaorSignClick}><img src={Naver}/></LoginLogo>
+        <LoginLogo onClick={OnNaverSignClick}><img src={Naver}/></LoginLogo>
+        <LoginLogo onClick={OnKakaorSignClick}><img src={Kakao}/></LoginLogo>
         <LoginLogo onClick={OnGoogleSignClick}><img src={Google}/></LoginLogo>
       </BtnStyleWrapper>
     </Container>
