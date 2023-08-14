@@ -4,3 +4,4 @@ export * from "./footer";
 export * from "./main";
 export * from "./news";
 export * from "./search";
+export * from "./mypage";

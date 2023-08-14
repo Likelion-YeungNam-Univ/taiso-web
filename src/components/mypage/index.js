@@ -1,3 +1,5 @@
 import Mybookmark from "./Mybookmark"
+import MyProfile from "./Myprofile";
+import RegisterCar from "./RegisterCar";
 
-export default Mybookmark;
+export { Mybookmark, MyProfile, RegisterCar };

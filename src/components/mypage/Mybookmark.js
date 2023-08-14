@@ -44,16 +44,16 @@ height: 133px;
 
 function Mybookmark() {
     return (
-      <Container>
-        <OutContent>
+      <Container className="a">
+        <OutContent className="b">
         <h1> 마이 페이지 </h1>
-        <Content>
-        <MyProfile/>
+        <Content className="c">
+        <MyProfile className="d"/>
         {/* <Content> */}
-        <InnerContent>
+        <InnerContent className="e">
         <Title><p>만나서 반갑습니다, 진우님!</p></Title>
-             <Mycar/>
-              <MybookmarkBoard/>
+             <Mycar className="f"/>
+              <MybookmarkBoard className="g"/>
         </InnerContent>
          </Content> 
          </OutContent>

@@ -1,3 +1,4 @@
 import MyPage from "./Mypage"
+import RegisterCarPage from "./RegisterCarPage"
 
-export {MyPage}
+export { MyPage, RegisterCarPage }
