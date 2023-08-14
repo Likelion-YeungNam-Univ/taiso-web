@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai';
-import { useState } from "react";
+import { useState, forwardRef } from "react";
 import { ImCheckboxUnchecked, ImCheckboxChecked } from 'react-icons/im';
 import cn from 'classnames';
 
@@ -78,10 +78,8 @@ const ItemText = styled.div`
     margin-left: 30px;
 `
 
-const WeatherFilter = () => {
+const WeatherFilter = forwardRef((props, ref) => {
     const [isOpen, setIsOpen] = useState(false);
-
-    // Separate checked states for each checkbox
     const [checkedStates, setCheckedStates] = useState({
         summer: false,
         winter: false,
@@ -94,7 +92,22 @@ const WeatherFilter = () => {
             ...prevState,
             [checkbox]: !prevState[checkbox],
         }));
-};
+    };
+
+    const resetFilter = () => {
+        setCheckedStates({
+            summer: false,
+            winter: false,
+            threeseasons: false,
+            fourseasons: false
+        });
+    };
+
+    if (ref) {
+        ref.current = {
+            resetFilter: resetFilter
+        };
+    }
 
     return (
         <Filter>
@@ -151,5 +164,5 @@ const WeatherFilter = () => {
             </FilterBox>         
         </Filter>
     );
-};
+});
 export default WeatherFilter;

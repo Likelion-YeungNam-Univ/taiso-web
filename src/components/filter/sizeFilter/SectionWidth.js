@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { useState, forwardRef } from "react";
 import { BiChevronDown, BiChevronUp } from 'react-icons/bi';
 
   
@@ -78,15 +78,27 @@ const DownIcon =styled.div`
                 {key: "355", value: "355mm"},
     ];
 
-    const SectionWidth = () => {
-        const [currentValue, setCurrentValue] = useState('단면폭');
+    const SectionWidth = forwardRef((props, ref) => {
+        const [currentValue, setCurrentValue] = useState('단면폭(mm)');
         const [showOptions, setShowOptions] = useState(false);
     
         const handleOnChangeSelectValue = (selectedValue) => {
             setCurrentValue(selectedValue);
-            setShowOptions(true); // Always show options when any option is selected
+            setShowOptions(true); 
         };
     
+        const resetFilter = () => {
+            setCurrentValue('단면폭(mm)'); 
+            setShowOptions(false); 
+        };
+    
+        if (ref) {
+            ref.current = {
+                resetFilter: resetFilter
+            };
+        }
+    
+
         return (
             <SelectBox onClick={() => setShowOptions((prev) => !prev)}>
                 <Header>
@@ -108,7 +120,7 @@ const DownIcon =styled.div`
                 </SelectOptions>
             </SelectBox>
         );
-    };
+    });
     
     export default SectionWidth;
    

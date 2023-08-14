@@ -1,8 +1,9 @@
 import { styled } from "styled-components";
 import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai';
-import { useState } from "react";
+// import { useState } from "react";
 import { ImCheckboxUnchecked, ImCheckboxChecked } from 'react-icons/im';
 import cn from 'classnames';
+import { useState, forwardRef } from 'react';
 
 
 const Filter = styled.div`
@@ -77,15 +78,12 @@ const ItemText = styled.div`
     line-height: normal;
     margin-left: 30px;
 `
-
-const TypeFilter = () => {
+const TypeFilter = forwardRef((props, ref) => {
     const [isOpen, setIsOpen] = useState(false);
-
-    // Separate checked states for each checkbox
     const [checkedStates, setCheckedStates] = useState({
         sedan: false,
         suv: false,
-        sedansuv: false,
+        sedansuv: false
     });
 
     const toggleCheckbox = (checkbox) => {
@@ -93,7 +91,21 @@ const TypeFilter = () => {
             ...prevState,
             [checkbox]: !prevState[checkbox],
         }));
-};
+    };
+
+    const resetFilter = () => {
+        setCheckedStates({
+            sedan: false,
+            suv: false,
+            sedansuv: false
+        });
+    };
+
+    if (ref) {
+        ref.current = {
+            resetFilter: resetFilter
+        };
+    }
 
     return (
         <Filter>
@@ -142,6 +154,6 @@ const TypeFilter = () => {
             
         </Filter>
     );
-};
+});
 
 export default TypeFilter;

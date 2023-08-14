@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai';
-import { useState } from "react";
+import { useRef, useState, forwardRef } from "react";
 import SectionWidth from "./sizeFilter/SectionWidth";
 import SideBySide from "./sizeFilter/SideBySide";
 import Inch from "./sizeFilter/Inch";
@@ -45,55 +45,73 @@ const ListItem = styled.ul`
     display: flex;
     align-self: center;
     padding: 0;
-   
-    
 `
 
 const Item = styled.li`
     position: relative;
     list-style: none;
-    /* display: flex;
-    align-items: center; */
     padding: 3px;
     cursor: pointer;
    
 `
-
-
-const SizeFilter = () => {
+const SizeFilter = forwardRef((props, ref) => {
     const [isOpen, setIsOpen] = useState(false);
+
+    const sectionWidthRef = useRef();
+    const sideBySideRef = useRef();
+    const inchRef = useRef();
+
+    const resetFilter = () => {
+       
+    if (sectionWidthRef.current && sectionWidthRef.current.resetFilter) {
+        sectionWidthRef.current.resetFilter();
+    }
+    if (sideBySideRef.current && sideBySideRef.current.resetFilter) {
+        sideBySideRef.current.resetFilter();
+    }
+
+    if (inchRef.current && inchRef.current.resetFilter) {
+        inchRef.current.resetFilter();
+    }
+
+};
+
+    if (ref) {
+        ref.current = {
+            resetFilter: resetFilter
+        };
+    }
 
     return (
         <Filter>
             <FilterBox>
-                <FilterBtn onClick={()=> setIsOpen((prev) => !prev)}>
+                <FilterBtn onClick={() => setIsOpen((prev) => !prev)}>
                     <Btntext>사이즈</Btntext>
                     <DownIcon>
                         {!isOpen ? (<AiOutlineDown/>) : (<AiOutlineUp/>)}
                     </DownIcon>
-                    
                 </FilterBtn> 
 
                 {isOpen && (
                     <ListItem>
                         <Item>
-                            <SectionWidth/>
+                            <SectionWidth ref={sectionWidthRef} />
                         </Item>
                         <Item>
-                            <SideBySide/>
+                            <SideBySide ref={sideBySideRef} />
                         </Item>
                         <Item>
-                            <Inch/>
+                            <Inch ref={inchRef} />
                         </Item>
                     </ListItem>
-                    
                 )}
                 {isOpen && (
-                 <SizeFooter/>  
+                    <SizeFooter/>
                 )}
-            </FilterBox>       
+            </FilterBox>
         </Filter>
     );
-};
+});
 
 export default SizeFilter;
+

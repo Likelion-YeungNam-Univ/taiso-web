@@ -3,29 +3,32 @@ import ResultList from './ResultList';
 
 const Container = styled.div`
 	width: 885px;
+	/* height: auto; */
 	height: auto;
 	margin: 0 auto;
+	box-shadow: 0px 16px 40px 0px rgba(112, 144, 176, 0.20);
+	border-radius: 18px;
 `;
 
 const Top = styled.div`
 	width: 885px;
 	display: flex;
-	margin-top: 50px;
-	margin-bottom: 10px;
+	align-items: center;
 	h2 {
-		margin-left: 10px;
 		font-size: 20px;
 		text-align: center;
 		font-family: 'IBM Plex Sans KR', sans-serif;
-		margin-right: 630px;
 		display: inline-block;
-		margin-left: 15px;
+		margin-left: 20px;
+		margin-top: 30px;
 	}
 `;
 const Select = styled.select`
 	width: 100px;
 	height: 39px;
 	border-radius: 10px;
+	margin-left: 600px;
+	margin-top: 30px;
 	p {
 		font-size: 14px;
 		text-align: center;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { useState, forwardRef } from "react";
 import { BiChevronDown, BiChevronUp } from 'react-icons/bi';
 
   
@@ -62,7 +62,7 @@ const optionData =[
             {key: "85", value: "85%"}
 ];
 
-const SectionWidth = () => {
+const SectionWidth = forwardRef((props, ref) => {
     const [currentValue, setCurrentValue] = useState('편평비(%)');
     const [showOptions, setShowOptions] = useState(false);
 
@@ -70,6 +70,17 @@ const SectionWidth = () => {
         setCurrentValue(selectedValue);
         setShowOptions(true); // Always show options when any option is selected
     };
+
+    const resetFilter = () => {
+        setCurrentValue('편평비(%)'); // Reset the current value
+        setShowOptions(false); // Close the options
+    };
+
+    if (ref) {
+        ref.current = {
+            resetFilter: resetFilter
+        };
+    }
 
     return (
         <SelectBox onClick={() => setShowOptions((prev) => !prev)}>
@@ -92,7 +103,7 @@ const SectionWidth = () => {
             </SelectOptions>
         </SelectBox>
     );
-};
+});
 
 export default SectionWidth;
    

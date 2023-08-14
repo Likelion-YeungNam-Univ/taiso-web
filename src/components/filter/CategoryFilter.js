@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai';
-import { useState } from "react";
+import { useState, forwardRef } from "react";
 import { ImCheckboxUnchecked, ImCheckboxChecked } from 'react-icons/im';
 import cn from 'classnames';
 
@@ -78,10 +78,8 @@ const ItemText = styled.div`
     margin-left: 30px;
 `
 
-const CategoryFilter = () => {
+const CategoryFilter = forwardRef((props, ref) => {
     const [isOpen, setIsOpen] = useState(false);
-
-    // Separate checked states for each checkbox
     const [checkedStates, setCheckedStates] = useState({
         high: false,
         middle: false,
@@ -93,7 +91,21 @@ const CategoryFilter = () => {
             ...prevState,
             [checkbox]: !prevState[checkbox],
         }));
-};
+    };
+
+    const resetFilter = () => {
+        setCheckedStates({
+            high: false,
+            middle: false,
+            low: false,
+        });
+    };
+
+    if (ref) {
+        ref.current = {
+            resetFilter: resetFilter
+        };
+    }
 
     return (
         <Filter>
@@ -142,6 +154,6 @@ const CategoryFilter = () => {
             
         </Filter>
     );
-};
+});
 
 export default CategoryFilter;

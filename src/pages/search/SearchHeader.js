@@ -6,9 +6,7 @@ const Search = styled.div`
     width: 1200px;
     height: 133px;
     flex-shrink: 0;
-    background: pink;  // 구역확인 임시 색
     border-bottom: 1px solid rgba(0, 0, 0, 0.30);
-    /* background: #FFF; */
     display: flex;
     align-items: center;
     margin: 0 auto;
@@ -21,7 +19,6 @@ const Input = styled.input`
     border: 1px solid #6F6F6F;
     outline: none;
     font-size: 18px;
-    background-color: rgb(233, 233, 233);
     /* letter-spacing: -.1px; */
     padding-left: 30px;
   
