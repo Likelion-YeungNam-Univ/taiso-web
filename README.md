@@ -12,6 +12,8 @@ main ── develop ── feature/"
 .
 ├── App.js
 ├── App.test.js
+├── Test1.js
+├── Test2.js
 ├── assets
 │   └── images
 │       ├── hot
@@ -36,10 +38,14 @@ main ── develop ── feature/"
 │       │   ├── Ad.svg
 │       │   ├── SlideLogo.svg
 │       │   ├── SwiperSlide1.png
-│       │   ├── SwiperSlide2.jpg
+│       │   ├── SwiperSlide2.png
 │       │   ├── SwiperSlide3.jpg
 │       │   ├── SwiperSlide4.jpg
 │       │   └── SwiperSlide5.jpg
+│       ├── news
+│       │   ├── BigNews.svg
+│       │   ├── News.svg
+│       │   └── NewsContent.svg
 │       ├── recommand
 │       │   ├── ThumbUp.svg
 │       │   ├── brand
@@ -92,9 +98,21 @@ main ── develop ── feature/"
 │   │       ├── StoryList.js
 │   │       └── index.js
 │   ├── news
-│   │   ├── HotNews.js
-│   │   ├── RecentNews.js
-│   │   ├── Title.js
+│   │   ├── HotNews
+│   │   │   ├── HotNBoard.js
+│   │   │   ├── HotNItem.js
+│   │   │   ├── HotNList.js
+│   │   │   └── index.js
+│   │   ├── RecentNews
+│   │   │   ├── RecentBoard.js
+│   │   │   ├── RecentItem.js
+│   │   │   ├── RecentList.js
+│   │   │   └── index.js
+│   │   └── index.js
+│   ├── search
+│   │   ├── ResulItem.js
+│   │   ├── ResultBoard.js
+│   │   ├── ResultList.js
 │   │   └── index.js
 │   └── topbar
 │       ├── TopBar.js
@@ -110,8 +128,13 @@ main ── develop ── feature/"
     │   ├── MainPage.js
     │   ├── Slider.js
     │   └── index.js
-    └── news
-        ├── NewsPage.js
+    ├── news
+    │   ├── NewsPage.js
+    │   └── index.js
+    └── search
+        ├── SearchFiter.js
+        ├── SearchHeader.js
+        ├── SearchPage.js
         └── index.js
 ```
 
