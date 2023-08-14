@@ -5,7 +5,8 @@ import Naver from "../../assets/images/login/NaverLogo.png";
 import Google from "../../assets/images/login/GoogleLogo.png";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import axios, { AxiosHeaders } from "axios";
+import { async } from "q";
 
 const Container = styled.div`
   flex-direction: column;
@@ -42,7 +43,7 @@ img {
 }
 `
 
-const OnNaverSignClick = () =>{
+const OnNaverSignClick = async () =>{
   // useEffect(() => {
   //   axios.get('https://208d-175-119-150-172.ngrok-free.app/oauth2/authorization/naver')
   // })
@@ -50,8 +51,16 @@ const OnNaverSignClick = () =>{
   // https://d0d7-175-119-150-172.ngrok-free.app/swagger-ui/index.html#/OAuth/naverLogin
   // https://d0d7-175-119-150-172.ngrok-free.app/oauth2/authorization/naver
   // /api'+'/oauth2/authorization/naver
-  axios.get('https://d0d7-175-119-150-172.ngrok-free.app/oauth2/authorization/naver',{withCredentials: true});
-  
+  // axios.get('https://d0d7-175-119-150-172.ngrok-free.app/oauth2/authorization/naver',{withCredentials: true});
+  await axios({
+    method: "get",
+    url: "https://b0ce-175-119-150-172.ngrok-free.app/hello",
+    responseType: "string",
+    withCredentials: true,
+  }).then(function (response) {
+    console.log(response.data)
+  });
+
 }
 const OnKakaorSignClick = () =>{
   axios.get("https://208d-175-119-150-172.ngrok-free.app/oauth2/authorization/kakao",{withCredentials: true});
