@@ -9,6 +9,7 @@ const Nav = styled.div`
     display: flex;
     align-items: center;
     font-family: 'Nunito', sans-serif;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.30);
 `
 const Logo = styled.div`
     flex: 5;
