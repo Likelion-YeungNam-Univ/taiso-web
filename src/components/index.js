@@ -5,3 +5,4 @@ export * from "./main";
 export * from "./news";
 export * from "./search";
 export * from "./filter";
+export * from "./mypage";

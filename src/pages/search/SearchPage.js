@@ -1,12 +1,12 @@
-import SearchHeader from "./SearchHeader"
-import { SearchFilter } from "components";
+// import { ResultBoard } from "components";
+import SearchHeader from "pages/search/SearchHeader"
+import { ResultBoard } from "components";
 
 const SearchPage = () => {
     return(
         <div>
             <SearchHeader/>
-            <SearchFilter/>
-            {/* <ResultBoard/> */}
+            <ResultBoard/>
         </div>
     );
 }
