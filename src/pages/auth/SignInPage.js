@@ -26,12 +26,14 @@ const BtnStyleWrapper = styled.div`
   margin-top: 20px;
   display: flex;
 align-items: center;
+margin-bottom:100px;
 `;
 
 const LoginLogo = styled.div`
 width: 250px;
 height:57px;
 padding: 10px;
+margin-bottom:10px;
 img {
   background: #E5E1E1;
   width: 100%;
