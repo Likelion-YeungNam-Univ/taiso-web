@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import HotNList from "./HotNList"
+import HotNItem from "./HotNItem"
 
 const Nav = styled.div`
 margin: 0 auto;
@@ -23,7 +23,7 @@ function HotNBoard() {
     return (
         <Nav>
             <Title><h4>지금 가장 인기있는 뉴스</h4></Title>
-            <HotNList></HotNList>
+            <HotNItem></HotNItem>
         </Nav>
     );
     
