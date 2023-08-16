@@ -40,7 +40,7 @@ function HotNItem() {
 
     return (
         <Container>
-            <Image src={BigNews} alt="BigCo Inc. logo" />
+            <a href="http://www.sentv.co.kr/news/view/665318"><Image src={BigNews} alt="BigCo Inc. logo" /></a>
             <Content>
             <p> <P>한국타이어앤테크놀로지는</P>  <br/>
               레이싱 타이어를 독점 공급하는 이탈 
