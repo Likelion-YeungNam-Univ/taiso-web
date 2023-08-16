@@ -38,8 +38,6 @@ height: 400px;
 
 function HotNItem() {
 
-  const toMove 
-
     return (
         <Container>
             <Image src={BigNews} alt="BigCo Inc. logo" />
