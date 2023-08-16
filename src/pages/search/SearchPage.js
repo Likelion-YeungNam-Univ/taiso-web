@@ -1,5 +1,5 @@
 import SearchHeader from "pages/search/SearchHeader";
-import { ResultBoard, SearchFilter, SearchReacommendBoard} from "components";
+import { ResultBoard, SearchFilter, SearchReacommendBoard, ResultList } from "components";
 import styled from "styled-components";
 import PageAd from "./PageAd";
 import { useEffect } from "react";
@@ -28,17 +28,7 @@ const SearchPage = () => {
     return(
         <Page>
             <ScrollToTopOnMount />
-            <SearchHeader/>
-            <Nav>
-                <SearchFilter/>
-                <Board>
-                    <SearchReacommendBoard/>
-                    <PageAd/>
-                    <ResultBoard/>
-                </Board>
-               
-            </Nav>
-            
+            <ResultList/>
         </Page>
     );
 }
