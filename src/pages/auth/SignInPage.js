@@ -2,16 +2,20 @@ import React from "react";
 import TireLogo from "../../assets/images/login/TireLogo.jpg"; 
 import Kakao from "../../assets/images/login/KakaoLogo.png"
 import Naver from "../../assets/images/login/NaverLogo.png";
-import Google from "../../assets/images/login/GoogleLogo.png";
+// import Google from "../../assets/images/login/GoogleLogo.png";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import axios, { AxiosHeaders } from "axios";
+import { async } from "q";
+import GoogleIcon from "assets/images/login/GoogleIcon.png";
 
 const Container = styled.div`
   flex-direction: column;
   text-align: center;
   align-items: center;
-`;
+  margin-top: 200px;
+  margin-bottom: 200px;
+`
 
 const TireLogoStyle = styled.img`
   width: 265px;
@@ -19,30 +23,56 @@ const TireLogoStyle = styled.img`
   margin: 0 auto;
   margin-bottom: 100px;
   cursor: pointer;
-`;
+`
 
 const BtnStyleWrapper = styled.div`
   flex-direction: column;
   margin-top: 20px;
   display: flex;
-align-items: center;
-margin-bottom:100px;
-`;
+  align-items: center;
+  margin-bottom:100px;
+`
 
 const LoginLogo = styled.div`
-width: 250px;
-height:57px;
-padding: 10px;
-margin-bottom:10px;
+  width: 250px;
+  height:57px;
+  padding: 10px;
+  margin-bottom:10px;
 img {
   background: #E5E1E1;
   width: 100%;
   height: 100%;
-  // border-radius: 5px;
 }
 `
 
-const OnNaverSignClick = () =>{
+const GoogleBtn = styled.div`
+    display: flex;  
+    align-items: center;
+    border-radius: 4px;
+    border: 1px solid rgba(111, 111, 111, 0.51);
+    background: #FFF;
+    width: 250px;
+    height:57px;
+    justify-content: center;
+    margin-top: 10px;
+
+`
+const P = styled.p`
+  color: #808080;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 160%;
+`
+const GoogleLogo = styled.img`
+    width: 18px;
+    height: 18px;
+    margin-right: 20px;
+`
+
+const OnNaverSignClick = async () =>{
   // useEffect(() => {
   //   axios.get('https://208d-175-119-150-172.ngrok-free.app/oauth2/authorization/naver')
   // })
@@ -50,8 +80,16 @@ const OnNaverSignClick = () =>{
   // https://d0d7-175-119-150-172.ngrok-free.app/swagger-ui/index.html#/OAuth/naverLogin
   // https://d0d7-175-119-150-172.ngrok-free.app/oauth2/authorization/naver
   // /api'+'/oauth2/authorization/naver
-  axios.get('https://d0d7-175-119-150-172.ngrok-free.app/oauth2/authorization/naver',{withCredentials: true});
-  
+  // axios.get('https://d0d7-175-119-150-172.ngrok-free.app/oauth2/authorization/naver',{withCredentials: true});
+  await axios({
+    method: "get",
+    url: "https://b0ce-175-119-150-172.ngrok-free.app/hello",
+    responseType: "string",
+    withCredentials: true,
+  }).then(function (response) {
+    console.log(response.data)
+  });
+
 }
 const OnKakaorSignClick = () =>{
   axios.get("https://208d-175-119-150-172.ngrok-free.app/oauth2/authorization/kakao",{withCredentials: true});
@@ -76,7 +114,11 @@ const SignInPage = () => {
       <BtnStyleWrapper>
         <LoginLogo onClick={OnNaverSignClick}><img src={Naver}/></LoginLogo>
         <LoginLogo onClick={OnKakaorSignClick}><img src={Kakao}/></LoginLogo>
-        <LoginLogo onClick={OnGoogleSignClick}><img src={Google}/></LoginLogo>
+        {/* <LoginLogo onClick={OnGoogleSignClick}><img src={Google}/></LoginLogo> */}
+        <GoogleBtn>
+            <GoogleLogo src={GoogleIcon} alt=""/>
+            <P>Sign in with Google</P>
+        </GoogleBtn>
       </BtnStyleWrapper>
     </Container>
   );
