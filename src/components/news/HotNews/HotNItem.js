@@ -4,7 +4,6 @@ const Container = styled.div`
 border-radius: 8px;
 padding: 20px;
 display:flex;
-// margin-right: 10px;
 `
 const Image = styled.div`
 margin-top:10px;
