@@ -29,7 +29,7 @@ align-items: center;
 margin-bottom:100px;
 `;
 
-const LoginLogo = styled.div`
+const LoginLogo = styled.a`
 width: 250px;
 height:57px;
 padding: 10px;
@@ -74,9 +74,9 @@ const SignInPage = () => {
       <h1>더 이상 추천받지 않는 안전을 위하여,</h1>
       <TireLogoStyle src={TireLogo} alt="로고" onClick={goMain}/>
       <BtnStyleWrapper>
-        <LoginLogo onClick={OnNaverSignClick}><img src={Naver}/></LoginLogo>
-        <LoginLogo onClick={OnKakaorSignClick}><img src={Kakao}/></LoginLogo>
-        <LoginLogo onClick={OnGoogleSignClick}><img src={Google}/></LoginLogo>
+        <LoginLogo href="백엔드 링크"><img src={Naver}/></LoginLogo>
+        <LoginLogo href="백엔드 링크"><img src={Kakao}/></LoginLogo>
+        <LoginLogo href="백엔드 링크"><img src={Google}/></LoginLogo>
       </BtnStyleWrapper>
     </Container>
   );
