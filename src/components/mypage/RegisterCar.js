@@ -2,6 +2,8 @@ import { Button } from "antd";
 import { styled } from "styled-components";
 import FuelFilter from "./FuelFilter"
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Container = styled.div`
     width: 866px;
@@ -80,24 +82,86 @@ line-height: normal;
 
 const RegisterCar = () => {
 
+
+  const [carName, setCarName] = useState("");
+  const [carNumber, setCarNumber] = useState("");
+  const [carBrand, setCarBrand] = useState("");
+  const [carModelName, setCarModelName] = useState("");
+
+
   const onMove = useNavigate();
 
   const moveToMyPage = () => {
     onMove("/mypage");
   }
 
+  const handleSubmit = async () => {
+    try {
+      const response = await axios.post("실제_요청_URL", {
+        carName,
+        carNumber,
+        carBrand,
+        carModelName
+      });
+
+      console.log(response.data); // 서버에서 받은 응답 출력
+      moveToMyPage();
+
+      // 다음 동작 수행
+      // 예: 다른 페이지로 이동
+    } catch (error) {
+      console.error("오류 발생:", error);
+      // 오류 처리
+    }
+
+  };
+
+  useEffect(()=>{
+    handleSubmit();
+  }, []);
+
+//   async function postMyInformation(){
+//     {
+//       const {data: response} = axios.post("url", {
+//         carName:'',
+//         carNumber:'',
+//         carBrand:'',
+//         carModelName:'',
+//         oilType:''
+//         })
+//         .then(function (response) {
+//             // response  
+//         }).catch(function (error) {
+//             // 오류발생시 실행
+//         })
+//         console.log(response);
+   
+// }
+
     return (
         <Container>
             <h1>새 차량정보 등록</h1>
             <Form>
-              <Input placeholder="차량 등록 이름 예) 진우의 Main Car "/>
-              <Input placeholder="차량 번호 예) 12가 3456" />
-              <Input placeholder="제조사명 예) 현대"/>
-              <Input placeholder="모델명 예) 쏘렌토" />
+              <Input placeholder="차량 등록 이름 예) 진우의 Main Car "
+                value={carName}
+              onChange={(e) => setCarName(e.target.value)}
+              />
+              <Input placeholder="차량 번호 예) 12가 3456"
+              value={carNumber}
+              onChange={(e) => setCarNumber(e.target.value)}
+              />
+              <Input placeholder="제조사명 예) 현대"
+              value={carBrand}
+              onChange={(e) => setCarBrand(e.target.value)}
+              />
+              <Input placeholder="모델명 예) 쏘렌토" 
+              value={carModelName}
+              onChange={(e) => setCarModelName(e.target.value)}
+              />
               <FuelFilter></FuelFilter>
               <Btn>
                 <StyledButton1 onClick={moveToMyPage}>취소하기</StyledButton1>
-                <StyledButton2 onClick={moveToMyPage}>등록하기</StyledButton2>
+                <StyledButton2 onClick={handleSubmit}>등록하기</StyledButton2>
               </Btn>
             </Form>
         </Container>
