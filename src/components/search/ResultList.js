@@ -2,11 +2,10 @@ import ResultItem from "./ResultItem";
 import { styled } from "styled-components";
 import Pagination from "./Pagination";
 import { useState, useEffect } from "react";
-import { Tires } from "./Tires";
 import PageAd from "./PageAd";
-import SearchReacommendBoard from "./SearchRecommendBoard";
 import { SearchFilter } from "components/filter";
 import { IoSearchCircleSharp } from 'react-icons/io5';
+import axios from 'axios';
 
 const Container = styled.div`
     width: 885px;
@@ -35,7 +34,6 @@ const Board = styled.div`
 	box-shadow: 0px 16px 40px 0px rgba(112, 144, 176, 0.20);
 	border-radius: 18px;
 `;
-
 const Top = styled.div`
 	width: 885px;
 	display: flex;
@@ -134,26 +132,48 @@ const IoSearch = styled(IoSearchCircleSharp)`
     flex-shrink: 0;
 `
 const ResultList = () => {
-    const [page, setPage] = useState(1);
+    const [page, setPage] = useState(1); // 페이지 설정
     const offset = (page - 1) * 9;
 
-    const [search, setSearch] = useState("");
-    const [lists, setLists] = useState([]);
-    const [currentPosts, setCurrentPosts] = useState([]);
+    const [search, setSearch] = useState(""); // search 설정
+    const [lists, setLists] = useState([]); //ItemList
+    const [currentPosts, setCurrentPosts] = useState([]); // 현재 post 설정
 
-    useEffect(() => {
+    async function getItem(){
+        {/*await axios
+        .get("https://b737-220-81-51-23.ngrok-free.app/tire")
+        .then((response) => {
+            console.log(response.data);
+            setLists(response.data);
+            setCurrentPosts(response.data);
+        });*/}
+        const {data: response} = await axios.get("https://b737-220-81-51-23.ngrok-free.app/tire", {withCredentials: true});
+        // console.log(typeof response);
+        console.log(response);
+        setLists(response);
+        setCurrentPosts(response);
+        // console.log("[Info] : getItem() lists : " + lists[0].name);
+    }
+    
+    useEffect(()=>{
+        getItem();
+    }, []);
+
+    {/*useEffect(() => {
         setLists(Tires);
         setCurrentPosts(Tires);
-    }, []);
+    }, []);*/}
 
     const onSearch = (e) => {
         e.preventDefault();
         if (search === null || search === '') {
             setCurrentPosts(lists); // Show all Tires data
         } else {
-            const filterData = Tires.filter((tire) =>
+            const filterData = lists.filter((tire) => // filter라는 기능, lists 안에 있는 원소를 하나하나 필터링을 하겠다! 
+            // tire에 어떤 정보가 담기냐? 하나씩 넘어와서 이름이 중요한 게 아니다! 
                 tire.name.toLowerCase().includes(search.toLowerCase())
             );
+            setLists(filterData);
             setCurrentPosts(filterData);
             setPage(1);
         }
@@ -168,7 +188,7 @@ const ResultList = () => {
       if(e.key === "Enter") {
         onSearch(e);
     };
-    };
+    };    
     return (
         <div>
         <Search>
@@ -184,7 +204,7 @@ const ResultList = () => {
         <Nav>
             <SearchFilter/>
             <div>
-                <SearchReacommendBoard/>
+                {/*<SearchReacommendBoard/>*/}
                 <PageAd/>
                 <Board>
                     <Top>
@@ -193,19 +213,19 @@ const ResultList = () => {
 		                </Top>
                 <Container>
                     <Container className="item-container">
-                        {currentPosts.slice(offset, offset + 9).map(({ id, image, brand, name, keyword1, keyword2, keyword3, keyword4, rate }) => (
-                            <ResultItem  key={id}
-                            img={image} 
+                        {currentPosts.slice(offset, offset + 9).map((tire) => (
+                            <ResultItem  key={tire.id}
+                            img={tire.imageUrl} 
                             brandcolor = "#FF0000"
-                            brand = {brand}
+                            brand = {tire.brand.name}
                             width = "50px"
-                            tirename = {name}
-                            keyword1 = {keyword1}
-                            keyword2 = {keyword2}
-                            keyword3 = {keyword3}
-                            keyword4 = {keyword4}
+                            tirename = {tire.name}
+                            keyword1 = {tire.carType}
+                            keyword2 = {tire.season}
+                            keyword3 = {tire.type}
+                            keyword4 = "임시"
                             color = "#E2BE45"
-                            grade = {rate} />
+                            grade = {tire.rate} />
                         ))}
                     </Container>
 
