@@ -32,12 +32,11 @@ const BtnStyleWrapper = styled.div`
   align-items: center;
   margin-bottom:100px;
 `
-
-const LoginLogo = styled.div`
-  width: 250px;
-  height:57px;
-  padding: 10px;
-  margin-bottom:10px;
+const LoginLogo = styled.a`
+width: 250px;
+height:57px;
+padding: 10px;
+margin-bottom:10px;
 img {
   background: #E5E1E1;
   width: 100%;
@@ -45,7 +44,7 @@ img {
 }
 `
 
-const GoogleBtn = styled.div`
+const GoogleBtn = styled.a`
     display: flex;  
     align-items: center;
     border-radius: 4px;
@@ -111,11 +110,9 @@ const SignInPage = () => {
     <Container>
       <h1>더 이상 추천받지 않는 안전을 위하여,</h1>
       <TireLogoStyle src={TireLogo} alt="로고" onClick={goMain}/>
-      <BtnStyleWrapper>
-        <LoginLogo onClick={OnNaverSignClick}><img src={Naver}/></LoginLogo>
-        <LoginLogo onClick={OnKakaorSignClick}><img src={Kakao}/></LoginLogo>
-        {/* <LoginLogo onClick={OnGoogleSignClick}><img src={Google}/></LoginLogo> */}
-        <GoogleBtn>
+      <BtnStyleWrapper>        <LoginLogo href="백엔드 링크"><img src={Naver}/></LoginLogo>
+        <LoginLogo href="백엔드 링크"><img src={Kakao}/></LoginLogo>
+        <GoogleBtn href="백엔드 링크">
             <GoogleLogo src={GoogleIcon} alt=""/>
             <P>Sign in with Google</P>
         </GoogleBtn>
