@@ -50,7 +50,7 @@ const ImageBox = styled.div`
     margin: 0 auto;
     position: relative;
 `
-const TireImageBox = styled.div`
+const TireImageBox = styled.img`
     width: 221px;
     height: 244px;
     margin: 0 auto;
@@ -124,7 +124,7 @@ function RecommandItem(props) {
                 ) : (
                     <EmptyHeart className="emptyheart" onClick={toggleLike}/>
                 )}
-                <TireImageBox>{props.img}</TireImageBox>
+                <TireImageBox src={props.img} alt=""></TireImageBox>
             </ImageBox>
             <BottomBox>
             <Brand width={props.width} height={props.height} color={props.brandcolor}>{props.brand}</Brand>

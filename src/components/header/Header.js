@@ -19,35 +19,6 @@ const Logo = styled.div`
     cursor: pointer;
 `
 
-// const Gnb = styled.div`
-//     flex: 5;
-    
-//     ul {
-//         display:flex;
-//         align-items: center;
-//         justify-content:center;
-//         list-style: none;
-//         margin: 0;
-//         padding: 0;
-// }
-  
-
-//     li {
-//         margin-right: 50px;
-//         font-size: 18px;
-//         cursor: pointer;
-//         border-radius: 10px;
-//         padding: 3px 10px 3px 10px;
-       
-//     }
-
-//     li:hover,
-//     li.active {
-//         background: #2D2926;
-//         color: #FFFFFF;
-//    }
-// `
-
 const Gnb = styled.div`
   flex: 5;
 
