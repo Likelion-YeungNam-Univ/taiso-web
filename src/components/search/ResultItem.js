@@ -6,7 +6,7 @@ import { FaStar } from "react-icons/fa";
 
 const Container = styled.div`
     width: 295px;
-    height: 550px;
+    height: 600px;
     h1 {
         font-size: 23px;
         font-family: 'IBM Plex Sans KR', sans-serif;
@@ -54,13 +54,26 @@ const TireImageBox = styled.img`
     width: 221px;
     height: 244px;
     margin: 0 auto;
+    display: block;
 `
 const BottomBox = styled.div`
     width: 265px;
     height: 228px;
     //background-color: blue;
     margin: 0 auto;
-    margin-top: 5px;
+    margin-top: 15px;
+    p {
+        font-size: 22px;
+        font-family: 'IBM Plex Sans KR', sans-serif;
+        display: flex;
+        margin-left: 15px;
+        p {
+            color: grey;
+            font-size: 15px;
+            margin-top: 5px;
+            margin-left: 5px;
+        }
+    }
 `
 const Brand = styled.span`
     width: ${props => props.width || "auto"};
@@ -69,8 +82,16 @@ const Brand = styled.span`
     font-size: 17px;
     font-family: 'IBM Plex Sans KR', sans-serif;
     text-align: center;
-    color: ${props => props.color || "black"};
-    box-shadow: 0.5px 0.5px 60px 10px #EFEFF1;
+    color: ${props => { 
+    if (props.color === "한국") {
+        return "#EC6608";
+    } else if (props.color === "넥센") {
+        return "#AD00FF";
+    } else {
+        return "#FF0000";
+    }
+    }};
+    box-shadow: 0.5px 0.5px 40px 15px #EFEFF1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -127,8 +148,9 @@ function RecommandItem(props) {
                 <TireImageBox src={props.img} alt=""></TireImageBox>
             </ImageBox>
             <BottomBox>
-            <Brand width={props.width} height={props.height} color={props.brandcolor}>{props.brand}</Brand>
+            <Brand width={props.width} height={props.height} color={props.brand}>{props.brand}</Brand>
             <h1>{props.tirename}</h1>
+            <p>{props.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}<p>원~</p></p>
             <KeywordContainer>
                 <Keyword>{props.keyword1}</Keyword>
                 <Keyword>{props.keyword2}</Keyword>

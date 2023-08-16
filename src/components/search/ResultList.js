@@ -130,7 +130,7 @@ const ResultList = () => {
     let params = useNavigate();   
 
     const handleSelect = (props) => {
-        params(`/?sort=${props}`);
+        params(`/tire?sort=${props}`);
     }
     
     // 등록순 선택 박스
@@ -231,11 +231,12 @@ const ResultList = () => {
                     <Container className="item-container">
                         {currentPosts.slice(offset, offset + 9).map((tire) => (
                             <ResultItem  key={tire.id}
-                            img={tire.imageUrl} 
+                            img={tire.imageUrl1} 
                             brandcolor = "#FF0000"
                             brand = {tire.brand.name}
                             width = "50px"
                             tirename = {tire.name}
+                            price = {tire.price}
                             keyword1 = {tire.carType}
                             keyword2 = {tire.season}
                             keyword3 = {tire.type}
