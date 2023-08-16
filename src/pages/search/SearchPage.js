@@ -1,5 +1,5 @@
 import SearchHeader from "pages/search/SearchHeader";
-import { ResultBoard, SearchFilter, SearchReacommendBoard} from "components";
+import { ResultBoard, SearchFilter, SearchReacommendBoard, ResultList } from "components";
 import styled from "styled-components";
 import PageAd from "./PageAd";
 
@@ -17,7 +17,7 @@ const Board = styled.div``
 const SearchPage = () => {
     return(
         <Page>
-            <SearchHeader/>
+            {/*<SearchHeader/>
             <Nav>
                 <SearchFilter/>
                 <Board>
@@ -26,8 +26,8 @@ const SearchPage = () => {
                     <ResultBoard/>
                 </Board>
                
-            </Nav>
-            
+            </Nav>*/}
+            <ResultList/>
         </Page>
     );
 }
