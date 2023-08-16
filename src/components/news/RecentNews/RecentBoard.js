@@ -2,10 +2,12 @@ import styled from "styled-components";
 import RecentList from "./RecentList"
 
 const Nav = styled.div`
-margin: 0 auto;
-width: 1170px;
-height: 724;
-margin-top: 30px;
+    margin: 0 auto;
+    width: 1170px;
+    height: 724;
+    margin-top: 30px;
+    margin-right: 28px;
+  
 `
 const Title = styled.span`
 font-family: IBM Plex Sans KR;
