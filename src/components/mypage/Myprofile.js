@@ -103,7 +103,7 @@ function MyProfile() {
         <Title>
        <TitleContent><SmallCheck/> <p>이메일 인증 완료</p></TitleContent>
        <TitleContent><SmallCheck /> <p>차량 정보 등록 완료</p></TitleContent>
-        <TitleContent><SmallCheck/><p>타이어 사이즈 등록 완료</p></TitleContent>
+        <TitleContent><SmallCheck/><p>p타이어 사이즈 등록 완료</p></TitleContent>
         </Title>
         <Button>프로필 수정하기</Button>
       </Content>
