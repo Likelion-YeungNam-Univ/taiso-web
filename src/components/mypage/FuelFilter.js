@@ -6,7 +6,7 @@ const SelectBox = styled.div`
 margin: 0 auto;
 margin-top:8px;
     position: relative;
-    width: 494px;
+    width: 480px;
 height: 40px;
     padding: 3px;
     align-self: center;
@@ -16,8 +16,16 @@ height: 40px;
 `;
 const Label = styled.label`
     font-size: 13px;
-    margin-left: 4px;
+    margin-left: 7px;
+    padding-top:5px;
     text-align: center;
+    color: var(--black, #272727);
+font-feature-settings: 'clig' off, 'liga' off;
+font-family: Helvetica;
+font-size: 14px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
 `;
 const SelectOptions = styled.ul`
     margin-top: 5px;
@@ -60,7 +68,7 @@ const optionData =[
 ];
 
 const FuelFilter = forwardRef((props) => {
-    const [currentValue, setCurrentValue] = useState('언로 타입');
+    const [currentValue, setCurrentValue] = useState('연료 타입');
     const [showOptions, setShowOptions] = useState(false);
 
     const handleOnChangeSelectValue = (selectedValue) => {

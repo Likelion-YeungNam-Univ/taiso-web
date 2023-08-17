@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import TireLogo from "../../assets/images/login/TireLogo.jpg"; 
 import Kakao from "../../assets/images/login/KakaoLogo.png"
 import Naver from "../../assets/images/login/NaverLogo.png";
 // import Google from "../../assets/images/login/GoogleLogo.png";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import axios, { AxiosHeaders } from "axios";
-import { async } from "q";
+import axios from "axios";
 import GoogleIcon from "assets/images/login/GoogleIcon.png";
+import NaverL from "./NaverLogin";
+import { useLocation,Link } from 'react-router-dom';
 
 const Container = styled.div`
   flex-direction: column;
@@ -33,7 +34,7 @@ const BtnStyleWrapper = styled.div`
   margin-bottom:100px;
 `
 const LoginLogo = styled.a`
-width: 250px;
+width: 260px;
 height:57px;
 padding: 10px;
 margin-bottom:10px;
@@ -105,13 +106,46 @@ const SignInPage = () => {
         movePage('/main');
     }
 
+//     useEffect(() => {
+//       try {
+//           let code = new URL(window.location.href).searchParams.get("code");
+//       console.log(code);
+//       const {data: response} = axios.get("http://www.tireso.co.kr:8080/auth/sign-in/naver/callback", {params : {code: code}});
+// console.log(response);
+//       } catch (err) {
+//           console.log(err);
+//       }
+//   });
+
+useEffect(() => {
+  const fetchData = async () => {
+      try {
+          let code = new URL(window.location.href).searchParams.get("code");
+          console.log(code);
+
+          const response = await axios.get(`https://6b17-218-150-7-191.ngrok-free.app/auth/sign-in/naver/callback?code=${code}`, {withCredentials: true});
+          console.log(response.data);
+      } catch (err) {
+          console.log(err);
+      }
+  };
+
+  fetchData();
+}, []);
+
+
+  //   useEffect(() => {
+  //     let code = new URL(window.location.href).searchParams.get("code");
+  //     console.log(code);
+  // });
 
   return (
     <Container>
       <h1>더 이상 추천받지 않는 안전을 위하여,</h1>
       <TireLogoStyle src={TireLogo} alt="로고" onClick={goMain}/>
+      <NaverL></NaverL>
       <BtnStyleWrapper>        
-        <LoginLogo href="https://6b17-218-150-7-191.ngrok-free.app/auth/sign-in/naver"><img src={Naver}/></LoginLogo>
+        {/* <LoginLogo href="https://6b17-218-150-7-191.ngrok-free.app/auth/sign-in/naver"><img src={Naver}/></LoginLogo> */}
         <LoginLogo href="https://6b17-218-150-7-191.ngrok-free.app/auth/sign-in/kakao"><img src={Kakao}/></LoginLogo>
         <GoogleBtn href="https://6b17-218-150-7-191.ngrok-free.app/auth/sign-in/google">
             <GoogleLogo src={GoogleIcon} alt=""/>

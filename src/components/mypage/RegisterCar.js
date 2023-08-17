@@ -6,36 +6,27 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const Container = styled.div`
-    width: 866px;
+padding:5px;
+    width: 880px;
     height: 552px;
     background: white;
     border-radius: 20px;
     box-shadow: 0px 16px 40px 0px rgba(112, 144, 176, 0.20);
-
-    h1 {
-      color: #484848;
-      font-family: IBM Plex Sans KR;
-      font-size: 24px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: normal;
-    }
-`
-const Form = styled.div`
-margin-top:100px;
-width: 866px;
-height:552px;
 `
 
-const Input = styled.input`
-margin: 0 auto;
-width: 486px;
-height: 40px;
-  display: flex;
-  margin-top:10px;
-  padding-left:10px;
-  border: 1px solid #ccc;
+const Title = styled.div`
+padding-left:30px;
+h4 {
+  margin-top:30px;
+  color: #484848;
+  font-family: IBM Plex Sans KR;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
 `
+
 const Btn = styled.div`
 text-align: right;
 margin-top:30px;
@@ -71,12 +62,49 @@ background: #111;
 color: #FFF;
 box-shadow: 0px 16px 40px 0px rgba(112, 144, 176, 0.20);
 font-family: IBM Plex Sans KR;
-font-size: 13px;
+font-size: 10px;
 font-style: normal;
 font-weight: 600;
 line-height: normal;
 `
 
+const Content = styled.span`
+display:flex;
+border: 1px solid #ccc;
+width: 486px;
+height: 40px;
+margin: 0 auto;
+margin-bottom: 10px;
+`
+const Font = styled.div`
+height: 26px;
+padding:3px;
+padding-left:5px;
+p{
+  padding:5px;
+  color: #000;
+font-feature-settings: 'clig' off, 'liga' off;
+font-family: Helvetica;
+font-size: 14px;
+font-style: normal;
+font-weight: 700;
+line-height: 25.6px; 
+}
+`
+const Form = styled.div`
+margin-top:80px;
+width: 866px;
+height:552px;
+`
+
+const Input = styled.input`
+width: 350px;
+height: 26px;
+padding:7px;
+border: none;
+
+  // border: 1px solid #ccc;
+`
 
 
 
@@ -140,28 +168,47 @@ const RegisterCar = () => {
 
     return (
         <Container>
-            <h1>새 차량정보 등록</h1>
+           <Title><h4>새 차량정보 등록</h4></Title>
             <Form>
-              <Input placeholder="차량 등록 이름 예) 진우의 Main Car "
+              <Content>
+              <Font>
+              <p>차량 등록 이름</p>
+              </Font>
+              <Input placeholder="예) 진우의 Main Car "
                 value={carName}
-              onChange={(e) => setCarName(e.target.value)}
-              />
-              <Input placeholder="차량 번호 예) 12가 3456"
+              onChange={(e) => setCarName(e.target.value)} />
+              </Content>
+              <Content>
+              <Font>
+              <p>차량 번호</p>
+              </Font>
+              <Input placeholder="예) 12가 3456"
               value={carNumber}
               onChange={(e) => setCarNumber(e.target.value)}
               />
-              <Input placeholder="제조사명 예) 현대"
+              </Content>
+              <Content>
+              <Font>
+              <p>제조사명</p>
+              </Font>
+              <Input placeholder="예) 현대"
               value={carBrand}
               onChange={(e) => setCarBrand(e.target.value)}
               />
-              <Input placeholder="모델명 예) 쏘렌토" 
+              </Content>
+              <Content>
+              <Font>
+              <p>모델명</p>
+              </Font>
+              <Input placeholder="예) 쏘렌토" 
               value={carModelName}
               onChange={(e) => setCarModelName(e.target.value)}
               />
+              </Content>
               <FuelFilter></FuelFilter>
               <Btn>
-                <StyledButton1 onClick={moveToMyPage}>취소하기</StyledButton1>
-                <StyledButton2 onClick={handleSubmit}>등록하기</StyledButton2>
+                <StyledButton1 onClick={moveToMyPage}>취소</StyledButton1>
+                <StyledButton2 onClick={moveToMyPage}>등록</StyledButton2>
               </Btn>
             </Form>
         </Container>
