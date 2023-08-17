@@ -14,7 +14,7 @@ function HotList() {
     return (
         <List>
             <HotItem
-                best = "BEST1"
+                hot = "HOT"
                 bestbackground = "#E2BE45"
                 img = {<Tire1/>}
                 brandcolor = "#FF0000"
@@ -30,7 +30,7 @@ function HotList() {
                 grade = "4.7 (2,165)"
             />
             <HotItem
-                best = "BEST2"
+                none= "none"
                 img={<Tire2/>} 
                 brandcolor = "#FF0000"
                 brand = "넥슨"
@@ -45,7 +45,7 @@ function HotList() {
                 grade = "4.7 (2,165)"
             />
             <HotItem
-            best = "BEST3"
+                none= "none"
                 img={<Tire3/>} 
                 brandcolor = "#FF0000"
                 brand = "한국"
@@ -64,3 +64,5 @@ function HotList() {
 }
 
 export default HotList;
+
+
