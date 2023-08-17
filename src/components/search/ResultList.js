@@ -65,9 +65,6 @@ const OPTIONS = [
 	{ value: 3, name: '높은가격순' },
 ];
 
-
-
-
 // 검색 창
 const Search = styled.div`
     width: 1200px;
@@ -128,14 +125,14 @@ const IoSearch = styled(IoSearchCircleSharp)`
 const ResultList = () => {
 
     const handleSelect = (props) => {
-        //params(`https://6b17-218-150-7-191.ngrok-free.app/tire?sort=${props}`);
+        console.log(props);
         setSelected(props);
     }
     
     // 등록순 선택 박스
     const SelectBox = (props) => {
         return (
-            <Select>
+            <Select onChange={ e => handleSelect(e.target.value)}>
                 {props.options.map((option) => (
                     <option value={option.value} defaultValue={props.defaultValue === option.value}>
                         {option.name}
@@ -175,7 +172,8 @@ const ResultList = () => {
     }, []);*/}
 
     async function getItem(sort) {
-        const {data: response} = await axios.get(`https://b737-220-81-51-23.ngrok-free.app/tire?sort=${sort}`, { withCredentials: true });
+        console.log(sort);
+        const {data: response} = await axios.get(`http://175.45.194.50:8080/tire`, { params: {sort: `${sort}`} }, { withCredentials: true });
         setLists(response);
         setCurrentPosts(response);
     }
@@ -227,8 +225,8 @@ const ResultList = () => {
                 <PageAd/>
                 <Board>
                     <Top>
-			            <h2>32건의 검색결과</h2>
-			            <SelectBox options={OPTIONS} defaultValue="등록순" onChange={e => handleSelect(e.target.value)}></SelectBox>
+			            <h2>{lists.length}건의 검색결과</h2>
+			            <SelectBox options={OPTIONS} defaultValue="등록순"></SelectBox>
 		                </Top>
                 <Container>
                     <Container className="item-container">
