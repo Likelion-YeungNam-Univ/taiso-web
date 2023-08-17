@@ -157,11 +157,12 @@ function RecommandItem(props) {
             </KeywordContainer>
             <KeywordContainer>
                 <Keyword>{props.keyword3}</Keyword>
-                <Keyword color={props.color}>{props.keyword4}</Keyword>
+                {props.keyword4 !== null && <Keyword color={props.color}>{props.keyword4}</Keyword>}
             </KeywordContainer>
             <KeywordContainer className="rate">
                 <FaStar className="star" color="#E2BE45" size="30"/>
                 <Grade>{props.grade}</Grade>
+                <Grade>({props.review.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")})</Grade>
             </KeywordContainer>
             </BottomBox>
         </Container>

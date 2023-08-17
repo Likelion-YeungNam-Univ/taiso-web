@@ -110,9 +110,10 @@ const SignInPage = () => {
     <Container>
       <h1>더 이상 추천받지 않는 안전을 위하여,</h1>
       <TireLogoStyle src={TireLogo} alt="로고" onClick={goMain}/>
-      <BtnStyleWrapper>        <LoginLogo href="백엔드 링크"><img src={Naver}/></LoginLogo>
-        <LoginLogo href="백엔드 링크"><img src={Kakao}/></LoginLogo>
-        <GoogleBtn href="백엔드 링크">
+      <BtnStyleWrapper>        
+        <LoginLogo href="https://6b17-218-150-7-191.ngrok-free.app/auth/sign-in/naver"><img src={Naver}/></LoginLogo>
+        <LoginLogo href="https://6b17-218-150-7-191.ngrok-free.app/auth/sign-in/kakao"><img src={Kakao}/></LoginLogo>
+        <GoogleBtn href="https://6b17-218-150-7-191.ngrok-free.app/auth/sign-in/google">
             <GoogleLogo src={GoogleIcon} alt=""/>
             <P>Sign in with Google</P>
         </GoogleBtn>

@@ -130,7 +130,7 @@ const ResultList = () => {
     let params = useNavigate();   
 
     const handleSelect = (props) => {
-        params(`/tire?sort=${props}`);
+        params(`https://6b17-218-150-7-191.ngrok-free.app/tire?sort=${props}`);
     }
     
     // 등록순 선택 박스
@@ -163,7 +163,7 @@ const ResultList = () => {
             setLists(response.data);
             setCurrentPosts(response.data);
         });*/}
-        const {data: response} = await axios.get("https://b737-220-81-51-23.ngrok-free.app/tire", {withCredentials: true});
+        const {data: response} = await axios.get("https://6b17-218-150-7-191.ngrok-free.app/tire", {withCredentials: true});
         // console.log(typeof response);
         console.log(response);
         setLists(response);
@@ -174,11 +174,6 @@ const ResultList = () => {
     useEffect(()=>{
         getItem();
     }, []);
-
-    {/*useEffect(() => {
-        setLists(Tires);
-        setCurrentPosts(Tires);
-    }, []);*/}
 
     const onSearch = (e) => {
         e.preventDefault();
@@ -232,7 +227,6 @@ const ResultList = () => {
                         {currentPosts.slice(offset, offset + 9).map((tire) => (
                             <ResultItem  key={tire.id}
                             img={tire.imageUrl1} 
-                            brandcolor = "#FF0000"
                             brand = {tire.brand.name}
                             width = "50px"
                             tirename = {tire.name}
@@ -240,9 +234,10 @@ const ResultList = () => {
                             keyword1 = {tire.carType}
                             keyword2 = {tire.season}
                             keyword3 = {tire.type}
-                            keyword4 = "임시"
+                            keyword4 = {tire.tag}
                             color = "#E2BE45"
-                            grade = {tire.rate} />
+                            grade = {tire.rate} 
+                            review = {tire.review_cnt}/>
                         ))}
                     </Container>
 
