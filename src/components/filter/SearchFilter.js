@@ -9,8 +9,6 @@ import { useRef } from 'react';
 
 const Filter = styled.div`
     width: 306px;
-    
-
 `
 const Filterheader = styled.div`
     display: flex;

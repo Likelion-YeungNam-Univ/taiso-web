@@ -6,6 +6,7 @@ import PageAd from "./PageAd";
 import { SearchFilter } from "components/filter";
 import { IoSearchCircleSharp } from 'react-icons/io5';
 import axios from 'axios';
+import { useNavigate, useParams } from "react-router-dom";
 
 const Container = styled.div`
     width: 885px;
@@ -59,22 +60,16 @@ const Select = styled.select`
 	}
 `;
 const OPTIONS = [
-	{ value: 'register', name: '등록순' },
-	{ value: 'popular', name: '인기순' },
-	{ value: 'lowprice', name: '낮은가격순' },
-	{ value: 'highprice', name: '높은가격순' },
+	{ value: 0, name: '등록순' },
+	{ value: 1, name: '인기순' },
+	{ value: 2, name: '낮은가격순' },
+	{ value: 3, name: '높은가격순' },
 ];
-const SelectBox = (props) => {
-	return (
-		<Select>
-			{props.options.map((option) => (
-				<option value={option.value} defaultValue={props.defaultValue === option.value}>
-					{option.name}
-				</option>
-			))}
-		</Select>
-	);
-};
+
+
+
+
+// 검색 창
 const Search = styled.div`
     width: 1200px;
     height: 133px;
@@ -132,12 +127,33 @@ const IoSearch = styled(IoSearchCircleSharp)`
     flex-shrink: 0;
 `
 const ResultList = () => {
+    let params = useNavigate();   
+
+    const handleSelect = (props) => {
+        params(`/tire?sort=${props}`);
+    }
+    
+    // 등록순 선택 박스
+    const SelectBox = (props) => {
+        return (
+            <Select onChange={e => handleSelect(e.target.value)}>
+                {props.options.map((option) => (
+                    <option value={option.value} defaultValue={props.defaultValue === option.value}>
+                        {option.name}
+                    </option>
+                ))}
+            </Select>
+        );
+    };
+
     const [page, setPage] = useState(1); // 페이지 설정
     const offset = (page - 1) * 9;
 
     const [search, setSearch] = useState(""); // search 설정
     const [lists, setLists] = useState([]); //ItemList
     const [currentPosts, setCurrentPosts] = useState([]); // 현재 post 설정
+
+    const [selected, setSelected] = useState("");
 
     async function getItem(){
         {/*await axios
@@ -215,11 +231,12 @@ const ResultList = () => {
                     <Container className="item-container">
                         {currentPosts.slice(offset, offset + 9).map((tire) => (
                             <ResultItem  key={tire.id}
-                            img={tire.imageUrl} 
+                            img={tire.imageUrl1} 
                             brandcolor = "#FF0000"
                             brand = {tire.brand.name}
                             width = "50px"
                             tirename = {tire.name}
+                            price = {tire.price}
                             keyword1 = {tire.carType}
                             keyword2 = {tire.season}
                             keyword3 = {tire.type}
