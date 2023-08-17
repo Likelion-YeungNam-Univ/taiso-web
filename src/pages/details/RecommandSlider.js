@@ -1,118 +1,3 @@
-
-// // Import Swiper React components
-// import { Swiper, SwiperSlide } from 'swiper/react';
-// import SlideBoardItem from "./SildeBoardItem"
-// // Import Swiper styles
-// import 'swiper/css';
-// import 'swiper/css/free-mode';
-// import 'swiper/css/navigation';
-
-// // import required modules
-// import { FreeMode, Pagination } from 'swiper';
-
-// export default function RecommandSlider() {
-//   return (
-//     <>
-//       <Swiper
-//         slidesPerView={3}
-//         spaceBetween={30}
-//         freeMode={true}
-//         pagination={{
-//           clickable: true,
-//         }}
-//         modules={[FreeMode, Pagination]}
-//         className="mySwiper"
-//       >
-//         <SwiperSlide><SlideBoardItem/></SwiperSlide>
-//         <SwiperSlide>Slide 2</SwiperSlide>
-//         <SwiperSlide>Slide 3</SwiperSlide>
-//         <SwiperSlide>Slide 4</SwiperSlide>
-//         <SwiperSlide>Slide 5</SwiperSlide>
-//         <SwiperSlide>Slide 6</SwiperSlide>
-//         <SwiperSlide>Slide 7</SwiperSlide>
-//         <SwiperSlide>Slide 8</SwiperSlide>
-//         <SwiperSlide>Slide 9</SwiperSlide>
-//       </Swiper>
-//     </>
-//   );
-// }
-
-   
-// Import Swiper React components
-// import { Swiper, SwiperSlide } from 'swiper/react';
-// import SlideBoardItem from "./SildeBoardItem"
-// // Import Swiper styles
-// import 'swiper/css';
-// import 'swiper/css/pagination';
-
-
-// // import required modules
-// import { Pagination } from 'swiper';
-// import { styled } from 'styled-components';
-
-// const Slider = styled.div`
-
-//     .swiper-slide, swiper-slide {
-//     flex-shrink: 0;
-//     width: 256px;
-//     height: 600px;
-//     position: relative;
-//     transition-property: transform;
-//     display: block;
-// }
-// .swiper, swiper-container {
-//     /* margin-left: auto;
-//     margin-right: auto; */
-//     position: relative;
-//     overflow: hidden;
-//     list-style: none;
-//     padding: 0;
-//     z-index: 1;
-//     display: block;
-// }
-// .swiper-wrapper {
-//     position: relative;
-//     width: 265px;
-//     height: 100%;
-//     z-index: 1;
-//     display: flex;
-//     transition-property: transform;
-//     transition-timing-function: var(--swiper-wrapper-transition-timing-function,initial);
-//     box-sizing: content-box;
-// }
-// `
-
-
-// export default function RecommandSlider() {
-//   return (
-//     <Slider>
-//       <Swiper
-//         slidesPerView={4}
-//         centeredSlides={true}
-//         spaceBetween={30}
-//         grabCursor={true}
-//         pagination={{
-//           clickable: true,
-//         }}
-//         modules={[Pagination]}
-//         className="mySwiper"
-//       >
-//         <SwiperSlide><SlideBoardItem/></SwiperSlide>
-//         <SwiperSlide>Slide 2</SwiperSlide>
-//         <SwiperSlide>Slide 3</SwiperSlide>
-//         <SwiperSlide>Slide 4</SwiperSlide>
-//         <SwiperSlide>Slide 5</SwiperSlide>
-//         <SwiperSlide>Slide 6</SwiperSlide>
-//         <SwiperSlide>Slide 7</SwiperSlide>
-//         <SwiperSlide>Slide 8</SwiperSlide>
-//         <SwiperSlide>Slide 9</SwiperSlide>
-//       </Swiper>
-//     </Slider>
-//   );
-// }
-
-// Import Swiper React components
-// import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SlideBoardItem from "./SildeBoardItem"
 // Import Swiper styles
@@ -123,6 +8,8 @@ import 'swiper/css/navigation';
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper';
 import { styled } from 'styled-components';
+
+
 
 export default function RecommandSlider() {
 
@@ -146,38 +33,62 @@ const Slider = styled.div`
     font-weight: 600 !important;
 } */
     .swiper {
-        width: 1250px;
+        width: 1200px;
+        margin: 0 auto;
+    }
+`
+const RecommandBox = styled.div`
+`
+const SliderTitle = styled.div`
+    width: 1200px;
+    margin: 0 auto;
+
+    p{
+        color: #323334;
+        font-family: Roboto;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-bottom: 40px;
     }
 `
 
   return (
-    <Slider>
-      <Swiper
-        // onSwiper={setSwiperRef}
-        slidesPerView={3}
-        centeredSlides={true}
-        spaceBetween={30}
-        autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-          }}
-        pagination={{
-          type: 'fraction',
-        }}
-        navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper"
-      >
-        <SwiperSlide><SlideBoardItem/></SwiperSlide>
-        <SwiperSlide><SlideBoardItem/></SwiperSlide>
-        <SwiperSlide><SlideBoardItem/></SwiperSlide>
-        <SwiperSlide><SlideBoardItem/></SwiperSlide>
-        <SwiperSlide><SlideBoardItem/></SwiperSlide>
-        <SwiperSlide><SlideBoardItem/></SwiperSlide>
-        <SwiperSlide><SlideBoardItem/></SwiperSlide>
-        <SwiperSlide><SlideBoardItem/></SwiperSlide>
-        <SwiperSlide><SlideBoardItem/></SwiperSlide>
-      </Swiper>
-    </Slider>
+    <RecommandBox>
+        <SliderTitle>
+            <p>이 상품에 관심있는 사람들이 함께 본 제품</p>
+        </SliderTitle>
+        <Slider>
+            <Swiper
+                // onSwiper={setSwiperRef}
+                slidesPerView={3}
+                centeredSlides={true}
+                spaceBetween={30}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }}
+                pagination={{
+                type: 'fraction',
+                }}
+                navigation={true}
+                modules={[Autoplay, Pagination, Navigation]}
+                className="mySwiper"
+            >
+                <SwiperSlide><SlideBoardItem/></SwiperSlide>
+                <SwiperSlide><SlideBoardItem/></SwiperSlide>
+                <SwiperSlide><SlideBoardItem/></SwiperSlide>
+                <SwiperSlide><SlideBoardItem/></SwiperSlide>
+                <SwiperSlide><SlideBoardItem/></SwiperSlide>
+                <SwiperSlide><SlideBoardItem/></SwiperSlide>
+                <SwiperSlide><SlideBoardItem/></SwiperSlide>
+                <SwiperSlide><SlideBoardItem/></SwiperSlide>
+                <SwiperSlide><SlideBoardItem/></SwiperSlide>
+                <SwiperSlide><SlideBoardItem/></SwiperSlide>
+             </Swiper>
+        </Slider>
+    </RecommandBox>
+    
   );
 }

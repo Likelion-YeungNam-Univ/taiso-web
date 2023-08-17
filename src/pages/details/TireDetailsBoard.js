@@ -41,7 +41,7 @@ const InnerBox = styled.div`
     flex-direction: column;
     align-items: flex-start;
     margin-top: 30px;
-    margin-left: 20px;
+    margin-left: 50px;
 
     & > * {
         margin: 5px 0;
