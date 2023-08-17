@@ -6,7 +6,6 @@ import PageAd from "./PageAd";
 import { SearchFilter } from "components/filter";
 import { IoSearchCircleSharp } from 'react-icons/io5';
 import axios from 'axios';
-import { useNavigate, useParams } from "react-router-dom";
 
 const Container = styled.div`
     width: 885px;
@@ -127,16 +126,16 @@ const IoSearch = styled(IoSearchCircleSharp)`
     flex-shrink: 0;
 `
 const ResultList = () => {
-    let params = useNavigate();   
 
     const handleSelect = (props) => {
-        params(`https://6b17-218-150-7-191.ngrok-free.app/tire?sort=${props}`);
+        //params(`https://6b17-218-150-7-191.ngrok-free.app/tire?sort=${props}`);
+        setSelected(props);
     }
     
     // 등록순 선택 박스
     const SelectBox = (props) => {
         return (
-            <Select onChange={e => handleSelect(e.target.value)}>
+            <Select>
                 {props.options.map((option) => (
                     <option value={option.value} defaultValue={props.defaultValue === option.value}>
                         {option.name}
@@ -153,17 +152,17 @@ const ResultList = () => {
     const [lists, setLists] = useState([]); //ItemList
     const [currentPosts, setCurrentPosts] = useState([]); // 현재 post 설정
 
-    const [selected, setSelected] = useState("");
+    const [selected, setSelected] = useState(0);
 
-    async function getItem(){
-        {/*await axios
+    {/*async function getItem(){
+        await axios
         .get("https://b737-220-81-51-23.ngrok-free.app/tire")
         .then((response) => {
             console.log(response.data);
             setLists(response.data);
             setCurrentPosts(response.data);
-        });*/}
-        const {data: response} = await axios.get("https://6b17-218-150-7-191.ngrok-free.app/tire", {withCredentials: true});
+        });
+        const {data: response} = await axios.get("https://6b17-218-150-7-191.ngrok-free.app/tire?sort=0", {withCredentials: true});
         // console.log(typeof response);
         console.log(response);
         setLists(response);
@@ -173,7 +172,17 @@ const ResultList = () => {
     
     useEffect(()=>{
         getItem();
-    }, []);
+    }, []);*/}
+
+    async function getItem(sort) {
+        const {data: response} = await axios.get(`https://b737-220-81-51-23.ngrok-free.app/tire?sort=${sort}`, { withCredentials: true });
+        setLists(response);
+        setCurrentPosts(response);
+    }
+
+    useEffect(() => {
+        getItem(selected); 
+    }, [selected]);
 
     const onSearch = (e) => {
         e.preventDefault();
@@ -198,8 +207,7 @@ const ResultList = () => {
     const activeEnter = (e) => {
       if(e.key === "Enter") {
         onSearch(e);
-    };
-    };    
+    };};    
     return (
         <div>
         <Search>
@@ -220,7 +228,7 @@ const ResultList = () => {
                 <Board>
                     <Top>
 			            <h2>32건의 검색결과</h2>
-			            <SelectBox options={OPTIONS} defaultValue="등록순"></SelectBox>
+			            <SelectBox options={OPTIONS} defaultValue="등록순" onChange={e => handleSelect(e.target.value)}></SelectBox>
 		                </Top>
                 <Container>
                     <Container className="item-container">
