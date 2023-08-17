@@ -122,6 +122,20 @@ const Keyword = styled.div`
     margin-right: 15px;
     margin: 0 auto;
 `
+const None = styled.div`
+    width: 108px;
+    height: 38px;
+    background: white;
+    font-size: 20px;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: 2px solid white;
+    margin-right: 15px;
+    margin: 0 auto;
+`
 const Grade = styled.p`
     font-size: 24px;
     font-family: 'IBM Plex Sans KR', sans-serif;
@@ -157,7 +171,7 @@ function RecommandItem(props) {
             </KeywordContainer>
             <KeywordContainer>
                 <Keyword>{props.keyword3}</Keyword>
-                {props.keyword4 !== null && <Keyword color={props.color}>{props.keyword4}</Keyword>}
+                {props.keyword4 === null ? <None>{props.keyword4}</None> : <Keyword color={props.color}>{props.keyword4}</Keyword>}
             </KeywordContainer>
             <KeywordContainer className="rate">
                 <FaStar className="star" color="#E2BE45" size="30"/>

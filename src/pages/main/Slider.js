@@ -6,9 +6,9 @@ import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper';
 import SwiperSlide1 from "assets/images/mainpage/SwiperSlide1.png"
 import SwiperSlide2 from "assets/images/mainpage/SwiperSlide2.png"
-import SwiperSlide3 from "assets/images/mainpage/SwiperSlide3.jpg"
-import SwiperSlide4 from "assets/images/mainpage/SwiperSlide4.jpg"
-import SwiperSlide5 from "assets/images/mainpage/SwiperSlide5.jpg"
+import SwiperSlide3 from "assets/images/mainpage/SwiperSlide3.png"
+import SwiperSlide4 from "assets/images/mainpage/SwiperSlide4.png"
+import SwiperSlide5 from "assets/images/mainpage/SwiperSlide5.png"
 import { SearchForm } from 'components';
 
 
@@ -22,31 +22,6 @@ const MainPageSwiper = styled.div`
         width: 100%;
         height: 800px;
         object-fit:cover;
-    };
-
-    .title-content {
-        /* position: absolute; */
-        /* top: 50%;
-        left: 50%;
-        transform: translate(-80%, -100%);
-        color: white;
-        padding: 10px;
-        font-size: 85px; */
-        /* display: flex;
-        align-items: center;
-        justify-content: center; */
-    };
-
-    .slide-logo {
-        /* position: absolute;
-        z-index: 1;
-        top: 50%;
-        left: 50%; 
-        transform: translate(20%, 40%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-         */
     };
 
     .swiper-pagination{
@@ -107,26 +82,18 @@ export default function MainPage() {
         className="mySwiper"
       >
         <SwiperSlide>
-            <div className= "slider1">
                 <img src={SwiperSlide1} alt=""/>
-                {/* <div className="title-content">
-                    <h3>더 이상 추천받지 않는 <br/>안전을 위하여,</h3>
-                </div>
-                <div className="slide-logo">
-                    <SlideLogo/>
-                </div> */}
-            </div>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide onClick={() => { window.location.href = 'https://www.hankooktire.com/kr/ko/company/media-list/media-detail.628638.html?tabCode=&contentType='; }}>
             <img src={SwiperSlide2} alt=""></img>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide onClick={() => { window.location.href = 'https://www.nexentire.com/kr/media/news/1241108_1224.php'; }}>
             <img src={SwiperSlide3} alt=""></img>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide onClick={() => { window.location.href = 'https://www.nexentire.com/kr/media/news/1240958_1224.php'; }}>
             <img src={SwiperSlide4} alt=""></img>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide onClick={() => { window.location.href = 'https://www.businesspost.co.kr/BP?command=article_view&num=233620'; }}>
             <img src={SwiperSlide5} alt=""></img>
         </SwiperSlide>
       </Swiper>

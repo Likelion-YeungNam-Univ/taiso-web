@@ -125,7 +125,7 @@ const RegisterCar = () => {
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.post("실제_요청_URL", {
+      const response = await axios.post("https://b737-220-81-51-23.ngrok-free.app/usr/member/mypage", {
         carName,
         carNumber,
         carBrand,

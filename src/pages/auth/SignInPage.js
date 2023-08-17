@@ -16,13 +16,23 @@ const Container = styled.div`
   align-items: center;
   margin-top: 200px;
   margin-bottom: 200px;
+
+  h1 {
+    color: #2D2926;
+    text-align: center;
+    font-family: IBM Plex Sans KR;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
 `
 
 const TireLogoStyle = styled.img`
   width: 265px;
   height: 75px;
   margin: 0 auto;
-  margin-bottom: 100px;
+  margin-bottom: 40px;
   cursor: pointer;
 `
 
@@ -37,7 +47,7 @@ const LoginLogo = styled.a`
 width: 260px;
 height:57px;
 padding: 10px;
-margin-bottom:10px;
+margin-bottom:5px;
 img {
   background: #E5E1E1;
   width: 100%;
@@ -141,7 +151,7 @@ useEffect(() => {
 
   return (
     <Container>
-      <h1>더 이상 추천받지 않는 안전을 위하여,</h1>
+      <h1>더 이상 추천받지 않는<br/>안전을 위하여,</h1>
       <TireLogoStyle src={TireLogo} alt="로고" onClick={goMain}/>
       <NaverL></NaverL>
       <BtnStyleWrapper>        
