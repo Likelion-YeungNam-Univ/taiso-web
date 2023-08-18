@@ -27,36 +27,36 @@ const Nav = styled.div`
     justify-content: center;
 `
 const Board = styled.div`
-	width: 885px;
-	/* height: auto; */
-	height: auto;
-	margin: 0 auto;
-	box-shadow: 0px 16px 40px 0px rgba(112, 144, 176, 0.20);
-	border-radius: 18px;
+   width: 885px;
+   /* height: auto; */
+   height: auto;
+   margin: 0 auto;
+   box-shadow: 0px 16px 40px 0px rgba(112, 144, 176, 0.20);
+   border-radius: 18px;
 `;
 const Top = styled.div`
-	width: 885px;
-	display: flex;
-	align-items: center;
-	h2 {
-		font-size: 20px;
-		text-align: center;
-		font-family: 'IBM Plex Sans KR', sans-serif;
-		display: inline-block;
-		margin-left: 20px;
-		margin-top: 30px;
-	}
+   width: 885px;
+   display: flex;
+   align-items: center;
+   h2 {
+      font-size: 20px;
+      text-align: center;
+      font-family: 'IBM Plex Sans KR', sans-serif;
+      display: inline-block;
+      margin-left: 20px;
+      margin-top: 30px;
+   }
 `;
 const Select = styled.select`
-	width: 100px;
-	height: 39px;
-	border-radius: 10px;
-	margin-left: 600px;
-	margin-top: 30px;
-	p {
-		font-size: 14px;
-		text-align: center;
-	}
+   width: 100px;
+   height: 39px;
+   border-radius: 10px;
+   margin-left: 600px;
+   margin-top: 30px;
+   p {
+      font-size: 14px;
+      text-align: center;
+   }
 `;
 const PropsSelect = styled.select`
 	width: 280px;
@@ -74,10 +74,10 @@ const PropsSelect = styled.select`
     padding: 10px 10px 10px 20px;
 `;
 const OPTIONS = [
-	{ value: "0", name: '등록순' },
-	{ value: "1", name: '인기순' },
-	{ value: "2", name: '낮은가격순' },
-	{ value: "3", name: '높은가격순' },
+   { value: "0", name: '등록순' },
+   { value: "1", name: '인기순' },
+   { value: "2", name: '낮은가격순' },
+   { value: "3", name: '높은가격순' },
 ];
 
 // 검색 창
@@ -194,6 +194,7 @@ const TYPES = [
 
 const ResultList = () => {
 
+
     const handleSelect = (value) => {
         console.log(value);
         setSelected(value);
@@ -269,18 +270,23 @@ const ResultList = () => {
 
     const [selected, setSelected] = useState("0");
 
+
     const [brand, setBrand] = useState("전체");
     const [tiretype, setTireType] = useState("전체");
     const [season, setSeason] = useState("전체");
     const [type, setType] = useState("전체");
 
     async function getItem(sort, brand_id, tiretype_id, season_id, type_id) {
-        const {data: response} = await axios.get(`http://www.tireso.co.kr:8080/tire?sort=${sort}&brand=${brand_id}&car_type=${tiretype_id}&season=${season_id}&type=${type_id}`,  { withCredentials: true });
-        setLists(response);
-        setCurrentPosts(response);
-    }
-
-    useEffect(() => {
+        try {
+            const {data: response} = await axios.get(`http://www.tireso.co.kr:8080/tire?sort=${sort}&brand=${brand_id}&car_type=${tiretype_id}&season=${season_id}&type=${type_id}`,  { withCredentials: true });
+            //console.log(response)
+            setLists([...response]);
+            setCurrentPosts([...response]);
+        } catch (error) {
+            console.log(error);
+        }
+    
+     useEffect(() => {
         console.log("[Info] : getItem - useEffect")
         getItem(selected, brand, tiretype, season, type); 
     }, [selected, brand, tiretype, season, type]);
@@ -291,16 +297,6 @@ const ResultList = () => {
             setCurrentPosts(lists);
         }
     }, [search])
-
-    {/*async function getFilter(brand, tiretype, season, type) {
-        const {data: response} = await axios.get(`http://www.tireso.co.kr:8080/tire?brand_id=${brand}&car_type=${tiretype}&season=${season}&type=${type}`,  { withCredentials: true });
-        setLists(response);
-        setCurrentPosts(response);
-    }
-
-    useEffect(() => {
-        getFilter(brand); 
-    }, [brand]);*/}
 
     const onSearch = (e) => {
         e.preventDefault();
@@ -324,7 +320,12 @@ const ResultList = () => {
     const activeEnter = (e) => {
       if(e.key === "Enter") {
         onSearch(e);
-    };};    
+    }};
+
+    
+
+
+
     return (
         <div>
         <Search>
@@ -362,7 +363,9 @@ const ResultList = () => {
                 <Container>
                     <Container className="item-container">
                         {currentPosts.slice(offset, offset + 9).map((tire) => (
-                            <ResultItem  key={tire.id}
+                            <ResultItem  
+                    
+                            id={tire.id}
                             img={tire.imageUrl1} 
                             brand = {tire.brand.name}
                             width = "50px"

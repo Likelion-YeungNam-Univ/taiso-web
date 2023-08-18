@@ -3,6 +3,7 @@ import { useState } from "react";
 import { ReactComponent as EmptyHeart } from "assets/images/search/emptylike.svg"
 import { ReactComponent as FillHeart } from "assets/images/search/filllike.svg"
 import { FaStar } from "react-icons/fa";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Container = styled.div`
     width: 295px;
@@ -157,15 +158,29 @@ const Size = styled.span`
     margin-left: 15px;
     color: #747475;
 `
-function RecommandItem(props) {
+function ResultItem(props) {
+  
     const [like, setLike] = useState(false);
+
+    console.log(props)
 
     const toggleLike = () => {
         setLike(!like);
     }
+    const navigate = useNavigate();
+
+    const onClickData = () => {
+        console.log(props.id)
+        navigate('/detailpage',{
+                state: {
+                    id: props.id
+            }
+        })
+    }
+ 
 
     return (
-        <Container>
+        <Container onClick={onClickData}>
             <ImageBox>
                 {like ? (
                     <FillHeart className="fillheart" onClick={toggleLike} />
@@ -197,7 +212,7 @@ function RecommandItem(props) {
     );
 }
 
-export default RecommandItem;
+export default ResultItem;
 
 // import { styled } from "styled-components";
 // import { useState } from "react";
