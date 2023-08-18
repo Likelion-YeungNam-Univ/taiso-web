@@ -154,14 +154,14 @@ useEffect(() => {
     <Container>
       <h1>더 이상 추천받지 않는<br/>안전을 위하여,</h1>
       <TireLogoStyle src={TireLogo} alt="로고" onClick={goMain}/>
-      <NaverLogin/>
+      {/* <NaverLogin/> */}
       <BtnStyleWrapper>        
-        {/* <LoginLogo href="https://6b17-218-150-7-191.ngrok-free.app/auth/sign-in/naver"><img src={Naver}/></LoginLogo> */}
-        {/* <LoginLogo href="https://6b17-218-150-7-191.ngrok-free.app/auth/sign-in/kakao"><img src={Kakao}/></LoginLogo>
-        <GoogleBtn href="https://6b17-218-150-7-191.ngrok-free.app/auth/sign-in/google"> */}
-            {/* <GoogleLogo src={GoogleIcon} alt=""/>
+        <LoginLogo href="http://www.tireso.co.kr:8080/auth/sign-in/naver"><img src={Naver}/></LoginLogo>
+        <LoginLogo href="http://www.tireso.co.kr:8080/auth/sign-in/kakao"><img src={Kakao}/></LoginLogo>
+        <GoogleBtn href="http://www.tireso.co.kr:8080/auth/sign-in/google"> 
+          <GoogleLogo src={GoogleIcon} alt=""/>
             <P>Sign in with Google</P>
-        </GoogleBtn> */}
+        </GoogleBtn> 
       </BtnStyleWrapper>
     </Container>
   );
