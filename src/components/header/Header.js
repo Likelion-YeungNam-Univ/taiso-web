@@ -94,11 +94,11 @@ const Header = () => {
                     <li onClick={() => { movePage("/search") }}>타이어 검색</li>
                     <li onClick={goNews}>뉴스</li>
                     <div>
-                        {check == -1 
+                        {(window.localStorage.getItem("is_login") !== "true")
                         ? 
                         <li onClick={() => { movePage("/mypage") }}><p>로그인</p></li> 
                         : 
-                        <li> <p>프로필 보기</p></li>
+                        <li onClick={() => { movePage("/mypage") }} ><p>프로필 보기</p></li>
                         }
                     </div>   
                     
