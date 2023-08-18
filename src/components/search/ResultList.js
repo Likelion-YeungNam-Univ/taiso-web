@@ -58,6 +58,21 @@ const Select = styled.select`
 		text-align: center;
 	}
 `;
+const PropsSelect = styled.select`
+	width: 280px;
+	height: 50px;
+	border-radius: 30px;
+	margin-top: 15px;
+    font-size: 15px;
+    font-family: IBM Plex Sans KR;
+    
+	p {
+		font-size: 14px;
+		text-align: center;
+        font-family: IBM Plex Sans KR;
+	}
+    padding: 10px 10px 10px 20px;
+`;
 const OPTIONS = [
 	{ value: "0", name: '등록순' },
 	{ value: "1", name: '인기순' },
@@ -113,7 +128,6 @@ const SearchBox = styled.div`
     display: flex;
     align-items: center;
     margin-left: auto;
-
 `
 const IoSearch = styled(IoSearchCircleSharp)`
     position: absolute;
@@ -121,7 +135,63 @@ const IoSearch = styled(IoSearchCircleSharp)`
     width: 37px;
     height: 37px;
     flex-shrink: 0;
+    cursor: pointer;
 `
+const Filter = styled.div`
+    width: 306px;
+    // margin: 0 auto;
+    h2 {
+        color: #000;
+        text-align: center;
+        font-family: IBM Plex Sans KR;
+        font-size: 27px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+    h3 {
+        color: #000;
+        text-align: center;
+        font-family: IBM Plex Sans KR;
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+`
+const Filterheader = styled.div`
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-top: 15px;
+`
+const BRANDS = [
+	{ value: "전체", name: '전체' },
+	{ value: "한국", name: '한국' },
+	{ value: "금호", name: '금호' },
+	{ value: "넥센", name: '넥센' },
+];
+const TIRETYPES = [
+	{ value: "전체", name: '전체' },
+	{ value: "승용차", name: '승용차' },
+	{ value: "SUV", name: 'SUV' },
+	{ value: "승용차&SUV 겸용", name: '승용차&SUV 겸용' },
+];
+const SEASONS = [
+	{ value: "전체", name: '전체' },
+	{ value: "여름용", name: '여름용' },
+	{ value: "겨울용", name: '겨울용' },
+	{ value: "삼계절용", name: '삼계절용' },
+    { value: "사계절용", name: '사계절용' },
+];
+const TYPES = [
+	{ value: "전체", name: '전체' },
+	{ value: "고급형", name: '고급형' },
+	{ value: "가성비", name: '가성비' },
+	{ value: "절약형", name: '절약형' },
+];
+
+
 const ResultList = () => {
 
     const handleSelect = (value) => {
@@ -132,13 +202,61 @@ const ResultList = () => {
     // 등록순 선택 박스
     const SelectBox = (props) => {
         return (
-            <Select onChange={ e => setSelected(e.target.value)} defaultValue="0">
+            <Select onChange={ e => setSelected(e.target.value)} value={selected}>
                 {props.options.map((option) => (
                     <option key={option.value} value={option.value}>
                         {option.name}
                     </option>
                 ))}
             </Select>
+        );
+    };
+
+    const BrandBox = (props) => {
+        return (
+            <PropsSelect onChange={ e => setBrand(e.target.value)} value={brand}>
+                {props.options.map((option) => (
+                    <option key={option.value} value={option.value}>
+                        {option.name}
+                    </option>
+                ))}
+            </PropsSelect>
+        );
+    };
+
+    const CarTypeBox = (props) => {
+        return (
+            <PropsSelect onChange={ e => setTireType(e.target.value)} value={tiretype}>
+                {props.options.map((option) => (
+                    <option key={option.value} value={option.value}>
+                        {option.name}
+                    </option>
+                ))}
+            </PropsSelect>
+        );
+    };
+
+    const SeasonBox = (props) => {
+        return (
+            <PropsSelect onChange={ e => setSeason(e.target.value)} value={season}>
+                {props.options.map((option) => (
+                    <option key={option.value} value={option.value}>
+                        {option.name}
+                    </option>
+                ))}
+            </PropsSelect>
+        );
+    };
+
+    const TypeBox = (props) => {
+        return (
+            <PropsSelect onChange={ e => setType(e.target.value)} value={type}>
+                {props.options.map((option) => (
+                    <option key={option.value} value={option.value}>
+                        {option.name}
+                    </option>
+                ))}
+            </PropsSelect>
         );
     };
 
@@ -151,15 +269,38 @@ const ResultList = () => {
 
     const [selected, setSelected] = useState("0");
 
-    async function getItem(sort) {
-        const {data: response} = await axios.get(`http://www.tireso.co.kr:8080/tire?sort=${sort}`,  { withCredentials: true });
+    const [brand, setBrand] = useState("전체");
+    const [tiretype, setTireType] = useState("전체");
+    const [season, setSeason] = useState("전체");
+    const [type, setType] = useState("전체");
+
+    async function getItem(sort, brand_id, tiretype_id, season_id, type_id) {
+        const {data: response} = await axios.get(`http://www.tireso.co.kr:8080/tire?sort=${sort}&brand=${brand_id}&car_type=${tiretype_id}&season=${season_id}&type=${type_id}`,  { withCredentials: true });
         setLists(response);
         setCurrentPosts(response);
     }
 
     useEffect(() => {
-        getItem(selected); 
-    }, [selected]);
+        console.log("[Info] : getItem - useEffect")
+        getItem(selected, brand, tiretype, season, type); 
+    }, [selected, brand, tiretype, season, type]);
+
+    useEffect(() => {
+        console.log("[Info] : search : " + search)
+        if (search.length == 0) {
+            setCurrentPosts(lists);
+        }
+    }, [search])
+
+    {/*async function getFilter(brand, tiretype, season, type) {
+        const {data: response} = await axios.get(`http://www.tireso.co.kr:8080/tire?brand_id=${brand}&car_type=${tiretype}&season=${season}&type=${type}`,  { withCredentials: true });
+        setLists(response);
+        setCurrentPosts(response);
+    }
+
+    useEffect(() => {
+        getFilter(brand); 
+    }, [brand]);*/}
 
     const onSearch = (e) => {
         e.preventDefault();
@@ -168,13 +309,12 @@ const ResultList = () => {
         } else {
             const filterData = lists.filter((tire) => // filter라는 기능, lists 안에 있는 원소를 하나하나 필터링을 하겠다! 
             // tire에 어떤 정보가 담기냐? 하나씩 넘어와서 이름이 중요한 게 아니다! 
-                tire.name.toLowerCase().includes(search.toLowerCase())
+                tire.name1.toLowerCase().includes(search.toLowerCase())
             );
-            setLists(filterData);
+            //setLists(filterData);
             setCurrentPosts(filterData);
             setPage(1);
         }
-        setSearch('');
     }
 
     const onChangeSearch = (e) => {
@@ -198,15 +338,27 @@ const ResultList = () => {
             </SearchBox>
        </Search>
         <Nav>
-            <SearchFilter/>
+        <Filter>
+            <Filterheader>
+                <h2>필터</h2>   
+                {/*<Reset  onClick={resetAllFilters}>
+                    <ResetIcon/>
+                    <h3>필터 초기화</h3>
+                </Reset>*/}
+            </Filterheader>
+            <BrandBox options={BRANDS} defaultValue="전체"></BrandBox>
+            <CarTypeBox options={TIRETYPES} defaultValue="전체"></CarTypeBox>
+            <SeasonBox options={SEASONS} defaultValue="전체"></SeasonBox>
+            <TypeBox options={TYPES} defaultValue="전체"></TypeBox>
+        </Filter>
             <div>
                 {/*<SearchReacommendBoard/>*/}
                 <PageAd/>
                 <Board>
                     <Top>
-			            <h2>{lists.length}건의 검색결과</h2>
+			            <h2>{currentPosts.length}건의 검색결과</h2>
 			            <SelectBox options={OPTIONS} defaultValue="등록순"></SelectBox>
-		                </Top>
+		            </Top>
                 <Container>
                     <Container className="item-container">
                         {currentPosts.slice(offset, offset + 9).map((tire) => (
@@ -215,6 +367,7 @@ const ResultList = () => {
                             brand = {tire.brand.name}
                             width = "50px"
                             tirename = {tire.name1}
+                            sizename = {tire.name2}
                             price = {tire.price}
                             keyword1 = {tire.carType}
                             keyword2 = {tire.season}
