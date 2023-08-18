@@ -62,7 +62,7 @@ background: #111;
 color: #FFF;
 box-shadow: 0px 16px 40px 0px rgba(112, 144, 176, 0.20);
 font-family: IBM Plex Sans KR;
-font-size: 10px;
+font-size: 13px;
 font-style: normal;
 font-weight: 600;
 line-height: normal;

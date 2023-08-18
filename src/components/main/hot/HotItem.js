@@ -42,7 +42,7 @@ const TitleBox = styled.span`
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    margin-left:13px;
+    margin-left:25px;
     margin-bottom: 10px;
   
     }
@@ -100,7 +100,8 @@ const Brand = styled.span`
     border-radius: 32px;
     background: #FFF;
     border: 1px;
-    box-shadow: 0px 5px 20px 0px #999;
+    // box-shadow: 0px 5px 20px 0px #999;
+    box-shadow: 0.5px 0.5px 40px 15px #EFEFF1;
     font-family: 'IBM Plex Sans KR', sans-serif;
     align-items: center;
 `

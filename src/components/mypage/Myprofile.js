@@ -1,14 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { ReactComponent as MyFace } from "../../assets/images/mypage/Image.svg";
 import { ReactComponent as Check } from  "../../assets/images/mypage/check.svg";
 import axios from "axios";
 
+
 const Container = styled.div`
   width: 279px;
   height: 610px;
   border-radius: 8px;
-  background-color: lightgray;
+  background: #EFF0F2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,7 +18,7 @@ const Container = styled.div`
 
 `;
 
-const Imagebox = styled.div`
+const Imagebox = styled.img`
   width: 142.64px;
   height: 142.64px;
   border-radius: 90px;
@@ -69,10 +70,11 @@ line-height: normal;
 const Button = styled.button`
   width: 150px;
   height: 40px;
-  background-color: #03C75A;
-  color: white;
+  background-color: white;
+  color: black;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
+  border: 1px solid #484848;
   cursor: pointer;
   font-family: Montserrat;
   font-size: 14px;
@@ -85,43 +87,62 @@ const Button = styled.button`
   }
 `;
 
+
+
 const TitleContent = styled.span`
  display:flex;
  margin-right:10px;
-`
+`;
 
-function MyProfile() {
+function MyProfile({sucessLogin}) {
 
-  // axios({
-  //   method: 'get',
-  //   url: 'http://www.tireso.co.kr:8080/auth/user-info',
-  // }, { withCredentials : true })
-  //   .then((Response)=>{
-  //     console.log("error"+Response.data);
-  // }).catch((Error)=>{
-  //     console.log(Error);
-  // })
+  // const userName 
+  // const userEmail
+  
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [imageurl, setImageUrl] = useState('');
 
-  axios.get("http://www.tireso.co.kr:8080/auth/user-info").
-  then(function(response){
-    console.log(response.data);
-  }).catch(function (error){
-    
-  }).then(function(){
-
+  axios({
+    method: 'get',
+    url: `http://www.tireso.co.kr:8080/auth/user-info/${sucessLogin}`,
   });
 
   const fetchData = useEffect(()=>{
     axios.get("http://www.tireso.co.kr:8080/auth/user-info")
+  }, { withCredentials : true })
     .then((res)=>{
-      console.log(res);
-      // setLists(response);
-      // setCurrentPosts(response);
-    }).catch((err)=>{
-      console.log("err:"+err);
-    })
+      setEmail(res.data.email);
+      setName(res.data.name);
+      setImageUrl(res.data.profileImageUrl);
+     //console.log(res.data.email);
+  }).catch((Error)=>{
+      console.log(Error);
+  })
 
-  },[])
+  // axios.post('http://localhost:8080/join',
+  //            {
+  //              userId:userId,
+  //              password:password,
+  //              email:email
+  //            })
+  //   .catch(function(error) {
+  //   console.log("실패");
+  //   console.log(error);
+  //   console.log(user);
+  // });
+
+  // const fetchData = useEffect(()=>{
+  //   axios.get("http://www.tireso.co.kr:8080/auth/user-info")
+  //   .then((res)=>{
+  //     console.log(res);
+  //     // setLists(response);
+  //     // setCurrentPosts(response);
+  //   }).catch((err)=>{
+  //     console.log("err:"+err);
+  //   })
+
+  // },[])
     
     // { withCredentials: true }); 
 
@@ -132,20 +153,19 @@ function MyProfile() {
 
   return (
     <Container>
-      <Imagebox>
-        <MyFace />
+      <Imagebox src= {imageurl}>
       </Imagebox>
       <Content>
         <Title>
-          <h4>이진우</h4>
-          <p>binarywoo@gmail.com</p>
+          <h4>{name}</h4>
+          <p>{email}</p>
         </Title>
         <Title>
        <TitleContent><SmallCheck/> <p>이메일 인증 완료</p></TitleContent>
        <TitleContent><SmallCheck /> <p>차량 정보 등록 완료</p></TitleContent>
-        <TitleContent><SmallCheck/><p>p타이어 사이즈 등록 완료</p></TitleContent>
+        <TitleContent><SmallCheck/><p>타이어 사이즈 등록 완료</p></TitleContent>
         </Title>
-        <Button>프로필 수정하기</Button>
+        <Button>로그아웃</Button>
       </Content>
     </Container>
   );

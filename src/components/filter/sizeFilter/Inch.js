@@ -76,7 +76,7 @@ const optionData =[
 ];
 
 const SectionWidth = forwardRef((props, ref) => {
-    const [currentValue, setCurrentValue] = useState('휠 지름(인치)');
+    const [currentValue, setCurrentValue] = useState('휠 지름');
     const [showOptions, setShowOptions] = useState(false);
 
     const handleOnChangeSelectValue = (selectedValue) => {

@@ -2,6 +2,8 @@ import styled from "styled-components";
 import React from "react";
 import { PlusCircleOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useState } from "react";
 
 const Container = styled.div`
 width: 866px;
@@ -71,7 +73,7 @@ cursor: pointer;
 `
 
 
-function Mycar() {
+function Mycar(sucessLogin) {
     
     const movePage = useNavigate();
 
@@ -86,7 +88,7 @@ function Mycar() {
         </Title>
         
             <MainCarContent>
-                <Keyword><p>진우의 Main Car</p></Keyword>
+                <Keyword><p>Main Car</p></Keyword>
                 <Keyword><p> 24나 7777 ┃ 5인승 ┃ 포르쉐  ┃ 카이엔(3세대) ┃ 디젤 ┃ 265/55/R19</p></Keyword>
             </MainCarContent>
             <AddCarContent>
