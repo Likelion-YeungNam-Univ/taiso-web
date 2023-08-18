@@ -30,10 +30,19 @@ p{
 }
 `
 
+
+
 function RecentItem(props) {
+
+// const onMove = useNavigate();
+
+//   const moveToLink1 = () => {
+//     onMove("https://www.yna.co.kr/view/AKR20230810100000051?input=1195m");
+//   }
+
     return (
         <Container>
-           {props.newsimg}
+           <a href={props.newslink}>{props.newsimg}</a>
             <Title>{props.newstitle}</Title>
             <Date><p>{props.newsdate}</p></Date>
         </Container>

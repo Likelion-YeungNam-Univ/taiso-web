@@ -3,9 +3,9 @@ import AdPart from "../main/AdPart";
 import styled from "styled-components";
 
 const Content = styled.div`
-    width:1200px;
-    margin:0 auto;
-    margin-top: 50px;
+width:1200px;
+margin:0 auto;
+padding-bottom: 30px;
 `
 
 
