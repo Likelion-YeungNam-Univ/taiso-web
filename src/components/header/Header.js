@@ -103,17 +103,17 @@ const Header = () => {
             <Gnb>
                 <ul>
                     
+                    {/* <li onClick={() => { movePage("/main") }}><p>홈</p></li>
+                    <li onClick={() => { movePage("/search") }}><p>타이어 검색</p></li>
+                    <li onClick={goNews}><p>뉴스</p></li>
+                    <li onClick={() => { movePage("/mypage") }}><P>로그인</P></li> */}
                     <li onClick={() => { movePage("/main") }}><p>홈</p></li>
                     <li onClick={() => { movePage("/search") }}><p>타이어 검색</p></li>
                     <li onClick={goNews}><p>뉴스</p></li>
-                    <li onClick={() => { movePage("/mypage") }}><P>로그인</P></li>
-                    <li onClick={() => { movePage("/main") }}>홈</li>
-                    <li onClick={() => { movePage("/search") }}>타이어 검색</li>
-                    <li onClick={goNews}>뉴스</li>
                     <div>
                         {check == -1 
                         ? 
-                        <li onClick={() => { movePage("/mypage") }}><p>로그인</p></li> 
+                        <li onClick={() => { movePage("/mypage") }}><P>로그인</P></li> 
                         : 
                         <li> <p>프로필 보기</p></li>
                         }
