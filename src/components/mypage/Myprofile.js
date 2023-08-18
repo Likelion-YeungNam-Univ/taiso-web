@@ -107,7 +107,10 @@ function MyProfile({sucessLogin}) {
   axios({
     method: 'get',
     url: `http://www.tireso.co.kr:8080/auth/user-info/${sucessLogin}`,
+  });
 
+  const fetchData = useEffect(()=>{
+    axios.get("http://www.tireso.co.kr:8080/auth/user-info")
   }, { withCredentials : true })
     .then((res)=>{
       setEmail(res.data.email);

@@ -113,6 +113,11 @@ const SignInPage = () => {
 
   const movePage = useNavigate();
 
+  useEffect(() => {
+    if (window.localStorage.getItem("is_login") === "true")
+      movePage("/main")
+  })
+
     function goMain() {
         movePage('/main');
     }
@@ -150,13 +155,18 @@ const SignInPage = () => {
   //     console.log(code);
   // });
 
+  const naverLoginTrigger = () => {
+    window.localStorage.setItem("is_login", "true");
+    window.location.href = "http://www.tireso.co.kr:8080/auth/sign-in/naver";
+  }
+
   return (
     <Container>
       <h1>더 이상 추천받지 않는<br/>안전을 위하여,</h1>
       <TireLogoStyle src={TireLogo} alt="로고" onClick={goMain}/>
       {/* <NaverLogin/> */}
       <BtnStyleWrapper>        
-        <LoginLogo href="http://www.tireso.co.kr:8080/auth/sign-in/naver"><img src={Naver}/></LoginLogo>
+        <LoginLogo onClick={naverLoginTrigger}><img src={Naver}/></LoginLogo>
         <LoginLogo href="http://www.tireso.co.kr:8080/auth/sign-in/kakao"><img src={Kakao}/></LoginLogo>
         <GoogleBtn href="http://www.tireso.co.kr:8080/auth/sign-in/google"> 
           <GoogleLogo src={GoogleIcon} alt=""/>

@@ -5,6 +5,7 @@ import axios from "axios";
 import { useState } from "react";
 
 const MainPage = () => {
+  console.log(window.localStorage.getItem("is_login"));
 
   return (
     <div>

@@ -1,5 +1,5 @@
 import { Header, TopBar, Footer} from "components";
-import { SignInPage, MainPage, NewsPage, SearchPage, MyPage, RegisterCarPage, TireDetailsPage } from "pages";
+import { SignInPage, MainPage, NewsPage, SearchPage, MyPage, RegisterCarPage, TireDetailsPage, Error } from "pages";
 import { Routes, Route } from "react-router-dom";
 
 const App = () => {
@@ -15,6 +15,7 @@ const App = () => {
            <Route path="/mypage" element={<MyPage/>}></Route>
            <Route path="/register/car" element={<RegisterCarPage/>}></Route>
            <Route path="/detailpage" element={<TireDetailsPage/>}></Route>
+           <Route path="*" element={<Error/>} ></Route>
        </Routes> 
      <Footer/>
      </div> 
