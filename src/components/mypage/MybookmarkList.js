@@ -15,19 +15,19 @@ function MybookmarkList() {
     img = {<BookmarkImg/>}
     brand = "금호"
     tirename = "크루젠 HP71"
-    tiretype = "265/55/R19"
+    tiretype = "265/55/R20"
 />
 <MybookmarkItem
 img = {<BookmarkImg/>}
-    brand = "금호"
-    tirename = "크루젠 HP71"
-    tiretype = "265/55/R19"
+    brand = "한국"
+    tirename = "솔루스 TA51"
+    tiretype = "285/45/R19"
 />
 <MybookmarkItem
 img = {<BookmarkImg/>}
-    brand = "금호"
-    tirename = "크루젠 HP71"
-    tiretype = "265/55/R19"
+    brand = "한국"
+    tirename = "벤투스 H462"
+    tiretype = "275/55/R21"
 />
 </List>
     );

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { ReactComponent as MyFace } from "../../assets/images/mypage/Image.svg";
 import { ReactComponent as Check } from  "../../assets/images/mypage/check.svg";
 import axios from "axios";
-
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   width: 279px;
@@ -98,6 +98,7 @@ function MyProfile({sucessLogin}) {
 
   // const userName 
   // const userEmail
+  const navigate = useNavigate();
   
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
@@ -150,6 +151,10 @@ function MyProfile({sucessLogin}) {
 // useEffect(() => {
 //     getItem(selected); 
 // }, [selected]);
+  const logoutBtn = () => {
+    window.localStorage.removeItem("is_login");
+    navigate("/");
+  }
 
   return (
     <Container>
@@ -165,7 +170,7 @@ function MyProfile({sucessLogin}) {
        <TitleContent><SmallCheck /> <p>차량 정보 등록 완료</p></TitleContent>
         <TitleContent><SmallCheck/><p>타이어 사이즈 등록 완료</p></TitleContent>
         </Title>
-        <Button>로그아웃</Button>
+        <Button onClick={logoutBtn}>로그아웃</Button>
       </Content>
     </Container>
   );

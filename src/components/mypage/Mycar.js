@@ -8,7 +8,8 @@ import { useState } from "react";
 const Container = styled.div`
 width: 866px;
 height: 229px;
- box-shadow: 0px 16px 40px 0px rgba(112, 144, 176, 0.20);
+box-shadow: 0px 10px 40px 0px rgba(50, 50, 50, 0.20);
+  border-radius: 10px;
 `
 
 const Title = styled.div`
@@ -88,7 +89,7 @@ function Mycar(sucessLogin) {
         </Title>
         
             <MainCarContent>
-                <Keyword><p>Main Car</p></Keyword>
+                <Keyword><p>나의 Main Car</p></Keyword>
                 <Keyword><p> 24나 7777 ┃ 5인승 ┃ 포르쉐  ┃ 카이엔(3세대) ┃ 디젤 ┃ 265/55/R19</p></Keyword>
             </MainCarContent>
             <AddCarContent>
