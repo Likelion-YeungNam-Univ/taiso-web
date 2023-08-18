@@ -103,7 +103,7 @@ const OnNaverSignClick = async () =>{
 
 }
 const OnKakaorSignClick = () =>{
-  axios.get("https://208d-175-119-150-172.ngrok-free.app/oauth2/authorization/kakao",{withCredentials: true});
+  axios.get("http://www.tireso.co.kr:8080/auth/sign-in/kakao",{withCredentials: true});
 }
 const OnGoogleSignClick = () =>{
   axios.get("https://208d-175-119-150-172.ngrok-free.app/oauth2/authorization/google",{withCredentials: true});
@@ -128,21 +128,21 @@ const SignInPage = () => {
 //       }
 //   });
 
-useEffect(() => {
-  const fetchData = async () => {
-      try {
-          let code = new URL(window.location.href).searchParams.get("code");
-          console.log(code);
+// useEffect(() => {
+//   const fetchData = async () => {
+//       try {
+//           let code = new URL(window.location.href).searchParams.get("code");
+//           console.log(code);
 
-          const response = await axios.get(`https://6b17-218-150-7-191.ngrok-free.app/auth/sign-in/naver/callback?code=${code}`, {withCredentials: true});
-          console.log(response.data);
-      } catch (err) {
-          console.log(err);
-      }
-  };
+//           const response = await axios.get(`https://6b17-218-150-7-191.ngrok-free.app/auth/sign-in/naver/callback?code=${code}`, {withCredentials: true});
+//           console.log(response.data);
+//       } catch (err) {
+//           console.log(err);
+//       }
+//   };
 
-  fetchData();
-}, []);
+//   fetchData();
+// }, []);
 
 
   //   useEffect(() => {
@@ -154,14 +154,14 @@ useEffect(() => {
     <Container>
       <h1>더 이상 추천받지 않는<br/>안전을 위하여,</h1>
       <TireLogoStyle src={TireLogo} alt="로고" onClick={goMain}/>
-      <NaverLogin/>
+      {/* <NaverLogin/> */}
       <BtnStyleWrapper>        
-        {/* <LoginLogo href="https://6b17-218-150-7-191.ngrok-free.app/auth/sign-in/naver"><img src={Naver}/></LoginLogo> */}
-        {/* <LoginLogo href="https://6b17-218-150-7-191.ngrok-free.app/auth/sign-in/kakao"><img src={Kakao}/></LoginLogo>
-        <GoogleBtn href="https://6b17-218-150-7-191.ngrok-free.app/auth/sign-in/google"> */}
-            {/* <GoogleLogo src={GoogleIcon} alt=""/>
+        <LoginLogo href="http://www.tireso.co.kr:8080/auth/sign-in/naver"><img src={Naver}/></LoginLogo>
+        <LoginLogo href="http://www.tireso.co.kr:8080/auth/sign-in/kakao" ><img src={Kakao}/></LoginLogo>
+        <GoogleBtn href="http://www.tireso.co.kr:8080/auth/sign-in/google"> 
+             <GoogleLogo src={GoogleIcon} alt=""/>
             <P>Sign in with Google</P>
-        </GoogleBtn> */}
+        </GoogleBtn> 
       </BtnStyleWrapper>
     </Container>
   );
