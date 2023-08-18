@@ -2,6 +2,8 @@ import { styled } from "styled-components";
 import MybookmarkBoard from "./MybookmarkBoard"
 import Mycar from "./Mycar"
 import MyProfile from "./Myprofile";
+import axios from "axios";
+import { useState } from "react";
 
 const Container = styled.div`
 display:flex;
@@ -48,12 +50,27 @@ line-height: normal;
 // `
 
 function Mybookmark() {
+  const [sucessLogin, setSucessLogin] = useState('')
+
+  axios({
+    method: 'get',
+    url: 'http://www.tireso.co.kr:8080/auth',
+  }, { withCredentials : true })
+    .then((Response)=>{
+      console.log(Response.data);
+      setSucessLogin(Response.data);
+      //console.log(sucessLogin);
+
+  }).catch((Error)=>{
+      console.log(Error);
+  })
+
     return (
       <Container className="a">
         <OutContent className="b">
         <h1> 마이 페이지 </h1>
         <Content className="c">
-        <MyProfile className="d"/>
+        <MyProfile className="d" sucessLogin={sucessLogin}/>
         {/* <Content> */}
         <InnerContent className="e">
         <Title><p>만나서 반갑습니다, 진우님!</p></Title>
