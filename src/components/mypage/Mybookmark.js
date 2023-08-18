@@ -65,6 +65,20 @@ function Mybookmark() {
       console.log(Error);
   })
 
+  const [name, setName] = useState('');
+
+  axios({
+    method: 'get',
+    url: `http://www.tireso.co.kr:8080/auth/user-info/${sucessLogin}`,
+
+  }, { withCredentials : true })
+    .then((res)=>{
+      setName(res.data.name);
+  }).catch((Error)=>{
+      console.log(Error);
+  })
+
+
     return (
       <Container className="a">
         <OutContent className="b">
@@ -73,7 +87,7 @@ function Mybookmark() {
         <MyProfile className="d" sucessLogin={sucessLogin}/>
         {/* <Content> */}
         <InnerContent className="e">
-        <Title><p>만나서 반갑습니다, 진우님!</p></Title>
+        <Title><p>만나서 반갑습니다, {name}님!</p></Title>
              <Mycar className="f"/>
               <MybookmarkBoard className="g"/>
         </InnerContent>
