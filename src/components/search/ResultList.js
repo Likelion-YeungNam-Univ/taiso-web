@@ -152,7 +152,7 @@ const ResultList = () => {
     const [selected, setSelected] = useState("0");
 
     async function getItem(sort) {
-        const {data: response} = await axios.get(`http://175.45.194.50:8080/tire?sort=${sort}`,  { withCredentials: true });
+        const {data: response} = await axios.get(`http://www.tireso.co.kr:8080/tire?sort=${sort}`,  { withCredentials: true });
         setLists(response);
         setCurrentPosts(response);
     }
