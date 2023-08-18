@@ -14,6 +14,7 @@ const Filterheader = styled.div`
     display: flex;
     align-items: center;
     margin-bottom:100px;
+    margin-top: 40px;
 `
 const H2 = styled.h2`
     color: #000;

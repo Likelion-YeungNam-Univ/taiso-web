@@ -36,24 +36,36 @@ const Gnb = styled.div`
             font-size: 16px;
             cursor: pointer;
             border-radius: 10px;
-            padding: 3px 10px;
+            padding: 10px 2px;
+            
         }
+        
+        li p:hover{background: #e9ecef; color:black;}
 
         p {
             border-radius: 40px;
             padding: 3px 25px;
-            background: #2D2926;
+            // background: #2D2926;
             flex-shrink: 0;
-            color: #FFF;
+            // color: #FFF;
         }
     }
     
-    @media screen and (max-width: 908px) {
+    @media screen and (max-width: 1070px) {
         ul {
             display: none; 
         }
     }
 `;
+
+const P = styled.span`
+    border-radius: 40px;
+    padding: 3px 25px;
+    background: #2D2926;
+    flex-shrink: 0;
+    color: #FFF;
+`
+
 
 const Header = () => {
     const movePage = useNavigate();
@@ -69,10 +81,11 @@ const Header = () => {
             </Logo>
             <Gnb>
                 <ul>
-                    <li onClick={() => { movePage("/main") }}>홈</li>
-                    <li onClick={() => { movePage("/search") }}>타이어 검색</li>
-                    <li onClick={goNews}>뉴스</li>
-                    <li onClick={() => { movePage("/mypage") }}><p>로그인</p></li>
+                    
+                    <li onClick={() => { movePage("/main") }}><p>홈</p></li>
+                    <li onClick={() => { movePage("/search") }}><p>타이어 검색</p></li>
+                    <li onClick={goNews}><p>뉴스</p></li>
+                    <li onClick={() => { movePage("/mypage") }}><P>로그인</P></li>
                 </ul>
             </Gnb>
         </Nav>

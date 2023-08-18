@@ -23,21 +23,21 @@ function RecommandList() {
                 keyword3 = {`고급형`}
                 keyword4 = {`연비짱`}
                 color = "#E2BE45"
-                grade = "4.7 (2,165)"
+                grade = "4.7 (2,745)"
             />
             <RecommandItem
                 title = {`“차종, 계절을 초월한 특수부대급\n전천후 프리미엄 타이어”`} 
                 img={<Tire2/>} 
                 brandcolor = "#FFA500"
-                brand = "컨티넨탈"
-                width = "116px"
+                brand = "한국"
+                width = "70px"
                 tirename = {`익스트림 컨택트 DW506`}
                 keyword1 = {`사계절용`}
                 keyword2 = {`승용·SUV`}
                 keyword3 = {`고급형`}
                 keyword4 = {`가심비`}
                 color = "#03C75A"
-                grade = "4.7 (2,165)"
+                grade = "4.9 (2,775)"
             />
         </List>
     );

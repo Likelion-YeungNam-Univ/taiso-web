@@ -65,16 +65,16 @@ const Btn = styled.div`
 const SizeFooter = () => {
     return (
         <Footer>
-            <Text>
+            {/* <Text>
                 <H4>내 타이어 사이즈가 궁금하다면</H4>
                 <QuestionIcon/>
-            </Text>
-            <Btn>
+            </Text> */}
+            {/* <Btn>
                 <Button onClick={""}>
                     <P>차종 등록하고 사이즈 불러오기</P>
                     <ButtonIcon/>
                 </Button>
-            </Btn>
+            </Btn> */}
          
         </Footer>
     );
