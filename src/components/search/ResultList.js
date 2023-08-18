@@ -27,42 +27,42 @@ const Nav = styled.div`
     justify-content: center;
 `
 const Board = styled.div`
-	width: 885px;
-	/* height: auto; */
-	height: auto;
-	margin: 0 auto;
-	box-shadow: 0px 16px 40px 0px rgba(112, 144, 176, 0.20);
-	border-radius: 18px;
+   width: 885px;
+   /* height: auto; */
+   height: auto;
+   margin: 0 auto;
+   box-shadow: 0px 16px 40px 0px rgba(112, 144, 176, 0.20);
+   border-radius: 18px;
 `;
 const Top = styled.div`
-	width: 885px;
-	display: flex;
-	align-items: center;
-	h2 {
-		font-size: 20px;
-		text-align: center;
-		font-family: 'IBM Plex Sans KR', sans-serif;
-		display: inline-block;
-		margin-left: 20px;
-		margin-top: 30px;
-	}
+   width: 885px;
+   display: flex;
+   align-items: center;
+   h2 {
+      font-size: 20px;
+      text-align: center;
+      font-family: 'IBM Plex Sans KR', sans-serif;
+      display: inline-block;
+      margin-left: 20px;
+      margin-top: 30px;
+   }
 `;
 const Select = styled.select`
-	width: 100px;
-	height: 39px;
-	border-radius: 10px;
-	margin-left: 600px;
-	margin-top: 30px;
-	p {
-		font-size: 14px;
-		text-align: center;
-	}
+   width: 100px;
+   height: 39px;
+   border-radius: 10px;
+   margin-left: 600px;
+   margin-top: 30px;
+   p {
+      font-size: 14px;
+      text-align: center;
+   }
 `;
 const OPTIONS = [
-	{ value: "0", name: '등록순' },
-	{ value: "1", name: '인기순' },
-	{ value: "2", name: '낮은가격순' },
-	{ value: "3", name: '높은가격순' },
+   { value: "0", name: '등록순' },
+   { value: "1", name: '인기순' },
+   { value: "2", name: '낮은가격순' },
+   { value: "3", name: '높은가격순' },
 ];
 
 // 검색 창
@@ -124,6 +124,7 @@ const IoSearch = styled(IoSearchCircleSharp)`
 `
 const ResultList = () => {
 
+
     const handleSelect = (value) => {
         console.log(value);
         setSelected(value);
@@ -132,7 +133,7 @@ const ResultList = () => {
     // 등록순 선택 박스
     const SelectBox = (props) => {
         return (
-            <Select onChange={ e => setSelected(e.target.value)} defaultValue="0">
+            <Select onChange={ e => setSelected(e.target.value)} value={selected}>
                 {props.options.map((option) => (
                     <option key={option.value} value={option.value}>
                         {option.name}
@@ -152,10 +153,17 @@ const ResultList = () => {
     const [selected, setSelected] = useState("0");
 
     async function getItem(sort) {
-        const {data: response} = await axios.get(`http://175.45.194.50:8080/tire?sort=${sort}`,  { withCredentials: true });
-        setLists(response);
-        setCurrentPosts(response);
+        try {
+            const {data: response} = await axios.get(`http://www.tireso.co.kr:8080/tire?sort=${sort}`,  { withCredentials: true });
+            //console.log(response)
+            setLists([...response]);
+            setCurrentPosts([...response]);
+        } catch (error) {
+            console.log(error);
+        }
+        
     }
+    console.log(lists);
 
     useEffect(() => {
         getItem(selected); 
@@ -184,7 +192,12 @@ const ResultList = () => {
     const activeEnter = (e) => {
       if(e.key === "Enter") {
         onSearch(e);
-    };};    
+    }};
+
+    
+
+
+
     return (
         <div>
         <Search>
@@ -204,13 +217,15 @@ const ResultList = () => {
                 <PageAd/>
                 <Board>
                     <Top>
-			            <h2>{lists.length}건의 검색결과</h2>
-			            <SelectBox options={OPTIONS} defaultValue="등록순"></SelectBox>
-		                </Top>
+                     <h2>{lists.length}건의 검색결과</h2>
+                     <SelectBox options={OPTIONS} defaultValue="등록순"></SelectBox>
+                      </Top>
                 <Container>
                     <Container className="item-container">
                         {currentPosts.slice(offset, offset + 9).map((tire) => (
-                            <ResultItem  key={tire.id}
+                            <ResultItem  
+                    
+                            id={tire.id}
                             img={tire.imageUrl1} 
                             brand = {tire.brand.name}
                             width = "50px"

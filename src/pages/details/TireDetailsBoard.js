@@ -208,6 +208,7 @@ const CautionText = styled.div`
 `
 
 const TireDetailsBoard = (props) => {
+    //console.log(props.title)
     return (
         <Container>
             <TitleBox>
@@ -215,8 +216,22 @@ const TireDetailsBoard = (props) => {
             </TitleBox>
             <ContentBox>
                 <ImageBox>
-                    <ImageBoxUP>{props.img1} {props.img2}</ImageBoxUP>
-                    <ImageBoxDown>{props.img3}</ImageBoxDown>
+                    <ImageBoxUP>
+                        <img src={props.img1} 
+                            style = {{width:'400px', height:'400px'}}
+                            
+                        >
+                        </img> 
+                        <img src={props.img2}
+                            style = {{width:'400px', height:'400px'}}
+                        ></img>
+                     
+                        </ImageBoxUP>
+                    <ImageBoxDown>
+                        <img src={props.img3}
+                            style = {{width:'400px', height:'400px'}}
+                        >
+                        </img></ImageBoxDown>
                     <Caution>
                         <CautionText>
                             <p>주의사항</p>
@@ -226,7 +241,9 @@ const TireDetailsBoard = (props) => {
                     </Caution>
                 </ImageBox>
                 <InnerBox>
-                    <Brand width={props.width} height={props.height} color={props.brandcolor}>{props.brand}</Brand>
+                    <Brand width={props.width} height={props.height} color={props.brandcolor}>{
+                        (props.brand?.name) ? props.brand.name : "loading.."
+                    }</Brand>
                     <h1>{props.tirename}</h1>
                     <KeywordContainer>
                         <Keyword>{props.keyword1}</Keyword>

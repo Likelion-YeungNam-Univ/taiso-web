@@ -110,7 +110,7 @@ function MyProfile() {
   }).then(function(){
 
   });
-=======
+
   const fetchData = useEffect(()=>{
     axios.get("http://www.tireso.co.kr:8080/auth/user-info")
     .then((res)=>{
