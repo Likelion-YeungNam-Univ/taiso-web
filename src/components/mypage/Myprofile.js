@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import { ReactComponent as MyFace } from "../../assets/images/mypage/Image.svg";
-import { ReactComponent as Check } from  "../../assets/images/mypage/check.svg"
+import { ReactComponent as Check } from  "../../assets/images/mypage/check.svg";
 import axios from "axios";
 
 const Container = styled.div`
@@ -92,6 +92,25 @@ const TitleContent = styled.span`
 
 function MyProfile() {
 
+  // axios({
+  //   method: 'get',
+  //   url: 'http://www.tireso.co.kr:8080/auth/user-info',
+  // }, { withCredentials : true })
+  //   .then((Response)=>{
+  //     console.log("error"+Response.data);
+  // }).catch((Error)=>{
+  //     console.log(Error);
+  // })
+
+  axios.get("http://www.tireso.co.kr:8080/auth/user-info").
+  then(function(response){
+    console.log(response.data);
+  }).catch(function (error){
+    
+  }).then(function(){
+
+  });
+=======
   const fetchData = useEffect(()=>{
     axios.get("http://www.tireso.co.kr:8080/auth/user-info")
     .then((res)=>{

@@ -157,9 +157,9 @@ const SignInPage = () => {
       {/* <NaverLogin/> */}
       <BtnStyleWrapper>        
         <LoginLogo href="http://www.tireso.co.kr:8080/auth/sign-in/naver"><img src={Naver}/></LoginLogo>
-        <LoginLogo href="http://www.tireso.co.kr:8080/auth/sign-in/kakao" ><img src={Kakao}/></LoginLogo>
+        <LoginLogo href="http://www.tireso.co.kr:8080/auth/sign-in/kakao"><img src={Kakao}/></LoginLogo>
         <GoogleBtn href="http://www.tireso.co.kr:8080/auth/sign-in/google"> 
-             <GoogleLogo src={GoogleIcon} alt=""/>
+          <GoogleLogo src={GoogleIcon} alt=""/>
             <P>Sign in with Google</P>
         </GoogleBtn> 
       </BtnStyleWrapper>
