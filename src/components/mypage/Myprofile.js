@@ -104,22 +104,22 @@ function MyProfile({sucessLogin}) {
   const [name, setName] = useState('');
   const [imageurl, setImageUrl] = useState('');
 
-  axios({
-    method: 'get',
-    url: `http://www.tireso.co.kr:8080/auth/user-info/${sucessLogin}`,
-  });
+  // axios({
+  //   method: 'get',
+  //   url: `http://www.tireso.co.kr:8080/auth/user-info/${sucessLogin}`,
+  // });
 
   const fetchData = useEffect(()=>{
-    axios.get("http://www.tireso.co.kr:8080/auth/user-info")
-  }, { withCredentials : true })
+    axios.get("http://www.tireso.co.kr:8080/auth/user-info", { withCredentials : true })
     .then((res)=>{
       setEmail(res.data.email);
       setName(res.data.name);
       setImageUrl(res.data.profileImageUrl);
      //console.log(res.data.email);
-  }).catch((Error)=>{
+    }).catch((Error)=>{
       console.log(Error);
-  })
+    })
+});
 
   // axios.post('http://localhost:8080/join',
   //            {
