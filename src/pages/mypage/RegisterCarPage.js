@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 import { MyProfile, RegisterCar } from "components";
 
+
 const Container = styled.div`
 display:flex;
 flex-Direction: row; 
@@ -31,12 +32,13 @@ padding:10px;
 `
 
 function RegisterCarPage() {
+  
     return (
       <Container>
         <OutContent>
         <h1> 마이 페이지 </h1>
         <Content>
-        <MyProfile/>
+        <MyProfile />
         <InnerContent>
             <RegisterCar/>
         </InnerContent>

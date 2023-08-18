@@ -1,6 +1,8 @@
 import { ReactComponent as HeaderLogo } from "assets/images/logo/HeaderLogo.svg";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useState,useEffect } from "react";
 
 const Nav = styled.div`
     width: 100%;
@@ -74,6 +76,25 @@ const Header = () => {
         movePage('/news');
     }
 
+    const [check, setCheck] = useState('');
+
+    useEffect(()=>{
+        axios({
+            method: 'get',
+            url: `http://www.tireso.co.kr:8080/auth`,
+        
+          }, { withCredentials : true })
+            .then((res)=>{
+            setCheck(res.data)
+            
+             //console.log(res.data.email);
+          }).catch((Error)=>{
+              console.log(Error);
+          })
+    })
+    console.log(check)
+
+
     return (
         <Nav>
             <Logo onClick={() => { movePage("/main") }}>
@@ -86,6 +107,18 @@ const Header = () => {
                     <li onClick={() => { movePage("/search") }}><p>타이어 검색</p></li>
                     <li onClick={goNews}><p>뉴스</p></li>
                     <li onClick={() => { movePage("/mypage") }}><P>로그인</P></li>
+                    <li onClick={() => { movePage("/main") }}>홈</li>
+                    <li onClick={() => { movePage("/search") }}>타이어 검색</li>
+                    <li onClick={goNews}>뉴스</li>
+                    <div>
+                        {check == -1 
+                        ? 
+                        <li onClick={() => { movePage("/mypage") }}><p>로그인</p></li> 
+                        : 
+                        <li> <p>프로필 보기</p></li>
+                        }
+                    </div>   
+                    
                 </ul>
             </Gnb>
         </Nav>
