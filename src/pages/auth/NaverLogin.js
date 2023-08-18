@@ -2,22 +2,24 @@ import { useEffect } from 'react'
 import { styled } from 'styled-components';
 import React from 'react';
 
-const NaverL = () => {
+const Button = styled.div``
 
-    const NAVER_CLIENT_ID = 'zp5cgCK2J2hPcz_dxndm'
+// const NaverL = () => {
+
+//     const NAVER_CLIENT_ID = 'zp5cgCK2J2hPcz_dxndm'
     
-	const NAVER_CALLBACK_URL = 'http://localhost:3000/'
+// 	const NAVER_CALLBACK_URL = 'http://localhost:3000/'
 
-    const url = `https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=${NAVER_CLIENT_ID}&state=false&redirect_uri=${NAVER_CALLBACK_URL}`
+//     const url = `https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=${NAVER_CLIENT_ID}&state=false&redirect_uri=${NAVER_CALLBACK_URL}`
 
-    console.log("[INFO] : finalUrl : " + url);
+//     console.log("[INFO] : finalUrl : " + url);
     
-    const ToNaverLogin = () => {
-        window.location.href = url;
-    };
+//     const ToNaverLogin = () => {
+//         window.location.href = url;
+//     };
 
-    return <button id='naverBtn' onClick={ToNaverLogin}> 네이버 로그인</button>;
-}
+//     return <button id='naverBtn' onClick={ToNaverLogin}> 네이버 로그인</button>;
+// }
 
 const NaverLogin = ({ setGetToken, setUserInfo }) => {
       
@@ -25,7 +27,7 @@ const NaverLogin = ({ setGetToken, setUserInfo }) => {
 	const { naver } = window
 	const NAVER_CLIENT_ID = 'zp5cgCK2J2hPcz_dxndm'
     
-	const NAVER_CALLBACK_URL = 'http://localhost:3000/login'
+	const NAVER_CALLBACK_URL = 'http://localhost:3000/main'
 
 	const initializeNaverLogin = () => {
 		const naverLogin = new naver.LoginWithNaverId({
@@ -70,9 +72,9 @@ const NaverLogin = ({ setGetToken, setUserInfo }) => {
 
 	return (
         
-			<NaverL id="naverIdLogin" />
+			<Button id="naverIdLogin" />
 	);
 };
 
-export default NaverL;
+export default NaverLogin;
 
