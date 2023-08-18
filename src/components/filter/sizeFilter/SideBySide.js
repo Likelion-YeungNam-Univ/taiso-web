@@ -63,7 +63,7 @@ const optionData =[
 ];
 
 const SectionWidth = forwardRef((props, ref) => {
-    const [currentValue, setCurrentValue] = useState('편평비(%)');
+    const [currentValue, setCurrentValue] = useState('편평비');
     const [showOptions, setShowOptions] = useState(false);
 
     const handleOnChangeSelectValue = (selectedValue) => {

@@ -5,7 +5,7 @@ import PageAd from "./PageAd";
 import { useEffect } from "react";
 
 const Page = styled.div`
-    
+ 
 `
 
 const Nav = styled.div`
@@ -13,7 +13,10 @@ const Nav = styled.div`
     align-self: center;
     justify-content: center;
 `
-const Board = styled.div``
+const Filter = styled.div`
+    // margin-right: 20px;
+`
+
 
 const SearchPage = () => {
 
@@ -27,7 +30,9 @@ const SearchPage = () => {
 
     return(
         <Page>
-            <ScrollToTopOnMount />
+            <Filter>
+                <ScrollToTopOnMount />
+            </Filter>
             <ResultList/>
         </Page>
     );

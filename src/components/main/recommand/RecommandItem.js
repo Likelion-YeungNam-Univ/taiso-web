@@ -15,7 +15,7 @@ const TitleBox = styled.div`
     justify-content: center;
     align-items: center;
     h1 {
-        font-size: 32px;
+        font-size: 28px;
         white-space: pre-line;
         text-align: center;
         font-family: 'IBM Plex Sans KR', sans-serif;

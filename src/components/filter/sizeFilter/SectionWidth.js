@@ -79,7 +79,7 @@ const DownIcon =styled.div`
     ];
 
     const SectionWidth = forwardRef((props, ref) => {
-        const [currentValue, setCurrentValue] = useState('단면폭(mm)');
+        const [currentValue, setCurrentValue] = useState('단면폭');
         const [showOptions, setShowOptions] = useState(false);
     
         const handleOnChangeSelectValue = (selectedValue) => {
