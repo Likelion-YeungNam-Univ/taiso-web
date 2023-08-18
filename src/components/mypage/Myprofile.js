@@ -102,26 +102,52 @@ function MyProfile() {
   //     console.log(Error);
   // })
 
-  axios.get("http://www.tireso.co.kr:8080/auth/user-info").
-  then(function(response){
-    console.log(response.data);
-  }).catch(function (error){
+  // axios.get("http://www.tireso.co.kr:8080/auth/user-info").
+  // then(function(response){
+  //   console.log(response.data);
+  // }).catch(function (error){
     
-  }).then(function(){
+  // }).then(function(){
 
-  });
-=======
-  const fetchData = useEffect(()=>{
-    axios.get("http://www.tireso.co.kr:8080/auth/user-info")
-    .then((res)=>{
-      console.log(res);
-      // setLists(response);
-      // setCurrentPosts(response);
-    }).catch((err)=>{
-      console.log("err:"+err);
-    })
+  // });
 
-  },[])
+  axios({
+
+    method: 'get',
+    url: 'http://www.tireso.co.kr:8080/auth/user-info/num',
+    params: {
+      "num":10
+    }
+  }, { withCredentials : true })
+    .then((Response)=>{
+      console.log(Response.data);
+  }).catch((Error)=>{
+      console.log(Error);
+  })
+
+  // axios.post('http://localhost:8080/join',
+  //            {
+  //              userId:userId,
+  //              password:password,
+  //              email:email
+  //            })
+  //   .catch(function(error) {
+  //   console.log("실패");
+  //   console.log(error);
+  //   console.log(user);
+  // });
+
+  // const fetchData = useEffect(()=>{
+  //   axios.get("http://www.tireso.co.kr:8080/auth/user-info")
+  //   .then((res)=>{
+  //     console.log(res);
+  //     // setLists(response);
+  //     // setCurrentPosts(response);
+  //   }).catch((err)=>{
+  //     console.log("err:"+err);
+  //   })
+
+  // },[])
     
     // { withCredentials: true }); 
 
