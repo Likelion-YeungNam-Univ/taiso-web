@@ -285,7 +285,7 @@ const ResultList = () => {
         } catch (error) {
             console.log(error);
         }
-    
+    }
      useEffect(() => {
         console.log("[Info] : getItem - useEffect")
         getItem(selected, brand, tiretype, season, type); 
