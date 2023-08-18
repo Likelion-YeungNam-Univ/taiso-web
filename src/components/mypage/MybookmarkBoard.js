@@ -5,7 +5,8 @@ import React from "react";
 const Container = styled.div`
 width: 866px;
 height: 330px;
-box-shadow: 0px 16px 40px 0px rgba(112, 144, 176, 0.20);
+box-shadow: 0px 10px 40px 0px rgba(50, 50, 50, 0.20);
+border-radius: 10px;
 
 `
 const Title = styled.div`

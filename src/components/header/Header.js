@@ -113,9 +113,9 @@ const Header = () => {
                     <div>
                         {check == -1 
                         ? 
-                        <li onClick={() => { movePage("/mypage") }}><P>로그인</P></li> 
+                        <li onClick={() => { movePage("/") }}><P>로그인</P></li> 
                         : 
-                        <li> <p>프로필 보기</p></li>
+                        <li onClick={() => { movePage("/mypage") }}><P>프로필 보기</P></li> 
                         }
                     </div>   
                     
