@@ -59,10 +59,10 @@ const Select = styled.select`
 	}
 `;
 const OPTIONS = [
-	{ value: 0, name: '등록순' },
-	{ value: 1, name: '인기순' },
-	{ value: 2, name: '낮은가격순' },
-	{ value: 3, name: '높은가격순' },
+	{ value: "0", name: '등록순' },
+	{ value: "1", name: '인기순' },
+	{ value: "2", name: '낮은가격순' },
+	{ value: "3", name: '높은가격순' },
 ];
 
 // 검색 창
@@ -124,17 +124,17 @@ const IoSearch = styled(IoSearchCircleSharp)`
 `
 const ResultList = () => {
 
-    const handleSelect = (props) => {
-        console.log(props);
-        setSelected(props);
+    const handleSelect = (value) => {
+        console.log(value);
+        setSelected(value);
     }
     
     // 등록순 선택 박스
     const SelectBox = (props) => {
         return (
-            <Select onChange={ e => handleSelect(e.target.value)}>
+            <Select onChange={ e => setSelected(e.target.value)} defaultValue="0">
                 {props.options.map((option) => (
-                    <option value={option.value} defaultValue={props.defaultValue === option.value}>
+                    <option key={option.value} value={option.value}>
                         {option.name}
                     </option>
                 ))}
@@ -149,31 +149,10 @@ const ResultList = () => {
     const [lists, setLists] = useState([]); //ItemList
     const [currentPosts, setCurrentPosts] = useState([]); // 현재 post 설정
 
-    const [selected, setSelected] = useState(0);
-
-    {/*async function getItem(){
-        await axios
-        .get("https://b737-220-81-51-23.ngrok-free.app/tire")
-        .then((response) => {
-            console.log(response.data);
-            setLists(response.data);
-            setCurrentPosts(response.data);
-        });
-        const {data: response} = await axios.get("https://6b17-218-150-7-191.ngrok-free.app/tire?sort=0", {withCredentials: true});
-        // console.log(typeof response);
-        console.log(response);
-        setLists(response);
-        setCurrentPosts(response);
-        // console.log("[Info] : getItem() lists : " + lists[0].name);
-    }
-    
-    useEffect(()=>{
-        getItem();
-    }, []);*/}
+    const [selected, setSelected] = useState("0");
 
     async function getItem(sort) {
-        console.log(sort);
-        const {data: response} = await axios.get(`http://175.45.194.50:8080/tire`, { params: {sort: `${sort}`} }, { withCredentials: true });
+        const {data: response} = await axios.get(`http://175.45.194.50:8080/tire?sort=${sort}`,  { withCredentials: true });
         setLists(response);
         setCurrentPosts(response);
     }
