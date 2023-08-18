@@ -18,6 +18,7 @@ const OutContent = styled.div`
 width:1200px;
 margin-top:30px;
 margin-bottom:30px;
+
 h1{
   border-bottom: 1px solid #e0e0e0; /* 밑줄 추가 */
   padding:10px;
@@ -36,7 +37,6 @@ function RegisterCarPage() {
         <h1> 마이 페이지 </h1>
         <Content>
         <MyProfile/>
-        {/* <Content> */}
         <InnerContent>
             <RegisterCar/>
         </InnerContent>
