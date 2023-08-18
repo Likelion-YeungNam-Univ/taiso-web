@@ -104,7 +104,7 @@ const Brand = styled.span`
     font-family: 'IBM Plex Sans KR', sans-serif;
     align-items: center;
 `
-const Best = styled.p`
+const Hot = styled.p`
     width: 103px;
     height: 38px;
     display: inline-flex;
@@ -114,7 +114,23 @@ const Best = styled.p`
     justify-content: center;
     align-items: center;
     border-radius: 18px 0px 18px 18px;
-    background: ${props => props.bestbackground || "#E2BE45"};
+    background: ${props => props.bestbackground || "#F00"};
+    border: 1px;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    align-items: center;
+    font-size: 20px;
+`
+const None = styled.p`
+    width: 103px;
+    height: 38px;
+    display: inline-flex;
+    padding: 5px 5px 5px 5px;
+    margin-bottom:10px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    border-radius: 18px 0px 18px 18px;
+    background: ${props => props.bestbackground || "#FFFFFF"};
     border: 1px;
     font-family: 'IBM Plex Sans KR', sans-serif;
     align-items: center;
@@ -123,8 +139,7 @@ const Best = styled.p`
 function HotItem(props) {
     return (
         <Container>
-            {/* {props.brand} */}
-            <Best>{props.best}</Best>
+            {props.hot === "HOT" ? <Hot>{props.hot}</Hot> : <None>{props.none}</None>}
              <ImageBox>{props.img}</ImageBox>
             <ContentBox>
                 <TitleBox>
@@ -150,3 +165,4 @@ function HotItem(props) {
 }
 
 export default HotItem;
+

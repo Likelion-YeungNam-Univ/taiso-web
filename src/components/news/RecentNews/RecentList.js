@@ -11,14 +11,16 @@ import { ReactComponent as New8 } from "../../../assets/images/news/News8.svg";
 
 
 const List = styled.div`
-width: 300px;
-height: 176px;
+    width: 300px;
+    height: 176px;
     display: flex;
     justify-content: space-between;
-    margin-bottom:150px;
+    margin-bottom:200px;
+    
+    
 `
 const AllList = styled.div`
-    
+   
 `
 
 function RecentList() {

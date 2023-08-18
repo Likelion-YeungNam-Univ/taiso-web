@@ -9,8 +9,6 @@ import { useRef } from 'react';
 
 const Filter = styled.div`
     width: 306px;
-    
-
 `
 const Filterheader = styled.div`
     display: flex;
@@ -86,41 +84,4 @@ const SearchFilter = () => {
 };
 
 export default SearchFilter;
-
-// const SearchFilter = () => {
-//     let brandFilterRef;
-    // typeFilterRef, weatherFilterRef, categoryFilterRef, sizeFilterRef;
-
-    // const resetAllFilters = () => {
-    //     brandFilterRef.resetFilter();
-    //     // Reset other filter references here
-    // };
-
-//     const SearchFilter = () => {
-//         const brandFilterRef = useRef(); // brandFilterRef를 useRef로 생성
-//         // ... 나머지 필터 ref들도 생성
-    
-//         const resetAllFilters = () => {
-//             brandFilterRef.current.resetFilter(); // brandFilterRef를 통해 resetFilter 호출
-//             // ... 나머지 필터들의 resetFilter 호출
-//         };
-    
-
-//     return (
-//         <Filter>
-//             <Filterheader>
-//                 <H2>필터</H2>
-//                 <Reset onClick={resetAllFilters}>
-//                     <ResetIcon />
-//                     <H3>필터 초기화</H3>
-//                 </Reset>
-//             </Filterheader>
-//             <BrandFilter ref={brandFilterRef} />
-
-//             {/* Add other filters with their respective refs */}
-//         </Filter>
-//     );
-// };
-
-// export default SearchFilter;
 

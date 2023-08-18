@@ -1,7 +1,8 @@
 import SearchHeader from "pages/search/SearchHeader";
-import { ResultBoard, SearchFilter, SearchReacommendBoard} from "components";
+import { ResultBoard, SearchFilter, SearchReacommendBoard, ResultList } from "components";
 import styled from "styled-components";
 import PageAd from "./PageAd";
+import { useEffect } from "react";
 
 const Page = styled.div`
     
@@ -15,19 +16,19 @@ const Nav = styled.div`
 const Board = styled.div``
 
 const SearchPage = () => {
+
+    function ScrollToTopOnMount() {
+        useEffect(() => {
+          window.scrollTo(0, 0);
+        }, []);
+      
+        return null;
+      }
+
     return(
         <Page>
-            <SearchHeader/>
-            <Nav>
-                <SearchFilter/>
-                <Board>
-                    <SearchReacommendBoard/>
-                    <PageAd/>
-                    <ResultBoard/>
-                </Board>
-               
-            </Nav>
-            
+            <ScrollToTopOnMount />
+            <ResultList/>
         </Page>
     );
 }

@@ -10,41 +10,50 @@ const Nav = styled.div`
     align-items: center;
     font-family: 'Nunito', sans-serif;
     border-bottom: 1px solid rgba(0, 0, 0, 0.30);
-`
+`;
+
 const Logo = styled.div`
     flex: 5;
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
     cursor: pointer;
-`
+`;
 
 const Gnb = styled.div`
     flex: 5;
-    
+    position: static;
     ul {
-        display:flex;
+        display: flex;
         align-items: center;
-        justify-content:center;
+        justify-content: center;
         list-style: none;
         margin: 0;
         padding: 0;
-    }
 
-    li {
-        margin-right: 50px;
-        font-size: 18px;
-        cursor: pointer;
-        border-radius: 10px;
-        padding: 3px 10px 3px 10px;
-    }
+        li {
+            margin-right: 40px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 10px;
+            padding: 3px 10px;
+        }
 
-    li:hover,
-    li.active {
-        background: #2D2926;
-        color: #FFFFFF;
-   }
-`
+        p {
+            border-radius: 40px;
+            padding: 3px 25px;
+            background: #2D2926;
+            flex-shrink: 0;
+            color: #FFF;
+        }
+    }
+    
+    @media screen and (max-width: 908px) {
+        ul {
+            display: none; 
+        }
+    }
+`;
 
 const Header = () => {
     const movePage = useNavigate();
@@ -52,23 +61,22 @@ const Header = () => {
     function goNews() {
         movePage('/news');
     }
+
     return (
         <Nav>
-            <Logo onClick={() => {movePage("/main")}}>
-                <HeaderLogo/>
+            <Logo onClick={() => { movePage("/main") }}>
+                <HeaderLogo />
             </Logo>
             <Gnb>
                 <ul>
-                    <li onClick={() => {movePage("/main")}}>홈</li>
-                    <li onClick={() => {movePage("/search")}}>타이어 검색</li>
-                    {/* <li onClick={() => {("")}}>커뮤니티</li> */}
+                    <li onClick={() => { movePage("/main") }}>홈</li>
+                    <li onClick={() => { movePage("/search") }}>타이어 검색</li>
                     <li onClick={goNews}>뉴스</li>
-                    <li onClick={() => {movePage("/mypage")}}>로그인</li>
+                    <li onClick={() => { movePage("/mypage") }}><p>로그인</p></li>
                 </ul>
-            </Gnb>    
+            </Gnb>
         </Nav>
     );
 };
 
 export default Header;
-

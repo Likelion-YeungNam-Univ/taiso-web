@@ -41,6 +41,7 @@ const ListItem = styled.ul`
     padding: 20px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.30);
     background: #FFF;
+    margin-bottom: 20px;
 `
 
 const Item = styled.li`
