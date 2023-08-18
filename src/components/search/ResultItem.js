@@ -145,6 +145,18 @@ const Grade = styled.p`
     justify-content: center;
     align-items: center;
 `
+const TireName = styled.p`
+    font-size: 23px;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    margin-left: 15px;
+    font-weight: bold;
+`
+const Size = styled.span`
+    font-size: 15px;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    margin-left: 15px;
+    color: #747475;
+`
 function RecommandItem(props) {
     const [like, setLike] = useState(false);
 
@@ -164,7 +176,8 @@ function RecommandItem(props) {
             </ImageBox>
             <BottomBox>
             <Brand width={props.width} height={props.height} color={props.brand}>{props.brand}</Brand>
-            <h1>{props.tirename}</h1>
+            <TireName>{props.tirename}</TireName>
+            <Size>{props.sizename}</Size>
             <p>{props.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}<p>원~</p></p>
             <KeywordContainer>
                 <Keyword>{props.keyword1}</Keyword>
