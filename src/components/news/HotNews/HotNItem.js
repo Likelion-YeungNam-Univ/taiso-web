@@ -2,13 +2,14 @@ import styled from "styled-components";
 import BigNews from "../../../assets/images/news/BigNews.png"
 
 const Container = styled.div`
-padding: 20px;
-display:flex;
+  padding: 20px;
+  display:flex;
+ 
 `
 const Content = styled.div`
   margin-left: 10px; 
   margin-top: 10px; 
-  margin=right:5px;
+  margin-right:5px;
   p{
     color: var(--black-60, #444);
 font-family: Noto Sans KR;
@@ -30,11 +31,10 @@ line-height: 180%;
 `
 
 const Image = styled.img`
-width: 840px;
-height: 400px;
+  width: 840px;
+  height: 400px;
+  border-radius: 8px;
 `
-
-
 
 function HotNItem() {
 
