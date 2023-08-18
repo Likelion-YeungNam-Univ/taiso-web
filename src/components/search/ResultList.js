@@ -235,7 +235,7 @@ const ResultList = () => {
                             img={tire.imageUrl1} 
                             brand = {tire.brand.name}
                             width = "50px"
-                            tirename = {tire.name}
+                            tirename = {tire.name1}
                             price = {tire.price}
                             keyword1 = {tire.carType}
                             keyword2 = {tire.season}
