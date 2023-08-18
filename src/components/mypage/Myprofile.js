@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { ReactComponent as MyFace } from "../../assets/images/mypage/Image.svg";
 import { ReactComponent as Check } from  "../../assets/images/mypage/check.svg";
@@ -110,6 +110,25 @@ function MyProfile() {
   }).then(function(){
 
   });
+=======
+  const fetchData = useEffect(()=>{
+    axios.get("http://www.tireso.co.kr:8080/auth/user-info")
+    .then((res)=>{
+      console.log(res);
+      // setLists(response);
+      // setCurrentPosts(response);
+    }).catch((err)=>{
+      console.log("err:"+err);
+    })
+
+  },[])
+    
+    // { withCredentials: true }); 
+
+
+// useEffect(() => {
+//     getItem(selected); 
+// }, [selected]);
 
   return (
     <Container>
