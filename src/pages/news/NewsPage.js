@@ -20,11 +20,14 @@ const Title = styled.span`
         line-height: normal;
         padding-bottom: 10px; /* 마진 및 여백 조정 */
         border-bottom: 1px solid #e0e0e0; /* 밑줄 추가 */
+        margin-top: 50px;
     }
 `
 const MiddleAd =styled.div`
     display: flex;
     justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
 `
 
 
