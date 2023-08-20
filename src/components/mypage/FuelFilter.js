@@ -3,30 +3,29 @@ import { useState, forwardRef } from "react";
 import { BiChevronDown, BiChevronUp } from 'react-icons/bi';
   
 const SelectBox = styled.div`
-margin: 0 auto;
-margin-top:8px;
+    margin: 0 auto;
+    margin-top:8px;
     position: relative;
     width: 480px;
-height: 40px;
+    height: 40px;
     padding: 3px;
     align-self: center;
     border: 1px solid #ccc;
-    // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
-`;
+`
 const Label = styled.label`
     font-size: 13px;
     margin-left: 7px;
     padding-top:5px;
     text-align: center;
     color: var(--black, #272727);
-font-feature-settings: 'clig' off, 'liga' off;
-font-family: Helvetica;
-font-size: 14px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
-`;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Helvetica;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+`
 const SelectOptions = styled.ul`
     margin-top: 5px;
     list-style: none;
@@ -38,22 +37,19 @@ const SelectOptions = styled.ul`
     max-height: ${(props) => (props.show ? "none" : "0")};
     padding: 0;
     border-radius: 8px;
-    // color: #fefefe;
-`;
+`
 const Option = styled.li`
     font-size: 14px;
     padding: 6px 8px;
     transition: background-color 0.2s ease-in;
-    // color: #000;
     &:hover {
     background-color: rgb(233, 233, 233);
     }
-`;
+`
 
 const Header = styled.div`
     display: flex;
     align-items: center;
-    // background-color: rgb(233, 233, 233);
     border-radius: 12px;
     margin-top: 5px;
 `
@@ -62,8 +58,8 @@ const DownIcon =styled.div`
     margin-top: 5px;
 `
 const optionData =[
-            {key: "1", value: "휘발유"},
-            {key: "2", value: "경유"},
+    {key: "1", value: "휘발유"},
+    {key: "2", value: "경유"},
            
 ];
 

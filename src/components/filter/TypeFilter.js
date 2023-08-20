@@ -1,14 +1,11 @@
 import { styled } from "styled-components";
 import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai';
-// import { useState } from "react";
 import { ImCheckboxUnchecked, ImCheckboxChecked } from 'react-icons/im';
 import cn from 'classnames';
 import { useState, forwardRef } from 'react';
 
-
 const Filter = styled.div`
     width: 306px;
-
 `
 const FilterBox = styled.div``
 
@@ -17,7 +14,6 @@ const FilterBtn = styled.div`
     align-items: center;
     margin-bottom: 30px;
 `
-
 const Btntext = styled.div`
     color: #000;
     text-align: center;
@@ -27,7 +23,6 @@ const Btntext = styled.div`
     font-weight: 500;
     line-height: normal;
 `
-
 const DownIcon = styled.div`
     display: flex;
     width: 23px;
@@ -44,7 +39,6 @@ const ListItem = styled.ul`
     background: #FFF;
     margin-bottom: 20px;
 `
-
 const Item = styled.li`
     list-style: none;
     display: flex;
@@ -58,7 +52,6 @@ const Item = styled.li`
         border-radius: 10px;
     }
 `
-
 const Checkbox = styled.div`
     display: flex;
     width: 32px;
@@ -66,9 +59,7 @@ const Checkbox = styled.div`
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
-  
 `
-
 const ItemText = styled.div`
     color: #000;
     text-align: center;
@@ -150,9 +141,7 @@ const TypeFilter = forwardRef((props, ref) => {
                         </Item>
                     </ListItem>
                 )}
-   
             </FilterBox>
-            
         </Filter>
     );
 });

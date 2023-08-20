@@ -6,8 +6,6 @@ const Title = styled.div`
     height: 100px;
     display: flex;
     align-items: center;
-    
-    
     padding: 0.5rem;
     margin-bottom: 2rem;
     h1 {
@@ -17,16 +15,13 @@ const Title = styled.div`
         font-weight: 600;
         font-family: 'IBM Plex Sans KR', sans-serif;
     }
-`;
+`
 const ThumbUpIcon = styled(ThumbUp)`
     margin-left: 2rem;
-`;
+`
 const Nav = styled.div`
     width: 1136px;
     height: 600px;
-    /* position: absolute; */
-    /* left: 50%; */
-    /* transform: translateX(-50%); */
     margin: auto;
     margin-top: 80px;
 `

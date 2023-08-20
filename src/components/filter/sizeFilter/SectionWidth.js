@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { useState, forwardRef } from "react";
 import { BiChevronDown, BiChevronUp } from 'react-icons/bi';
 
-  
 const SelectBox = styled.div`
     position: relative;
     width: 89px;
@@ -11,12 +10,12 @@ const SelectBox = styled.div`
     align-self: center;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
-`;
+`
 const Label = styled.label`
     font-size: 13px;
     margin-left: 4px;
     text-align: center;
-`;
+`
 const SelectOptions = styled.ul`
     margin-top: 5px;
     list-style: none;
@@ -29,7 +28,7 @@ const SelectOptions = styled.ul`
     padding: 0;
     border-radius: 8px;
     color: #fefefe;
-`;
+`
 const Option = styled.li`
     font-size: 14px;
     padding: 6px 8px;
@@ -38,8 +37,7 @@ const Option = styled.li`
     &:hover {
     background-color: rgb(233, 233, 233);
     }
-`;
-
+`
 const Header = styled.div`
     display: flex;
     align-items: center;

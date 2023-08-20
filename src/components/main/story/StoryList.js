@@ -10,9 +10,7 @@ const List = styled.div`
     justify-content: center;
     margin-top: 1rem;
     margin: 0 auto;
-    
 `
-
 function ReviewList() {
     return (
         <List>

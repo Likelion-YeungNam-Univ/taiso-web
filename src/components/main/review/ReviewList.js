@@ -15,7 +15,6 @@ const List = styled.div`
     margin-left: 3rem;
     align-content: center;
 `
-
 function ReviewList() {
     return (
         <List>

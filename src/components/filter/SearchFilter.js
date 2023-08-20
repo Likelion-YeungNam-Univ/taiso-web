@@ -45,7 +45,6 @@ const H3 = styled.h3`
     font-weight: 500;
     line-height: normal;
 `
-
 const SearchFilter = () => {
 
     const brandFilterRef = useRef(); 

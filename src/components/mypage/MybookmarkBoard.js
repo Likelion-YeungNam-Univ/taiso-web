@@ -3,24 +3,24 @@ import MybookmarkList from "./MybookmarkList";
 import React from "react";
 
 const Container = styled.div`
-width: 866px;
-height: 330px;
-box-shadow: 0px 10px 40px 0px rgba(50, 50, 50, 0.20);
-border-radius: 10px;
+    width: 866px;
+    height: 330px;
+    box-shadow: 0px 10px 40px 0px rgba(50, 50, 50, 0.20);
+    border-radius: 10px;
 
 `
 const Title = styled.div`
-margin-left:20px;
-margin-top:10px;
-padding-top:10px;
-p{
-    color: #484848;
-font-family: IBM Plex Sans KR;
-font-size: 16px;
-font-style: normal;
-font-weight: 600;
-line-height: normal;
-text-decoration-line: underline;
+    margin-left:20px;
+    margin-top:10px;
+    padding-top:10px;
+    p{
+        color: #484848;
+    font-family: IBM Plex Sans KR;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-decoration-line: underline;
 }
 `
 
@@ -31,7 +31,6 @@ function MybookmarkBoard() {
             <MybookmarkList></MybookmarkList>
        </Container>
     );
-    
 }
 
 export default MybookmarkBoard;

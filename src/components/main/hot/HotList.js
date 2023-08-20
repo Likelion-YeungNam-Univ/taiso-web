@@ -9,7 +9,6 @@ const List = styled.div`
     height: 620px;
     width: 400px;
 `
-
 function HotList() {
     return (
         <List>

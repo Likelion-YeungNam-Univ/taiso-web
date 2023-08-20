@@ -22,7 +22,7 @@ const TireDetailsPage = () => {
     return (
         <div>
             <SearchHeader/>
-            <TireDetailsItem id={id}/>
+            <TireDetailsItem id= {id}/>
             <Description/>
             <RecommandSlider/>
         </div>

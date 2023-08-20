@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-    // margin: 0.5rem;
     div {
         width: auto;
         height: 293px;
@@ -16,7 +15,6 @@ const Container = styled.div`
         margin-top: 1rem;
     }
 `
-
 function StoryItem(props) {
     return (
         <Container>

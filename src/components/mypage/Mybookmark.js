@@ -6,49 +6,42 @@ import axios from "axios";
 import { useState } from "react";
 
 const Container = styled.div`
-display:flex;
-flex-Direction: row; 
-width:1168px;
-margin: 0 auto;
-justify-content: space-between;
-margin-bottom:20px;
+    display:flex;
+    flex-Direction: row; 
+    width:1168px;
+    margin: 0 auto;
+    justify-content: space-between;
+    margin-bottom:20px;
 `
 const Content = styled.div`
- display:flex;
- margin-top:10px;
+    display:flex;
+    margin-top:10px;
 `
 const OutContent = styled.div`
-width:1200px;
-margin-top: 30px;
+    width:1200px;
+    margin-top: 30px;
     margin-bottom: 30px;
     
 h1{
-  padding:10px;
-  border-bottom: 1px solid #e0e0e0; /* 밑줄 추가 */
+    padding:10px;
+    border-bottom: 1px solid #e0e0e0; /* 밑줄 추가 */
 }
 `
 const InnerContent = styled.div`
-margin-left:15px;
-padding:8px;
+    margin-left:15px;
+    padding:8px;
 `
-
 const Title = styled.div`
-margin-left:15px;
+    margin-left:15px;
 p{
-color: #484848;
-font-family: IBM Plex Sans KR;
-font-size: 28px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
+    color: #484848;
+    font-family: IBM Plex Sans KR;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
 `
-
-// const PageTitle = styled.div`
-// width: 1200px;
-// height: 133px;
-// `
-
 function Mybookmark() {
   const [sucessLogin, setSucessLogin] = useState('')
 
@@ -59,7 +52,6 @@ function Mybookmark() {
     .then((Response)=>{
       console.log(Response.data);
       setSucessLogin(Response.data);
-      //console.log(sucessLogin);
 
   }).catch((Error)=>{
       console.log(Error);
@@ -78,14 +70,12 @@ function Mybookmark() {
       console.log(Error);
   })
 
-
     return (
       <Container className="a">
         <OutContent className="b">
         <h1> 마이 페이지 </h1>
         <Content className="c">
         <MyProfile className="d" sucessLogin={sucessLogin}/>
-        {/* <Content> */}
         <InnerContent className="e">
         <Title><p>만나서 반갑습니다, {name}님!</p></Title>
              <Mycar className="f"/>
@@ -94,7 +84,6 @@ function Mybookmark() {
          </Content> 
          </OutContent>
        </Container>
-      // </OutContent>
     );
   }
 

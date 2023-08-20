@@ -6,12 +6,9 @@ import SideBySide from "./sizeFilter/SideBySide";
 import Inch from "./sizeFilter/Inch";
 import SizeFooter from "./sizeFilter/SizeFooter";
 
-
-
 const Filter = styled.div`
     width: 306px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.30);
-
 `
 const FilterBox = styled.div``
 
@@ -20,7 +17,6 @@ const FilterBtn = styled.div`
     align-items: center;
     margin-bottom: 30px;
 `
-
 const Btntext = styled.div`
     color: #000;
     text-align: center;
@@ -30,7 +26,6 @@ const Btntext = styled.div`
     font-weight: 500;
     line-height: normal;
 `
-
 const DownIcon = styled.div`
     display: flex;
     width: 23px;
@@ -52,7 +47,6 @@ const Item = styled.li`
     list-style: none;
     padding: 3px;
     cursor: pointer;
-   
 `
 const SizeFilter = forwardRef((props, ref) => {
     const [isOpen, setIsOpen] = useState(false);

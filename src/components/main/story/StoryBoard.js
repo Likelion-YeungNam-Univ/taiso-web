@@ -14,17 +14,16 @@ const Title = styled.div`
         font-weight: 600;
         font-family: 'IBM Plex Sans KR', sans-serif;
     }
-`;
+`
 const StoryIcon = styled(Story)`
     margin-left: 2rem;
-`;
+`
 const Nav = styled.div`
     width: 1136px;
     height: 650px;
     margin: 0 auto;
     left: 50%;
     margin-top: 80px;
-    
 `
 const Button = styled.button`
     width: 176px;
@@ -35,7 +34,6 @@ const Button = styled.button`
     border-radius: 30px;
     border: 2px solid black;
     margin-left: auto;
-    /* margin-top: 1.5rem; */
     margin-top:32px;
     cursor: pointer; 
     &:hover,

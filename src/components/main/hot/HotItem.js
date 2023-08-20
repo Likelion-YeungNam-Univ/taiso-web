@@ -2,16 +2,14 @@ import { styled } from "styled-components";
 import { FaStar } from "react-icons/fa";
 
 const Container = styled.div`
-width: 368px;
-    // padding: 0.5rem;
+    width: 368px;
     border-radius: 20px;
     margin-right: 20px;
-    //margin: 1 auto;
     box-shadow: 0.5px 0.5px 20px 10px #EFEFF1;
 `
 const ImageBox = styled.div`   
     display: flex;
-     margin: 0 auto;
+    margin: 0 auto;
     justify-content: center;
     align-items: center;
     width: 250px;
@@ -23,7 +21,7 @@ const ContentBox = styled.div`
     margin: 0 auto;
 `
 const TitleBox = styled.span`
-    /* padding-bottom:10px; */
+    
     display:flex;
     align-items: center;
     h1 {
@@ -31,20 +29,19 @@ const TitleBox = styled.span`
         text-align: center;
         font-family: 'IBM Plex Sans KR', sans-serif;
         margin-left: 10px;
-    
     }
+
     p{
-    display: inline;
-    color: #000;
-    text-align: center;
-    font-family: IBM Plex Sans KR;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    margin-left:25px;
-    margin-bottom: 10px;
-  
+        display: inline;
+        color: #000;
+        text-align: center;
+        font-family: IBM Plex Sans KR;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        margin-left:25px;
+        margin-bottom: 10px;
     }
 `
 const InnerBox = styled.div`
@@ -58,7 +55,6 @@ const InnerBox = styled.div`
         font-family: 'IBM Plex Sans KR', sans-serif; 
         text-align: center;
         margin: 5px 5px 20px 5px;
-        
     }
 `
 const KeywordContainer = styled.div`
@@ -66,7 +62,6 @@ const KeywordContainer = styled.div`
     padding-top:10px;
     padding-bottom:px;
     padding-left: 5px;
-    
 `
 const Keyword = styled.div`
     width: 100px;
@@ -100,7 +95,6 @@ const Brand = styled.span`
     border-radius: 32px;
     background: #FFF;
     border: 1px;
-    // box-shadow: 0px 5px 20px 0px #999;
     box-shadow: 0.5px 0.5px 40px 15px #EFEFF1;
     font-family: 'IBM Plex Sans KR', sans-serif;
     align-items: center;
@@ -162,7 +156,6 @@ function HotItem(props) {
             </ContentBox>
         </Container>
     );
-    
 }
 
 export default HotItem;

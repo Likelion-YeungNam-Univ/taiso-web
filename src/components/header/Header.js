@@ -12,16 +12,14 @@ const Nav = styled.div`
     align-items: center;
     font-family: 'Nunito', sans-serif;
     border-bottom: 1px solid rgba(0, 0, 0, 0.30);
-`;
-
+`
 const Logo = styled.div`
     flex: 5;
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
     cursor: pointer;
-`;
-
+`
 const Gnb = styled.div`
     flex: 5;
     position: static;
@@ -38,8 +36,7 @@ const Gnb = styled.div`
             font-size: 16px;
             cursor: pointer;
             border-radius: 10px;
-            padding: 10px 2px;
-            
+            padding: 10px 2px;    
         }
         
         li p:hover{background: #e9ecef; color:black;}
@@ -47,9 +44,7 @@ const Gnb = styled.div`
         p {
             border-radius: 40px;
             padding: 3px 25px;
-            // background: #2D2926;
             flex-shrink: 0;
-            // color: #FFF;
         }
     }
     
@@ -58,8 +53,7 @@ const Gnb = styled.div`
             display: none; 
         }
     }
-`;
-
+`
 const P = styled.span`
     border-radius: 40px;
     padding: 3px 25px;
@@ -67,8 +61,6 @@ const P = styled.span`
     flex-shrink: 0;
     color: #FFF;
 `
-
-
 const Header = () => {
     const movePage = useNavigate();
 
@@ -87,13 +79,11 @@ const Header = () => {
             .then((res)=>{
             setCheck(res.data)
             
-             //console.log(res.data.email);
           }).catch((Error)=>{
               console.log(Error);
           })
     })
     console.log(check)
-
 
     return (
         <Nav>
@@ -102,11 +92,6 @@ const Header = () => {
             </Logo>
             <Gnb>
                 <ul>
-                    
-                    {/* <li onClick={() => { movePage("/main") }}><p>홈</p></li>
-                    <li onClick={() => { movePage("/search") }}><p>타이어 검색</p></li>
-                    <li onClick={goNews}><p>뉴스</p></li>
-                    <li onClick={() => { movePage("/mypage") }}><P>로그인</P></li> */}
                     <li onClick={() => { movePage("/main") }}><p>홈</p></li>
                     <li onClick={() => { movePage("/search") }}><p>타이어 검색</p></li>
                     <li onClick={goNews}><p>뉴스</p></li>
@@ -117,8 +102,7 @@ const Header = () => {
                         : 
                         <li onClick={() => { movePage("/mypage") }}><P>프로필 보기</P></li> 
                         }
-                    </div>   
-                    
+                    </div>    
                 </ul>
             </Gnb>
         </Nav>

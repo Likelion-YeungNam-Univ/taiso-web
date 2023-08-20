@@ -12,10 +12,10 @@ const Title = styled.div`
         font-weight: 600;
         font-family: 'IBM Plex Sans KR', sans-serif;
     }
-`;
+`
 const ReviewIcon = styled(Review)`
     margin-left: 2rem;
-`;
+`
 const Nav = styled.div`
     width: 1136px;
     height: 650px;

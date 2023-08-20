@@ -7,7 +7,6 @@ const List = styled.div`
     display: flex;
     height: 448px;
 `
-
 function RecommandList() {
     return (
         <List>

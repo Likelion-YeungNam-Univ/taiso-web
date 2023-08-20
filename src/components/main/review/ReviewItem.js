@@ -18,6 +18,7 @@ const Innerbox1 = styled.div`
     display: flex;
     display: flex;
     align-items: center;
+    
     div {
         height: 70px;
         margin-left: 20px;
