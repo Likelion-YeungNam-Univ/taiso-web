@@ -48,7 +48,7 @@ const Gnb = styled.div`
         }
     }
     
-    @media screen and (max-width: 1070px) {
+    @media screen and (max-width: 1150px) {
         ul {
             display: none; 
         }

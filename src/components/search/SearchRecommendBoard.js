@@ -7,7 +7,7 @@ const Container = styled.div`
     border-radius: 18px;
     box-shadow: 0px 16px 40px 0px rgba(112, 144, 176, 0.20);
     margin-left: 5px;
-`;
+`
 
 const Top = styled.div`
 	width: 885px;
@@ -23,12 +23,7 @@ const Top = styled.div`
         font-weight: 600;
         line-height: normal;
 	}
-`;
-
-
-
-
-
+`
 
 const SearchReacommendBoard = () => {
 	return (
