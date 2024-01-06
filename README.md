@@ -1,4 +1,7 @@
 # YU LIKELION
+### 📌 피그마
+
+https://www.figma.com/file/EhhpR5wkONiV38chChppaC/LIKELION_-Hackathon_%ED%83%80%EC%9D%B4%EC%86%8C?type=design&node-id=533-864&mode=design&t=2iBgdCzEqQtuA679-0
 
 ### 📌 Branch Naming Convention
 
@@ -212,6 +215,9 @@ main ── develop ── feature/"
         ├── SearchPage.js
         └── index.js
 ```
+### 📌 완성된 프로젝트 모습
+<img width="390" alt="image" src="https://github.com/Likelion-YeungNam-Univ/tireso-web/assets/33176397/8828e0ea-105e-4f26-869e-e7ef778a0129">
+
 
 ### 📌 Commit Convention
 
